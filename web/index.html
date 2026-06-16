@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAELUM — IA y transformación digital para PYMEs | Madrid</title>
+  <meta name="description" content="KAELUM implementa IA, presencia digital y Meta Ads para PYMEs españolas que quieren crecer sin depender de la suerte. Auditorías, automatización y resultados medibles. Madrid." />
+  <meta name="theme-color" content="#0A0A0F" />
+  <link rel="canonical" href="https://kaelum.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="KAELUM — IA y transformación digital para PYMEs" />
+  <meta property="og:description" content="IA, presencia digital y Meta Ads para negocios que quieren crecer sin depender de la suerte." />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:url" content="https://kaelum.io/" />
+
+  <!-- Fonts: Inter + JetBrains Mono, font-display swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Progressive enhancement: hide-then-reveal logic only applies when JS runs. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "KAELUM",
+    "description": "Implementación de IA y transformación digital para PYMEs.",
+    "areaServed": "ES",
+    "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+    "email": "hola@kaelum.io",
+    "url": "https://kaelum.io/",
+    "foundingDate": "2026"
+  }
+  </script>
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav" data-anim="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="KAELUM inicio">
+        KAELUM<span class="nav__dot">.</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#proceso" class="nav__link">Proceso</a>
+        <a href="#casos" class="nav__link">Casos</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn--ghost nav__cta">Hablar con nosotros&nbsp;→</a>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilePanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile slide-in panel -->
+  <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  <aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <nav class="mobile-panel__links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#casos">Casos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn--primary mobile-panel__cta">Hablar con nosotros&nbsp;→</a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="particles" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="eyebrow" data-hero="badge">
+          <span class="eyebrow__icon">✦</span> Transformación digital para PYMEs
+        </span>
+
+        <h1 class="hero__title" data-hero="title">
+          <span class="word">Llevamos</span> <span class="word">tu</span> <span class="word">empresa</span><br />
+          <span class="word">al</span> <span class="word">nivel</span> <span class="word grad">más&nbsp;alto.</span>
+        </h1>
+
+        <p class="hero__subtitle" data-hero="subtitle">
+          Agentes de IA a medida, automatización de procesos y presencia digital
+          para negocios que quieren crecer sin depender de la suerte.
+        </p>
+
+        <div class="hero__ctas" data-hero="ctas">
+          <a href="#contacto" class="btn btn--primary">Hablar con nosotros&nbsp;→</a>
+          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+        </div>
+
+        <div class="hero__proof" data-hero="proof">
+          <div class="hero__proof-line" aria-hidden="true"></div>
+          <ul class="hero__stats">
+            <li><strong>32</strong> PYMEs auditadas</li>
+            <li aria-hidden="true" class="dot">·</li>
+            <li><strong>€180k</strong> generados</li>
+            <li aria-hidden="true" class="dot">·</li>
+            <li><strong>Madrid</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Servicios</span>
+          <h2 class="section__title">Lo que hacemos por ti</h2>
+          <p class="section__lead">De diagnosticar dónde la IA te hace ganar dinero a montártela y mantenerla. Precios claros, sin letra pequeña.</p>
+        </header>
+
+        <div class="grid grid--services">
+          <article class="card card--service" data-reveal data-stagger="0">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+            </div>
+            <h3 class="card__title">Diagnóstico de IA</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Mapeamos cada proceso de tu empresa y detectamos dónde la IA te ahorra tiempo y costes. Sales con un plan de implementación priorizado.</p>
+            <a href="#contacto" class="card__price">Desde 600€ <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card card--service card--featured" data-reveal data-stagger="1">
+            <span class="card__badge">Lo más demandado</span>
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="2.5"/><path d="M12 8V5.5"/><circle cx="12" cy="3.6" r="1.4"/><circle cx="9.3" cy="13" r="1"/><circle cx="14.7" cy="13" r="1"/><path d="M9.5 16.2h5"/><path d="M3 12.5v3M21 12.5v3"/></svg>
+            </div>
+            <h3 class="card__title">Agentes de IA a medida</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Diseñamos y desplegamos agentes de IA que trabajan por ti: atención al cliente, ventas, gestión interna. Optimizan procesos y reducen costes, con plan de mantenimiento mensual.</p>
+            <a href="#contacto" class="card__price">Desde 1.500€ + mant. mensual <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card card--service" data-reveal data-stagger="2">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+            </div>
+            <h3 class="card__title">IA en tus Procesos</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Automatizamos las tareas repetitivas de tu día a día con IA (Make, n8n y GPT). Menos horas de gestión, cero errores manuales.</p>
+            <a href="#contacto" class="card__price">Desde 800€ <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card card--service" data-reveal data-stagger="3">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <h3 class="card__title">Auditoría Digital KAELUM</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Analizamos tu web, SEO, Google Maps y competencia al completo. Te damos un plan de acción concreto y priorizado.</p>
+            <a href="#contacto" class="card__price">Desde 500€ <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card card--service" data-reveal data-stagger="4">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg>
+            </div>
+            <h3 class="card__title">Presencia Digital Completa</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Web nueva, perfil de Google Business optimizado y LinkedIn de empresa. Que te encuentren y te elijan.</p>
+            <a href="#contacto" class="card__price">Desde 1.200€ <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card card--service" data-reveal data-stagger="5">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5"/><circle cx="12" cy="14" r="4"/></svg>
+            </div>
+            <h3 class="card__title">Meta Ads Gestionado</h3>
+            <div class="card__rule"></div>
+            <p class="card__text">Campañas de Facebook e Instagram para negocios locales. Tú atiendes clientes, nosotros los traemos.</p>
+            <a href="#contacto" class="card__price">Desde 400€/mes <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
+    <section class="section section--proceso" id="proceso">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Cómo trabajamos</span>
+          <h2 class="section__title">Tres pasos. Sin rodeos.</h2>
+        </header>
+
+        <div class="process">
+          <div class="process__line" aria-hidden="true"><span class="process__line-fill" id="processLine"></span></div>
+
+          <div class="process__step" data-reveal data-stagger="0">
+            <span class="process__num">01</span>
+            <h3 class="process__title">Auditamos</h3>
+            <p class="process__text">Analizamos tu situación actual sin filtros. Dónde estás, dónde está tu competencia y qué te está costando dinero.</p>
+          </div>
+          <div class="process__step" data-reveal data-stagger="1">
+            <span class="process__num">02</span>
+            <h3 class="process__title">Diseñamos</h3>
+            <p class="process__text">Plan de acción concreto, priorizado y medible. Sabes exactamente qué vamos a hacer y qué vas a conseguir.</p>
+          </div>
+          <div class="process__step" data-reveal data-stagger="2">
+            <span class="process__num">03</span>
+            <h3 class="process__title">Ejecutamos</h3>
+            <p class="process__text">Implementamos contigo y medimos resultados reales. No te dejamos con un PDF: lo ponemos en marcha.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASOS ============ -->
+    <section class="section" id="casos">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Casos</span>
+          <h2 class="section__title">Resultados, no promesas</h2>
+          <p class="section__lead">Ejemplos del tipo de negocio con el que trabajamos y lo que conseguimos juntos.</p>
+        </header>
+
+        <div class="grid grid--cases">
+          <article class="card card--case case--a" data-reveal data-stagger="0">
+            <span class="case__tag">Clínica dental · Madrid</span>
+            <p class="case__metric">0 → 47 reseñas</p>
+            <p class="case__sub">en 3 meses</p>
+            <p class="case__text">Reputación online de cero a referente del barrio. <strong>+60% de citas</strong> reservadas online.</p>
+          </article>
+
+          <article class="card card--case case--b" data-reveal data-stagger="1">
+            <span class="case__tag">Restaurante familiar</span>
+            <p class="case__metric">4.2x ROAS</p>
+            <p class="case__sub">en campañas de Ads</p>
+            <p class="case__text">Cada euro invertido devolvió 4,2. <strong>180 clientes nuevos</strong> en 60 días.</p>
+          </article>
+
+          <article class="card card--case case--c" data-reveal data-stagger="2">
+            <span class="case__tag">Academia de idiomas</span>
+            <p class="case__metric">−8 h / semana</p>
+            <p class="case__sub">en gestión manual</p>
+            <p class="case__text">Web nueva y matrículas automatizadas con IA. <strong>Ocho horas semanales</strong> recuperadas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POR QUÉ KAELUM ============ -->
+    <section class="section section--why" id="why">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <span class="section__eyebrow">Por qué KAELUM</span>
+          <h2 class="section__title">Lo que nos diferencia</h2>
+        </header>
+        <div class="why">
+          <div class="why__item" data-reveal data-stagger="0">
+            <h3 class="why__title">Somos PYMEs también</h3>
+            <p class="why__text">Entendemos tu negocio porque también somos emprendedores. Hablamos tu idioma, no el de los consultores.</p>
+          </div>
+          <div class="why__item" data-reveal data-stagger="1">
+            <h3 class="why__title">Sin humo</h3>
+            <p class="why__text">Solo prometemos lo que podemos medir y demostrar. Si no se puede medir, no te lo vendemos.</p>
+          </div>
+          <div class="why__item" data-reveal data-stagger="2">
+            <h3 class="why__title">Implementamos, no consultamos</h3>
+            <p class="why__text">No te dejamos con un informe y suerte. Ejecutamos contigo hasta ver los resultados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="cta" id="contacto">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner" data-reveal>
+        <h2 class="cta__title">¿Listo para subir de nivel?</h2>
+        <p class="cta__sub">Primera consulta gratuita. Sin compromiso.</p>
+        <a href="mailto:hola@kaelum.io?subject=Quiero%20reservar%20una%20llamada" class="btn btn--primary btn--lg">Reservar llamada gratuita&nbsp;→</a>
+        <p class="cta__meta"><a href="mailto:hola@kaelum.io">hola@kaelum.io</a> &nbsp;·&nbsp; Madrid, España</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="nav__logo">KAELUM<span class="nav__dot">.</span></a>
+        <p class="footer__legal">© 2026 KAELUM. Madrid.<br />Todos los derechos reservados.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Diagnóstico de IA</a>
+          <a href="#servicios">Agentes de IA a medida</a>
+          <a href="#servicios">IA en procesos</a>
+          <a href="#servicios">Auditoría digital</a>
+          <a href="#servicios">Presencia digital</a>
+          <a href="#servicios">Meta Ads</a>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <a href="#why">Nosotros</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <a href="mailto:hola@kaelum.io">hola@kaelum.io</a>
+          <a href="https://wa.me/34600000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/particles.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

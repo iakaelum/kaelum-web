@@ -1,0 +1,24 @@
+# Dependencias
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Entorno / secretos (NUNCA subir claves)
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Herramientas Claude Code (config local, no del repo)
+.claude/
