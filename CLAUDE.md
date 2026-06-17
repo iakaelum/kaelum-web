@@ -2,9 +2,9 @@
 
 ## Qué es esto
 Sitio público (landing one-page) de **KAELUM**: startup de Madrid (2026) de IA y transformación
-digital para PYMEs. Fundadores: Jaime y Rodrigo. Repo **`iakaelum/kaelum-web`** → despliega en **`kaelum.io`**.
+digital para PYMEs. Fundadores: Jaime y Rodrigo. Repo **`iakaelum/kaelum-web`** → despliega en **`kaelum.es`**.
 
-El **CRM interno está en OTRO repo**: `iakaelum/kaelum-crm` → `crm.kaelum.io`.
+El **CRM interno está en OTRO repo**: `iakaelum/kaelum-crm` → `crm.kaelum.es`.
 
 ## Stack y convenciones
 - **HTML + CSS + JS vanilla, sin dependencias de runtime.** No hay build.
@@ -24,7 +24,7 @@ tooling/    → dev-server.mjs (preview local)
 - Preview local: `node tooling/dev-server.mjs` → http://localhost:8099
 - Deploy: Cloudflare Pages, **build output directory = `web`**, build command vacío. Auto-deploy en cada push a `main`.
 - Servicios (6, IA primero): Diagnóstico de IA · Agentes de IA a medida (flagship, con mantenimiento recurrente) · IA en tus Procesos · Auditoría Digital · Presencia Digital · Meta Ads.
-- Email: `hola@kaelum.io`. Dominios: `kaelum.io` (principal) + `kaelum.es` (redirección). `.com`/`.ai`/`.app` cogidos.
+- Email: `contacto@kaelum.es` (correo de Hostinger). Dominio: `kaelum.es` (comprado en Hostinger), web → `kaelum.es`, CRM → `crm.kaelum.es`.
 
 ## Roadmap (ver docs/arquitectura.md)
 Nivel 0 web estática (hecho) → Nivel 1 CRM con Supabase (repo crm) → Nivel 2 agentes IA con n8n + API.

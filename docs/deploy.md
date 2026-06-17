@@ -20,22 +20,29 @@ Cada `git push` a `main` redespliega solo. No hay que subir archivos a mano nunc
 
 > La clave es **Build output directory = `web`**: el sitio vive en la subcarpeta `web/`, no en la raíz del repo.
 
-## 2. Conectar el dominio
+## 2. Conectar el dominio `kaelum.es` (comprado en Hostinger)
 
-`.com`, `.ai` y `.app` están cogidos. Usa **`kaelum.io`** (principal) y **`kaelum.es`** (redirección).
+El dominio está en **Hostinger**. La forma recomendada de conectarlo a Cloudflare Pages es **mover el
+DNS a Cloudflare** (cambiar los nameservers). Así dominio + DNS + web + subdominio del CRM quedan en un
+solo sitio y el dominio raíz funciona sin líos.
 
-1. Registra `kaelum.io` (Cloudflare Registrar es lo más cómodo porque ya estás dentro; también Porkbun/Namecheap).
-2. En tu proyecto de Pages → **Custom domains** → **Set up a domain** → `kaelum.io`.
-3. Registros DNS (si el dominio está en Cloudflare se crean solos; si está fuera, créalos a mano):
+> ⚠️ **CUIDADO CON EL EMAIL.** `contacto@kaelum.es` depende de registros DNS (MX, SPF, DKIM) que hoy
+> viven en Hostinger. Al mover el DNS a Cloudflare hay que **conservar esos registros** o el correo deja
+> de funcionar. Cloudflare los importa solos al añadir el dominio, pero **hay que verificarlo**.
 
-   | Tipo | Nombre | Valor |
-   |---|---|---|
-   | CNAME | `@` (raíz) | `kaelum.pages.dev` |
-   | CNAME | `www` | `kaelum.pages.dev` |
+1. En Cloudflare: **Add a site** → escribe `kaelum.es` → plan **Free**.
+2. Cloudflare escanea el DNS actual. **Comprueba que aparezcan los registros de correo** (varios `MX` que
+   apuntan a Hostinger, y `TXT` de SPF/DKIM). Si falta alguno, cópialo desde Hostinger (panel de Email).
+3. Cloudflare te da **2 nameservers** (p.ej. `xxx.ns.cloudflare.com`). En **Hostinger → Dominios → DNS /
+   Nameservers**, cambia a "usar nameservers personalizados" y pega esos dos. (Tarda de minutos a 24 h.)
+4. Cuando Cloudflare diga "Active", ve al proyecto **kaelum-web** → **Custom domains** → **Set up a domain**
+   → `kaelum.es` y también `www.kaelum.es`. Como el DNS ya está en Cloudflare, los registros se crean solos.
+5. SSL (candado https) automático en minutos.
+6. **Verifica el correo:** manda un email a `contacto@kaelum.es` desde fuera y comprueba que llega.
 
-   *(Si tu DNS no permite CNAME en la raíz, activa CNAME flattening o usa los A/AAAA que indique Pages.)*
-4. `kaelum.es`: añádelo como dominio extra o crea una **Redirect Rule 301 → https://kaelum.io**.
-5. El SSL (candado https) se emite solo en unos minutos.
+### Alternativa sin mover nameservers (dejar DNS en Hostinger)
+Posible pero más frágil para el dominio raíz: en Hostinger creas un `CNAME` de `www` → `kaelum-web.pages.dev`
+y rediriges la raíz a `www`. El email no se toca. Solo si no quieres mover los nameservers.
 
 ## 3. Flujo de trabajo diario
 

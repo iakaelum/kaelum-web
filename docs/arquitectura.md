@@ -5,7 +5,7 @@ Tres niveles. No hace falta todo hoy; los vais activando según crecéis.
 ## Nivel 0 — Hoy (ya está hecho)
 
 ```
-web/ (HTML/CSS/JS)  ──►  GitHub  ──►  Cloudflare Pages  ──►  kaelum.io
+web/ (HTML/CSS/JS)  ──►  GitHub  ──►  Cloudflare Pages  ──►  kaelum.es
 CRM                 ──►  localStorage (datos por dispositivo)
 ```
 Coste: **0 €**. Sirve para lanzar y captar los primeros leads.

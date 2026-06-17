@@ -3,9 +3,9 @@
 ### 🔗 [Ver web en vivo →](https://kaelum-web.pages.dev/)
 
 Sitio público de **KAELUM** — IA y transformación digital para PYMEs (Madrid, 2026).
-Se despliega en **`kaelum.io`** (preview actual: [`kaelum-web.pages.dev`](https://kaelum-web.pages.dev/)).
+Se despliega en **`kaelum.es`** (preview actual: [`kaelum-web.pages.dev`](https://kaelum-web.pages.dev/)).
 
-> El CRM interno vive en un **repo aparte** (`crm`, → `crm.kaelum.io`). Este repo es solo la web pública.
+> El CRM interno vive en un **repo aparte** (`crm`, → `crm.kaelum.es`). Este repo es solo la web pública.
 
 > **Empieza por aquí.** Este README es el panel de control: qué hay, dónde está y cómo se opera.
 
@@ -49,7 +49,7 @@ Se publica solo en **Cloudflare Pages** en cada `git push` a `main`. Config (una
 | Build command | *(vacío)* |
 | **Build output directory** | `web` |
 
-Guía completa (+ dominio `kaelum.io`) en [`docs/deploy.md`](docs/deploy.md).
+Guía completa (+ dominio `kaelum.es`) en [`docs/deploy.md`](docs/deploy.md).
 
 ## 🧭 A dónde ir según lo que quieras hacer
 
@@ -64,7 +64,7 @@ Guía completa (+ dominio `kaelum.io`) en [`docs/deploy.md`](docs/deploy.md).
 
 ## 📌 Datos clave
 
-- **Dominio:** `kaelum.io` (principal) + `kaelum.es` (redirección). `.com`/`.ai`/`.app` cogidos.
-- **CRM:** repo `crm` → `crm.kaelum.io`.
-- **Email:** `hola@kaelum.io`
+- **Dominio:** `kaelum.es` (comprado en Hostinger). Web → `kaelum.es`, CRM → `crm.kaelum.es`.
+- **CRM:** repo `crm` → `crm.kaelum.es`.
+- **Email:** `contacto@kaelum.es`
 - **Stack:** HTML + CSS + JS, sin dependencias (deploy estático).
