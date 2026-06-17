@@ -1,7 +1,9 @@
 # KAELUM · Web pública
 
+### 🔗 [Ver web en vivo →](https://kaelum-web.pages.dev/)
+
 Sitio público de **KAELUM** — IA y transformación digital para PYMEs (Madrid, 2026).
-Se despliega en **`kaelum.io`**.
+Se despliega en **`kaelum.io`** (preview actual: [`kaelum-web.pages.dev`](https://kaelum-web.pages.dev/)).
 
 > El CRM interno vive en un **repo aparte** (`crm`, → `crm.kaelum.io`). Este repo es solo la web pública.
 
