@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Kaelum — Transformación digital e IA para PYMEs">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b8cff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.2" r="0.9">
+      <stop offset="0%" stop-color="#5b8cff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(110,250)">
+    <path d="M0 0 L0 130 L26 130 L26 78 L74 130 L110 130 L48 64 L110 0 L74 0 L26 52 L26 0 Z" fill="url(#g)"/>
+  </g>
+  <text x="250" y="320" font-family="Inter, system-ui, sans-serif" font-size="84" font-weight="800" fill="#f1f1fa">KAELUM<tspan fill="#a855f7">.</tspan></text>
+  <text x="252" y="385" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="500" fill="#9a9ab8">Presencia digital e IA para PYMEs</text>
+  <text x="252" y="430" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#6f6f8a">Madrid · kaelum.com</text>
+</svg>

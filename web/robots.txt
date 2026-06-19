@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /crm.html
 
 Sitemap: https://kaelum.es/sitemap.xml
