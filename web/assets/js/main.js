@@ -176,6 +176,17 @@
     }).catch(function () { /* si falla el CDN, queda el scroll nativo */ });
   }
 
+  /* ---------- Fondo que reacciona al scroll ---------- */
+  function initScrollFx() {
+    if (reduce) return;
+    var ticking = false;
+    function update() { document.body.style.setProperty("--sy", String(window.scrollY)); ticking = false; }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+
   function init() {
     animateHero();
     initReveals();
@@ -184,6 +195,7 @@
     initDropdown();
     initSpotlight();
     initSmoothScroll();
+    initScrollFx();
     var yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }

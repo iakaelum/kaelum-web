@@ -14,14 +14,16 @@
   --surface: #111119;
   --surface-2: #16161F;
 
-  /* Acentos de marca (del logo) */
+  /* Acentos de marca (del logo: azul → púrpura → magenta) */
   --accent: #6B5CE7;
   --accent-2: #A78BFA;
   --accent-3: #818cf8;
   --accent-soft: #c4b5fd;
+  --accent-blue: #4D8DF0;
+  --accent-magenta: #C24DE0;
   --glow: #4338CA;
-  --grad: linear-gradient(110deg, #A78BFA, #6B5CE7 55%, #c4b5fd);
-  --grad-btn: linear-gradient(135deg, #7C6BF0, #5A4BD4);
+  --grad: linear-gradient(110deg, #4D8DF0, #7C5CDA 50%, #C24DE0);
+  --grad-btn: linear-gradient(135deg, #4D8DF0, #6B5CE7 55%, #B347D8);
 
   /* Texto */
   --tx-1: #FAFAFA;
@@ -713,3 +715,44 @@ html.lenis, html.lenis body { height: auto; }
   .logos-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
   .hero__visual { animation: none; }
 }
+
+/* ============================================================
+   FONDO GLOBAL ANIMADO (se mueve al hacer scroll) — todas las páginas
+   ============================================================ */
+body::before {
+  content: ""; position: fixed; inset: -15%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(520px 520px at 18% 14%, rgba(77, 141, 240, 0.16), transparent 60%),
+    radial-gradient(640px 640px at 84% 24%, rgba(124, 92, 218, 0.15), transparent 60%),
+    radial-gradient(560px 560px at 60% 86%, rgba(194, 77, 224, 0.12), transparent 62%);
+  transform: translate3d(0, calc(var(--sy, 0) * -0.045px), 0);
+  animation: bgDrift 26s ease-in-out infinite;
+  will-change: transform, background-position;
+}
+@keyframes bgDrift { 50% { background-position: 4% 5%, -4% 6%, 5% -4%; } }
+
+/* La marca real como pieza central del hero */
+.brandshow { position: relative; display: grid; place-items: center; min-height: 380px; }
+.brandshow__ring {
+  position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%; pointer-events: none;
+  background: conic-gradient(from 0deg, rgba(77,141,240,0), rgba(124,92,218,.38), rgba(194,77,224,0), rgba(77,141,240,.38), rgba(124,92,218,0));
+  filter: blur(48px); opacity: .75; animation: brandSpin 26s linear infinite;
+}
+.brandshow::after {
+  content: ""; position: absolute; width: 60%; aspect-ratio: 1; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(124, 92, 218, 0.5), transparent 62%); filter: blur(42px);
+}
+.brandshow__logo {
+  position: relative; z-index: 1; width: min(440px, 84%); height: auto;
+  mix-blend-mode: screen;  /* funde el fondo oscuro del logo con la web */
+  filter: drop-shadow(0 24px 60px rgba(90, 60, 210, 0.5));
+  animation: floaty 6.5s ease-in-out infinite;
+}
+@keyframes floaty { 50% { transform: translateY(-16px); } }
+@keyframes brandSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; transform: none; }
+  .brandshow__logo, .brandshow__ring { animation: none; }
+}
+@media (max-width: 900px) { .brandshow { min-height: 300px; } }
