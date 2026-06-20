@@ -6,6 +6,6 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# Cache largo para assets estáticos (llevan hash implícito por ruta)
+# Assets sin hash en el nombre → revalidar para que los cambios salgan al desplegar.
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate

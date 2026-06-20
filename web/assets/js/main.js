@@ -143,12 +143,47 @@
     });
   }
 
+  /* ---------- Spotlight: brillo que sigue al cursor en las cards ---------- */
+  function initSpotlight() {
+    if (reduce || !window.matchMedia("(pointer:fine)").matches) return;
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      }, { passive: true });
+    });
+  }
+
+  /* ---------- Scroll suave (Lenis, carga dinámica desde CDN) ---------- */
+  function initSmoothScroll() {
+    if (reduce) return;
+    import("https://cdn.jsdelivr.net/npm/lenis@1.1.20/+esm").then(function (m) {
+      var Lenis = m.default;
+      var lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      // Enlaces ancla internos → scroll suave con offset del header
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var id = a.getAttribute("href");
+          if (id.length > 1) {
+            var target = document.querySelector(id);
+            if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -90 }); }
+          }
+        });
+      });
+    }).catch(function () { /* si falla el CDN, queda el scroll nativo */ });
+  }
+
   function init() {
     animateHero();
     initReveals();
     initProcessLine();
     initMobile();
     initDropdown();
+    initSpotlight();
+    initSmoothScroll();
     var yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }

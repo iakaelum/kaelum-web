@@ -604,3 +604,40 @@ ul { list-style: none; }
   .container { padding: 0 18px; }
   .hero-cta .btn, .hero-cta { width: 100%; }
 }
+
+/* ============================================================
+   PULIDO PREMIUM (capa adicional, no toca lo anterior)
+   Lenis · spotlight en cards · sheen en CTA principal
+   ============================================================ */
+
+/* Scroll suave (Lenis) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Spotlight: brillo radial que sigue al cursor sobre cualquier .card */
+.card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; opacity: 0; z-index: 0;
+  transition: opacity .4s var(--ease);
+  background: radial-gradient(440px circle at var(--mx, 50%) var(--my, 50%),
+              rgba(124, 107, 240, 0.16), transparent 60%);
+}
+.card:hover::after { opacity: 1; }
+/* el contenido de la card por encima del brillo */
+.card > * { position: relative; z-index: 1; }
+
+/* Sheen: destello que barre el botón principal al pasar el ratón */
+.btn-accent { position: relative; overflow: hidden; isolation: isolate; }
+.btn-accent::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -130%; width: 55%;
+  z-index: -1; transform: skewX(-18deg); pointer-events: none;
+  background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+}
+.btn-accent:hover::after { animation: btnSheen .85s var(--ease-out); }
+@keyframes btnSheen { from { left: -130%; } to { left: 140%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .card::after, .btn-accent::after { display: none; }
+}
