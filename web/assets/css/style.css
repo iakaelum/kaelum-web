@@ -306,6 +306,13 @@ ul { list-style: none; }
 .card-icon svg { width: 24px; height: 24px; stroke: currentColor; }
 .card h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
 .card p { color: var(--tx-2); margin-bottom: 0; font-size: 1rem; }
+.card-sub { color: var(--accent-2); font-weight: 600; font-size: 0.95rem; margin: -6px 0 12px; }
+
+/* Card compacta (grid "Para quién trabajamos") */
+.card-compact { padding: 28px 24px; text-align: center; }
+.card-compact .card-icon { margin: 0 auto 18px; }
+.card-compact h3 { font-size: 1.08rem; }
+.card-compact .card-sub { margin: 6px 0 0; font-size: 0.85rem; }
 .card-more { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--s-3); font-weight: 600; color: var(--accent-2); font-size: 0.95rem; transition: gap .25s var(--ease); }
 .card-more svg { width: 16px; height: 16px; transition: transform .25s var(--ease); }
 .card-link:hover .card-more { gap: 12px; }
