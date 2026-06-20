@@ -6,6 +6,14 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# Cache largo para assets estáticos (llevan hash implícito por ruta)
-/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+# IMPORTANTE: los assets NO llevan hash en el nombre (style.css, main.js,
+# ai-robot-working.mp4 …). Por eso NO usamos "immutable": forzamos revalidación
+# para que cualquier cambio se propague siempre y no se sirvan versiones viejas.
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/img/*
+  Cache-Control: public, max-age=86400, must-revalidate
+/assets/videos/*
+  Cache-Control: public, max-age=86400, must-revalidate
