@@ -12,21 +12,25 @@
   <meta property="og:title" content="Kaelum — Presencia digital e IA para PYMEs en Madrid">
   <meta property="og:description" content="Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde aporta valor real. Para PYMEs y comercio local de Madrid Oeste. Diagnóstico gratuito.">
   <meta property="og:url" content="https://kaelum.es/">
-  <meta property="og:image" content="https://kaelum.es/assets/img/og-cover.svg">
+  <meta property="og:image" content="https://kaelum.es/assets/img/logo-mark.webp">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0A0A0F">
 
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=2">
+  <link rel="icon" type="image/webp" sizes="192x192" href="/assets/img/logo-mark.webp">
+  <link rel="apple-touch-icon" href="/assets/img/logo-mark.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=2">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Kaelum",
   "url": "https://kaelum.es",
-  "logo": "https://kaelum.es/assets/img/logo.svg",
+  "logo": "https://kaelum.es/assets/img/logo-mark.webp",
   "description": "Implementación de IA y aumento de presencia digital para PYMEs y comercio local.",
   "email": "contacto@kaelum.es",
   "areaServed": "Madrid, España",
@@ -43,7 +47,8 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="/" class="brand" aria-label="Kaelum — inicio">
-        <img src="/assets/img/logo.svg" alt="Kaelum" class="brand-logo" width="200" height="40">
+        <img src="/assets/img/logo-mark.webp?v=2" alt="" class="brand-mark" width="38" height="38" aria-hidden="true">
+        <span class="brand-word">KAELUM</span>
       </a>
       <nav class="main-nav" aria-label="Navegación principal">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
@@ -73,23 +78,80 @@
   <main>
 
     <section class="hero" id="hero">
-      <canvas class="hero__canvas" id="particles" aria-hidden="true"></canvas>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__content">
         <span class="hero-badge" data-hero="badge"><span class="dot"></span> Aceptando nuevos proyectos en Madrid Oeste</span>
-        <h1 class="hero__title" data-hero="title"><span class="word">Llevamos</span> <span class="word">tu</span> <span class="word">negocio</span> <span class="word">al</span> <span class="word gradient-text">nivel</span> <span class="word gradient-text">más</span> <span class="word gradient-text">alto</span></h1>
-        <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con resultados medibles y casos reales.</p>
+        <h1 class="hero__title" data-hero="title"><span class="word">Presencia</span> <span class="word">digital</span> <span class="word">e</span> <span class="word gradient-text">IA</span> <span class="word">para</span> <span class="word">tu</span> <span class="word">negocio</span></h1>
+        <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con transparencia total y resultados medibles.</p>
         <div class="hero-cta" data-hero="ctas">
-          <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="/contacto/" class="btn btn-accent btn-lg"><span>Solicitar diagnóstico gratuito</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           <a href="/servicios/" class="btn btn-ghost btn-lg">Ver servicios</a>
         </div>
+
+        <!-- ===========================================================
+             HUECO DE VÍDEO DEL HERO
+             Para poner el vídeo final: deja el archivo en
+               web/assets/video/kaelum-intro.mp4
+             (ver web/assets/video/README.md). No hace falta tocar nada más:
+             arranca solo en muted/autoplay y, si no, queda el botón de play.
+             Para cambiar el póster: web/assets/img/video-poster.svg
+             =========================================================== -->
+        <div class="hero__media" data-hero="media">
+          <div class="video-frame" data-video>
+            <video class="hero__video" muted loop playsinline preload="none" poster="/assets/img/video-poster.svg">
+              <source src="/assets/video/kaelum-intro.mp4" type="video/mp4">
+            </video>
+            <div class="video-poster" aria-hidden="true">
+              <img class="video-poster__mark" src="/assets/img/logo-mark.webp" alt="" width="116" height="116" loading="lazy">
+            </div>
+            <button class="play-btn" type="button" aria-label="Reproducir vídeo de presentación">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="video-tag"><span class="dot"></span> Vídeo de presentación · próximamente</span>
+          </div>
+        </div>
+
         <div class="hero__proof" data-hero="proof">
           <div class="hero__proof-line"></div>
           <!-- Stats del hero: edita el texto de cada <strong> cuando tengas cifras reales -->
           <div class="hero__proof-stats">
-            <span><strong>Diagnósticos gratuitos</strong> disponibles</span><span class="sep">·</span>
-            <span><strong>Automatizaciones</strong> en producción</span><span class="sep">·</span>
+            <span><strong>Diagnóstico gratuito</strong> sin compromiso</span><span class="sep">·</span>
+            <span><strong>Transparencia</strong> total, cero humo</span><span class="sep">·</span>
             <span><strong>Madrid</strong> Zona Oeste</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tira de integraciones / stack real -->
+    <section class="section-tight" style="padding-bottom:0">
+      <div class="container">
+        <p class="text-muted" style="text-align:center;font-size:0.9rem;letter-spacing:0.04em;margin-bottom:18px" data-reveal>Trabajamos con un stack moderno y abierto</p>
+        <div class="marquee" data-reveal>
+          <div class="marquee-track">
+            <span class="integration-pill"><span class="ip-dot"></span>Google Business</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Meta Ads</span>
+            <span class="integration-pill"><span class="ip-dot"></span>WhatsApp Business</span>
+            <span class="integration-pill"><span class="ip-dot"></span>n8n</span>
+            <span class="integration-pill"><span class="ip-dot"></span>OpenAI</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Claude</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Make</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Cal.com</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Brevo</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Google Analytics</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Supabase</span>
+            <!-- duplicado para bucle continuo -->
+            <span class="integration-pill"><span class="ip-dot"></span>Google Business</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Meta Ads</span>
+            <span class="integration-pill"><span class="ip-dot"></span>WhatsApp Business</span>
+            <span class="integration-pill"><span class="ip-dot"></span>n8n</span>
+            <span class="integration-pill"><span class="ip-dot"></span>OpenAI</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Claude</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Make</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Cal.com</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Brevo</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Google Analytics</span>
+            <span class="integration-pill"><span class="ip-dot"></span>Supabase</span>
           </div>
         </div>
       </div>
@@ -166,19 +228,45 @@
       </div>
     </section>
 
-    <section class="section section-tight bg-glow">
+    <section class="section bg-glow">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="eyebrow">Credibilidad</span>
-          <h2>Resultados, no promesas</h2>
-          <p>Nuestro modelo se basa en datos reales y resultados medibles. Estas cifras se actualizarán con casos de estudio verificables a medida que cerramos proyectos.</p>
+          <span class="eyebrow">Por qué Kaelum</span>
+          <h2>La transparencia es nuestro diferencial</h2>
+          <p>No prometemos lo que no podemos cumplir. Estas son las reglas con las que trabajamos, sacadas de nuestro propio modelo.</p>
         </div>
-        <!-- Stats: edita data-count / texto del .num y el .label cuando tengas cifras reales -->
-        <div class="stats">
-          <div class="stat" data-reveal data-stagger="0"><div class="num gradient-text" style="font-size:1.6rem">En crecimiento</div><p class="label">PYMEs auditadas</p></div>
-          <div class="stat" data-reveal data-stagger="1"><div class="num gradient-text" data-count="45" data-prefix="+">+0</div><p class="label">Puntos de mejora en caso real (web rediseñada)</p></div>
-          <div class="stat" data-reveal data-stagger="2"><div class="num gradient-text" data-count="6">0</div><p class="label">Workflows de IA funcionando en producción</p></div>
-          <div class="stat" data-reveal data-stagger="3"><div class="num gradient-text">Madrid</div><p class="label">Zona oeste · cerca de ti</p></div>
+        <div class="bento">
+          <article class="card bento-tall featured" data-reveal>
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
+            <h3 style="font-size:1.6rem">Diagnóstico gratuito de verdad</h3>
+            <p style="margin-top:12px">No es una llamada comercial disfrazada. Es un informe profesional con análisis técnico, comparativa con tu competencia y un plan de acción priorizado. Te lo quedas tú, sin compromiso ni letra pequeña, decidas trabajar con nosotros o no.</p>
+            <p style="margin-top:16px"><span class="chip">Sin coste · sin venta agresiva</span></p>
+          </article>
+          <article class="card bento-3" data-reveal data-stagger="1">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+            <h3 style="font-size:1.2rem">Mantenimiento real, no abandono</h3>
+            <p>La mayoría de agencias entregan y desaparecen. Nosotros nos quedamos optimizando mes a mes para que la inversión siga generando resultados.</p>
+          </article>
+          <article class="card bento-3" data-reveal data-stagger="2">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3 style="font-size:1.2rem">Especialistas en PYME local</h3>
+            <p>Conocemos las particularidades de clínicas, comercios y servicios de Madrid Oeste. No somos generalistas: hablamos tu idioma.</p>
+          </article>
+          <article class="card bento-sm" data-reveal data-stagger="0">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3 style="font-size:1.1rem">Modelo dual</h3>
+            <p>Mientras uno implementa, el otro prospecta. Más velocidad de ejecución para ti.</p>
+          </article>
+          <article class="card bento-sm" data-reveal data-stagger="1">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3 style="font-size:1.1rem">Stack abierto</h3>
+            <p>Cal.com, n8n y herramientas open source que puedes mantener aunque dejes de trabajar con nosotros. Sin lock-in.</p>
+          </article>
+          <article class="card bento-sm" data-reveal data-stagger="2">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
+            <h3 style="font-size:1.1rem">IA con ROI medible</h3>
+            <p>No vendemos IA como marketing. Implementamos casos concretos y medimos si funcionan con tus números.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -186,25 +274,16 @@
     <section class="section">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="eyebrow">Por qué Kaelum</span>
-          <h2>¿Por qué elegirnos?</h2>
+          <span class="eyebrow">Empezamos en serio</span>
+          <h2>Una empresa nueva, con las cosas claras</h2>
+          <p>Estamos arrancando, y lo decimos abiertamente. Por eso cuidamos cada proyecto al detalle. Estas cifras crecerán con casos de estudio verificables a medida que cerramos proyectos.</p>
         </div>
-        <div class="grid grid-3">
-          <div class="card" data-reveal data-stagger="0">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
-            <h3>Diagnóstico gratuito de verdad</h3>
-            <p>No es una llamada comercial disfrazada. Es un informe profesional con análisis técnico, comparativas y plan de acción. Sin compromiso ni letra pequeña.</p>
-          </div>
-          <div class="card" data-reveal data-stagger="1">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-            <h3>Mantenimiento real, no abandono</h3>
-            <p>La mayoría de agencias entregan y se van. Nosotros nos quedamos optimizando para que la inversión siga generando resultados mes a mes.</p>
-          </div>
-          <div class="card" data-reveal data-stagger="2">
-            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <h3>Especialistas en PYME local</h3>
-            <p>No somos generalistas. Conocemos las particularidades de clínicas, comercios y servicios en Madrid Oeste. Hablamos tu idioma.</p>
-          </div>
+        <!-- Stats: edita data-count / texto del .num y el .label cuando tengas cifras reales -->
+        <div class="stats">
+          <div class="stat" data-reveal data-stagger="0"><div class="num gradient-text" style="font-size:1.6rem">En crecimiento</div><p class="label">PYMEs auditadas</p></div>
+          <div class="stat" data-reveal data-stagger="1"><div class="num gradient-text" data-count="6">0</div><p class="label">Workflows de IA en producción</p></div>
+          <div class="stat" data-reveal data-stagger="2"><div class="num gradient-text">2 líneas</div><p class="label">Presencia digital · IA</p></div>
+          <div class="stat" data-reveal data-stagger="3"><div class="num gradient-text">Madrid</div><p class="label">Zona oeste · cerca de ti</p></div>
         </div>
       </div>
     </section>
@@ -214,7 +293,7 @@
         <div class="cta-inner" data-reveal>
           <h2>¿Hablamos de tu negocio?</h2>
           <p>Cuéntanos cómo está tu negocio digitalmente. Te hacemos un diagnóstico gratuito con recomendaciones concretas. Sin compromiso y sin humo.</p>
-          <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a href="/contacto/" class="btn btn-accent btn-lg"><span>Solicitar diagnóstico gratuito</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
       </div>
     </section>
@@ -224,7 +303,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/assets/img/logo.svg" alt="Kaelum" class="brand-logo" width="200" height="40">
+          <a href="/" class="brand" aria-label="Kaelum — inicio">
+            <img src="/assets/img/logo-mark.webp?v=2" alt="" class="brand-mark" width="38" height="38" aria-hidden="true">
+            <span class="brand-word">KAELUM</span>
+          </a>
           <p>Presencia digital e implementación de IA para PYMEs y comercio local de Madrid. Resultados medibles, compromiso a largo plazo.</p>
           <div class="footer-socials">
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -270,7 +352,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/particles.js" defer></script>
-  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js?v=2" defer></script>
 </body>
 </html>

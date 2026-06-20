@@ -11,13 +11,16 @@ const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml',
   '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8',
-  '.json': 'application/json', '.ico': 'image/x-icon'
+  '.json': 'application/json', '.ico': 'image/x-icon',
+  '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg', '.mp4': 'video/mp4', '.webm': 'video/webm',
+  '.woff2': 'font/woff2', '.woff': 'font/woff'
 };
 
 createServer(async (req, res) => {
   try {
     let urlPath = decodeURIComponent(req.url.split('?')[0]);
-    if (urlPath === '/') urlPath = '/index.html';
+    if (urlPath.endsWith('/')) urlPath += 'index.html';   // /servicios/ → /servicios/index.html (como Cloudflare)
     const filePath = normalize(join(ROOT, urlPath));
     if (!filePath.startsWith(ROOT)) { res.writeHead(403).end('Forbidden'); return; }
     const data = await readFile(filePath);

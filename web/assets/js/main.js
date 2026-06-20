@@ -1,28 +1,67 @@
 /* ============================================================
-   KAELUM — Interacciones. Sin dependencias.
-   Hero orquestado · reveals (fade-up+blur, stagger) ·
-   contadores · línea de proceso · header glass · menú móvil ·
-   dropdown. Respeta prefers-reduced-motion.
+   KAELUM — Interacciones (rediseño v2). Sin build.
+   Fondo de orbes + parallax · Lenis (scroll suave) · reveals
+   (fade-up+blur, stagger) · spotlight en cards · contadores ·
+   header glass · menú móvil · dropdown · vídeo del hero.
+   Respeta prefers-reduced-motion.
    ============================================================ */
 (function () {
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Header: estado glass al hacer scroll ---------- */
+  /* ---------- Fondo de orbes (inyectado, va en TODAS las páginas) ---------- */
+  function injectOrbs() {
+    if (document.querySelector(".bg-orbs")) return;
+    var wrap = document.createElement("div");
+    wrap.className = "bg-orbs";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML = '<span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>';
+    document.body.insertBefore(wrap, document.body.firstChild);
+    return wrap;
+  }
+
+  /* ---------- Header glass + parallax de orbes al hacer scroll ---------- */
   var header = document.getElementById("site-header");
-  function onScroll() { if (header) header.classList.toggle("scrolled", window.scrollY > 8); }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  var orbsEls = [];
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset || 0;
+    if (header) header.classList.toggle("scrolled", y > 8);
+    if (!reduce && orbsEls.length) {
+      orbsEls[0] && (orbsEls[0].style.translate = "0 " + (y * 0.12) + "px");
+      orbsEls[1] && (orbsEls[1].style.translate = "0 " + (y * -0.08) + "px");
+      orbsEls[2] && (orbsEls[2].style.translate = "0 " + (y * 0.05) + "px");
+    }
+  }
+
+  /* ---------- Lenis: scroll suave (CDN, con fallback al nativo) ---------- */
+  function initLenis() {
+    if (reduce) return;
+    var s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js";
+    s.async = true;
+    s.onload = function () {
+      if (!window.Lenis) return;
+      var lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      // anclas internas con Lenis
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          var id = a.getAttribute("href");
+          if (id.length < 2) return;
+          var target = document.querySelector(id);
+          if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -90 }); }
+        });
+      });
+    };
+    document.head.appendChild(s);
+  }
 
   /* ---------- Entrada orquestada del hero ---------- */
   function animateHero() {
     var heroEls = document.querySelectorAll("[data-hero]");
     if (!heroEls.length) return;
-    if (reduce) {
-      heroEls.forEach(function (el) { el.style.opacity = "1"; });
-      if (window.KAELUM_startParticles) window.KAELUM_startParticles();
-      return;
-    }
+    if (reduce) { heroEls.forEach(function (el) { el.style.opacity = "1"; }); return; }
     var set = function (sel, delay, fromY) {
       var el = document.querySelector(sel);
       if (!el) return;
@@ -30,32 +69,62 @@
       el.style.transition = "opacity .7s ease, transform .7s cubic-bezier(0.16,1,0.3,1)";
       setTimeout(function () { el.style.opacity = "1"; el.style.transform = "none"; }, delay);
     };
-    set('[data-hero="badge"]', 200, 8);
+    set('[data-hero="badge"]', 150, 8);
 
-    // Titular: palabra a palabra, stagger 40ms desde 400ms
     var words = document.querySelectorAll('.hero__title .word');
     words.forEach(function (wd, i) {
       wd.style.opacity = "0";
       wd.style.transform = "translateY(24px)";
       wd.style.transition = "opacity .6s ease, transform .7s cubic-bezier(0.16,1,0.3,1)";
-      setTimeout(function () { wd.style.opacity = "1"; wd.style.transform = "none"; }, 400 + i * 40);
+      setTimeout(function () { wd.style.opacity = "1"; wd.style.transform = "none"; }, 350 + i * 38);
     });
     var title = document.querySelector('[data-hero="title"]');
     if (title) title.style.opacity = "1";
 
-    set('[data-hero="subtitle"]', 820);
-    set('[data-hero="ctas"]', 1000);
-    set('[data-hero="proof"]', 1120);
+    set('[data-hero="subtitle"]', 760);
+    set('[data-hero="ctas"]', 920);
+    set('[data-hero="media"]', 1040, 18);
+    set('[data-hero="proof"]', 1180);
+  }
 
-    setTimeout(function () { if (window.KAELUM_startParticles) window.KAELUM_startParticles(); }, 1200);
+  /* ---------- Vídeo del hero: autoplay con fallback a botón ---------- */
+  function initVideo() {
+    var frame = document.querySelector("[data-video]");
+    if (!frame) return;
+    var video = frame.querySelector("video");
+    var btn = frame.querySelector(".play-btn");
+    function play() {
+      if (!video) return;
+      var p = video.play();
+      if (p && p.then) p.then(function () { frame.classList.add("is-playing"); }).catch(function () {});
+    }
+    // intento de autoplay silencioso (si hay archivo de vídeo válido)
+    if (video && !reduce) {
+      video.addEventListener("playing", function () { frame.classList.add("is-playing"); });
+      video.addEventListener("loadeddata", function () { if (video.readyState >= 2) play(); });
+    }
+    if (btn) btn.addEventListener("click", function () {
+      if (video) { video.muted = true; play(); }
+    });
+  }
+
+  /* ---------- Spotlight que sigue al cursor en cards ---------- */
+  function initSpotlight() {
+    if (reduce || !window.matchMedia("(hover: hover)").matches) return;
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
   }
 
   /* ---------- Contador animado ---------- */
   function runCounter(el) {
     var to = parseFloat(el.dataset.count);
     if (isNaN(to)) return;
-    var prefix = el.dataset.prefix || "";
-    var suffix = el.dataset.suffix || "";
+    var prefix = el.dataset.prefix || "", suffix = el.dataset.suffix || "";
     if (reduce) { el.textContent = prefix + to + suffix; return; }
     var dur = 1100, start = performance.now();
     function tick(now) {
@@ -91,7 +160,6 @@
     }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
     items.forEach(function (el) { io.observe(el); });
 
-    // Contadores que no estén dentro de un [data-reveal]
     var cio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) { runCounter(entry.target); cio.unobserve(entry.target); }
@@ -144,7 +212,14 @@
   }
 
   function init() {
+    var wrap = injectOrbs();
+    if (wrap) orbsEls = [].slice.call(wrap.querySelectorAll(".orb"));
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    initLenis();
     animateHero();
+    initVideo();
+    initSpotlight();
     initReveals();
     initProcessLine();
     initMobile();
