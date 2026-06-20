@@ -108,6 +108,83 @@
     });
   }
 
+  /* ---------- Rise-on-scroll: las tarjetas suben al hacer scroll ---------- */
+  function initRise() {
+    var risers = [].slice.call(document.querySelectorAll("[data-rise]"));
+    if (!risers.length) return;
+    if (reduce) { risers.forEach(function (el) { el.style.opacity = "1"; el.style.transform = "none"; }); return; }
+    var ticking = false;
+    function update() {
+      var vh = window.innerHeight;
+      risers.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        var start = vh * 0.98, end = vh * 0.55;
+        var p = (start - r.top) / (start - end);
+        p = Math.max(0, Math.min(1, p));
+        if (p >= 1) {
+          if (!el.classList.contains("risen")) { el.classList.add("risen"); el.style.transform = ""; el.style.opacity = ""; }
+          return;
+        }
+        el.classList.remove("risen");
+        var dist = parseFloat(el.dataset.rise) || 70;
+        el.style.transform = "translateY(" + ((1 - p) * dist).toFixed(1) + "px)";
+        el.style.opacity = (0.12 + 0.88 * p).toFixed(3);
+      });
+      ticking = false;
+    }
+    function onRise() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener("scroll", onRise, { passive: true });
+    window.addEventListener("resize", onRise);
+    update();
+  }
+
+  /* ---------- Botones magnéticos ---------- */
+  function initMagnetic() {
+    if (reduce || !window.matchMedia("(hover: hover)").matches) return;
+    document.querySelectorAll(".btn-accent, [data-magnetic]").forEach(function (btn) {
+      btn.addEventListener("pointermove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var mx = e.clientX - (r.left + r.width / 2);
+        var my = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = "translate(" + (mx * 0.22).toFixed(1) + "px," + (my * 0.32).toFixed(1) + "px)";
+      });
+      btn.addEventListener("pointerleave", function () { btn.style.transform = ""; });
+    });
+  }
+
+  /* ---------- Glow que sigue al cursor en el hero ---------- */
+  function initCursorGlow() {
+    if (reduce) return;
+    var hero = document.querySelector(".hero");
+    var glow = hero && hero.querySelector(".hero__cursor");
+    if (!glow) return;
+    hero.addEventListener("pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      glow.style.setProperty("--cx", (e.clientX - r.left) + "px");
+      glow.style.setProperty("--cy", (e.clientY - r.top) + "px");
+    });
+  }
+
+  /* ---------- Cluster flotante (Sobre nosotros): pulsar = desplegar info ---------- */
+  function initFloating() {
+    var cards = document.querySelectorAll("[data-float-target]");
+    var panels = [].slice.call(document.querySelectorAll(".float-panel"));
+    if (!cards.length) return;
+    function close(p) { p.classList.remove("open"); document.body.style.overflow = ""; }
+    cards.forEach(function (c) {
+      c.addEventListener("click", function () {
+        var panel = document.getElementById(c.getAttribute("data-float-target"));
+        if (panel) { panel.classList.add("open"); document.body.style.overflow = "hidden"; }
+      });
+    });
+    panels.forEach(function (p) {
+      p.querySelectorAll("[data-float-close], .float-panel__bg").forEach(function (el) {
+        el.addEventListener("click", function () { close(p); });
+      });
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") panels.forEach(close); });
+  }
+
   /* ---------- Spotlight que sigue al cursor en cards ---------- */
   function initSpotlight() {
     if (reduce || !window.matchMedia("(hover: hover)").matches) return;
@@ -220,6 +297,10 @@
     animateHero();
     initVideo();
     initSpotlight();
+    initRise();
+    initMagnetic();
+    initCursorGlow();
+    initFloating();
     initReveals();
     initProcessLine();
     initMobile();

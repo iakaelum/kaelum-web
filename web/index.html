@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="/assets/css/style.css?v=2">
+  <link rel="stylesheet" href="/assets/css/style.css?v=3">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,47 +77,59 @@
 
   <main>
 
-    <section class="hero" id="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <span class="hero-badge" data-hero="badge"><span class="dot"></span> Aceptando nuevos proyectos en Madrid Oeste</span>
-        <h1 class="hero__title" data-hero="title"><span class="word">Presencia</span> <span class="word">digital</span> <span class="word">e</span> <span class="word gradient-text">IA</span> <span class="word">para</span> <span class="word">tu</span> <span class="word">negocio</span></h1>
-        <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con transparencia total y resultados medibles.</p>
-        <div class="hero-cta" data-hero="ctas">
-          <a href="/contacto/" class="btn btn-accent btn-lg"><span>Solicitar diagnóstico gratuito</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="/servicios/" class="btn btn-ghost btn-lg">Ver servicios</a>
-        </div>
-
-        <!-- ===========================================================
-             HUECO DE VÍDEO DEL HERO
-             Para poner el vídeo final: deja el archivo en
-               web/assets/video/kaelum-intro.mp4
-             (ver web/assets/video/README.md). No hace falta tocar nada más:
-             arranca solo en muted/autoplay y, si no, queda el botón de play.
-             Para cambiar el póster: web/assets/img/video-poster.svg
-             =========================================================== -->
-        <div class="hero__media" data-hero="media">
-          <div class="video-frame" data-video>
-            <video class="hero__video" muted loop playsinline preload="none" poster="/assets/img/video-poster.svg">
-              <source src="/assets/video/kaelum-intro.mp4" type="video/mp4">
-            </video>
-            <div class="video-poster" aria-hidden="true">
-              <img class="video-poster__mark" src="/assets/img/logo-mark.webp" alt="" width="116" height="116" loading="lazy">
+    <section class="hero hero--split" id="hero">
+      <div class="hero__aurora" aria-hidden="true"></div>
+      <div class="hero__cursor" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero__content">
+            <span class="hero-badge" data-hero="badge"><span class="dot"></span> Aceptando nuevos proyectos en Madrid Oeste</span>
+            <h1 class="hero__title" data-hero="title"><span class="word">Presencia</span> <span class="word">digital</span> <span class="word">e</span> <span class="word gradient-text">IA</span> <span class="word">para</span> <span class="word">tu</span> <span class="word">negocio</span></h1>
+            <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con transparencia total y resultados medibles.</p>
+            <div class="hero-cta" data-hero="ctas">
+              <a href="/contacto/" class="btn btn-accent btn-lg"><span>Solicitar diagnóstico gratuito</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+              <a href="/servicios/" class="btn btn-ghost btn-lg">Ver servicios</a>
             </div>
-            <button class="play-btn" type="button" aria-label="Reproducir vídeo de presentación">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            <span class="video-tag"><span class="dot"></span> Vídeo de presentación · próximamente</span>
+            <div class="hero__proof" data-hero="proof">
+              <div class="hero__proof-line"></div>
+              <!-- Stats del hero: edita el texto de cada <strong> cuando tengas cifras reales -->
+              <div class="hero__proof-stats">
+                <span><strong>Diagnóstico gratuito</strong> sin compromiso</span><span class="sep">·</span>
+                <span><strong>Transparencia</strong> total, cero humo</span><span class="sep">·</span>
+                <span><strong>Madrid</strong> Zona Oeste</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="hero__proof" data-hero="proof">
-          <div class="hero__proof-line"></div>
-          <!-- Stats del hero: edita el texto de cada <strong> cuando tengas cifras reales -->
-          <div class="hero__proof-stats">
-            <span><strong>Diagnóstico gratuito</strong> sin compromiso</span><span class="sep">·</span>
-            <span><strong>Transparencia</strong> total, cero humo</span><span class="sep">·</span>
-            <span><strong>Madrid</strong> Zona Oeste</span>
+          <!-- Grafo de nodos: las herramientas fluyen hacia Kaelum (núcleo) -->
+          <div class="hero__visual" data-hero="media">
+            <div class="nodegraph">
+              <svg class="nodegraph__lines" viewBox="0 0 520 470" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#4D8DF0"/><stop offset="0.5" stop-color="#7C5CDA"/><stop offset="1" stop-color="#C24DE0"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#lineGrad)">
+                  <path d="M70 100 C 70 230 250 250 250 320"/>
+                  <path d="M160 100 C 160 215 250 250 250 320"/>
+                  <path d="M250 100 C 250 210 250 250 250 320"/>
+                  <path d="M340 100 C 340 215 250 250 250 320"/>
+                  <path d="M430 100 C 430 230 250 250 250 320"/>
+                </g>
+              </svg>
+              <span class="nodeicon" style="--i:0; left:13.5%; top:14.9%" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></span>
+              <span class="nodeicon" style="--i:1; left:30.8%; top:14.9%" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
+              <span class="nodeicon" style="--i:2; left:48.1%; top:14.9%" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+              <span class="nodeicon" style="--i:3; left:65.4%; top:14.9%" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
+              <span class="nodeicon" style="--i:4; left:82.7%; top:14.9%" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg></span>
+              <div class="nodegraph__orb" aria-hidden="true"><img src="/assets/img/logo-mark.webp" alt="" width="120" height="120"></div>
+              <div class="nodegraph__card">
+                <div class="nodegraph__card-head"><img src="/assets/img/logo-mark.webp" alt=""><strong>Kaelum · Asistente</strong><span>ejemplo</span></div>
+                <p>"He visto 12 reservas perdidas fuera de horario esta semana. ¿Activamos un agente de WhatsApp para captarlas?"</p>
+                <a href="/servicios/implementacion-ia/" class="btn btn-accent"><span>Ver cómo funciona</span></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -157,6 +169,36 @@
       </div>
     </section>
 
+    <!-- ===========================================================
+         SECCIÓN DE VÍDEO
+         Deja el archivo final en web/assets/video/kaelum-intro.mp4
+         (ver web/assets/video/README.md). Arranca solo en muted/autoplay;
+         si no, queda el póster con botón de play. Póster: web/assets/img/video-poster.svg
+         =========================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Conócenos en 60 segundos</span>
+          <h2>Mira cómo trabajamos</h2>
+          <p>Un vídeo corto para entender qué hacemos y cómo lo hacemos. Sin tecnicismos.</p>
+        </div>
+        <div class="hero__media" data-reveal>
+          <div class="video-frame" data-video>
+            <video class="hero__video" muted loop playsinline preload="none" poster="/assets/img/video-poster.svg">
+              <source src="/assets/video/kaelum-intro.mp4" type="video/mp4">
+            </video>
+            <div class="video-poster" aria-hidden="true">
+              <img class="video-poster__mark" src="/assets/img/logo-mark.webp" alt="" width="116" height="116" loading="lazy">
+            </div>
+            <button class="play-btn" type="button" aria-label="Reproducir vídeo de presentación">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="video-tag"><span class="dot"></span> Vídeo de presentación · próximamente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -165,20 +207,36 @@
           <p>Contrátalas por separado o juntas. Empezamos siempre por un diagnóstico gratuito para saber qué te aporta más valor.</p>
         </div>
         <div class="grid grid-2">
-          <a href="/servicios/presencia-digital/" class="card card-link" data-reveal>
+          <a href="/servicios/presencia-digital/" class="card card-link" data-rise="80">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <h3>Presencia digital</h3>
             <p class="card-sub">Para que te encuentren y te elijan</p>
             <p>Web optimizada, Google Business, sistema de reservas online, WhatsApp Business, SEO local, analítica y automatizaciones de marketing. Todo lo que tu negocio necesita para captar y fidelizar clientes online.</p>
             <span class="card-more">Ver servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
-          <a href="/servicios/implementacion-ia/" class="card card-link" data-reveal data-stagger="1">
+          <a href="/servicios/implementacion-ia/" class="card card-link" data-rise="130">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
             <h3>Implementación de IA</h3>
             <p class="card-sub">Para ganar eficiencia y escalar</p>
             <p>Diagnóstico de oportunidades reales, agentes de IA a medida, automatizaciones avanzadas con n8n e integraciones con tus sistemas actuales. IA aplicada que ahorra horas y multiplica capacidad.</p>
             <span class="card-more">Ver servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifiesto en claro: rompe la monotonía oscura (contraste) -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="manifesto" data-reveal>
+          <span class="eyebrow">Nuestra forma de pensar</span>
+          <h2>No vendemos IA como <span class="gradient-text">marketing</span>. Implementamos casos concretos con ROI medible.</h2>
+          <p>Preferimos perder un cliente por sinceros que ganarlo por humo. Diagnóstico gratuito de verdad, precios cerrados y mantenimiento real, no abandono.</p>
+          <div class="manifesto-meta">
+            <div><strong>3 fases</strong><span>Diagnóstico · Implementación · Mantenimiento</span></div>
+            <div><strong>0</strong><span>Promesas que no cumplimos</span></div>
+            <div><strong>100%</strong><span>Tus cuentas son tuyas</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -206,19 +264,19 @@
           <p>Trabajamos con negocios reales de Madrid Oeste que quieren competir digitalmente con los grandes.</p>
         </div>
         <div class="grid grid-4">
-          <div class="card card-compact" data-reveal data-stagger="0">
+          <div class="card card-compact" data-rise="60">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <h3>Clínicas y centros de salud</h3>
           </div>
-          <div class="card card-compact" data-reveal data-stagger="1">
+          <div class="card card-compact" data-rise="100">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
             <h3>Comercio local y retail</h3>
           </div>
-          <div class="card card-compact" data-reveal data-stagger="2">
+          <div class="card card-compact" data-rise="140">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg></div>
             <h3>Academias y formación</h3>
           </div>
-          <div class="card card-compact" data-reveal data-stagger="3">
+          <div class="card card-compact" data-rise="180">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
             <h3>Servicios profesionales</h3>
             <p class="card-sub" style="margin-top:6px">Inmobiliarias, asesorías, fisios</p>
@@ -236,33 +294,33 @@
           <p>No prometemos lo que no podemos cumplir. Estas son las reglas con las que trabajamos, sacadas de nuestro propio modelo.</p>
         </div>
         <div class="bento">
-          <article class="card bento-tall featured" data-reveal>
+          <article class="card bento-tall featured" data-rise="70">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
             <h3 style="font-size:1.6rem">Diagnóstico gratuito de verdad</h3>
             <p style="margin-top:12px">No es una llamada comercial disfrazada. Es un informe profesional con análisis técnico, comparativa con tu competencia y un plan de acción priorizado. Te lo quedas tú, sin compromiso ni letra pequeña, decidas trabajar con nosotros o no.</p>
             <p style="margin-top:16px"><span class="chip">Sin coste · sin venta agresiva</span></p>
           </article>
-          <article class="card bento-3" data-reveal data-stagger="1">
+          <article class="card bento-3" data-rise="110">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
             <h3 style="font-size:1.2rem">Mantenimiento real, no abandono</h3>
             <p>La mayoría de agencias entregan y desaparecen. Nosotros nos quedamos optimizando mes a mes para que la inversión siga generando resultados.</p>
           </article>
-          <article class="card bento-3" data-reveal data-stagger="2">
+          <article class="card bento-3" data-rise="150">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <h3 style="font-size:1.2rem">Especialistas en PYME local</h3>
             <p>Conocemos las particularidades de clínicas, comercios y servicios de Madrid Oeste. No somos generalistas: hablamos tu idioma.</p>
           </article>
-          <article class="card bento-sm" data-reveal data-stagger="0">
+          <article class="card bento-sm" data-rise="90">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
             <h3 style="font-size:1.1rem">Modelo dual</h3>
             <p>Mientras uno implementa, el otro prospecta. Más velocidad de ejecución para ti.</p>
           </article>
-          <article class="card bento-sm" data-reveal data-stagger="1">
+          <article class="card bento-sm" data-rise="130">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
             <h3 style="font-size:1.1rem">Stack abierto</h3>
             <p>Cal.com, n8n y herramientas open source que puedes mantener aunque dejes de trabajar con nosotros. Sin lock-in.</p>
           </article>
-          <article class="card bento-sm" data-reveal data-stagger="2">
+          <article class="card bento-sm" data-rise="170">
             <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div>
             <h3 style="font-size:1.1rem">IA con ROI medible</h3>
             <p>No vendemos IA como marketing. Implementamos casos concretos y medimos si funcionan con tus números.</p>
@@ -352,6 +410,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js?v=2" defer></script>
+  <script src="/assets/js/main.js?v=3" defer></script>
 </body>
 </html>
