@@ -131,6 +131,23 @@
     });
   }
 
+  /* ---------- Video showcase: autoplay al entrar en viewport (35%) ---------- */
+  function initVideoShowcase() {
+    var videos = document.querySelectorAll(".video-showcase__video");
+    if (!videos.length || reduce || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(function (err) { console.log("Video autoplay prevented:", err); });
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35, rootMargin: "0px" });
+    videos.forEach(function (video) { io.observe(video); });
+  }
+
   /* ---------- Dropdown "Servicios" (click en móvil) ---------- */
   function initDropdown() {
     document.querySelectorAll(".has-dropdown > .dropdown-trigger").forEach(function (trigger) {
@@ -147,6 +164,7 @@
     animateHero();
     initReveals();
     initProcessLine();
+    initVideoShowcase();
     initMobile();
     initDropdown();
     var yearEl = document.getElementById("year");
