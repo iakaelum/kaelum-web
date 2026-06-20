@@ -73,23 +73,66 @@
   <main>
 
     <section class="hero" id="hero">
+      <div class="hero__orbs" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span></div>
       <canvas class="hero__canvas" id="particles" aria-hidden="true"></canvas>
       <div class="hero__glow" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <span class="hero-badge" data-hero="badge"><span class="dot"></span> Aceptando nuevos proyectos en Madrid Oeste</span>
-        <h1 class="hero__title" data-hero="title"><span class="word">Llevamos</span> <span class="word">tu</span> <span class="word">negocio</span> <span class="word">al</span> <span class="word gradient-text">nivel</span> <span class="word gradient-text">más</span> <span class="word gradient-text">alto</span></h1>
-        <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con resultados medibles y casos reales.</p>
-        <div class="hero-cta" data-hero="ctas">
-          <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="/servicios/" class="btn btn-ghost btn-lg">Ver servicios</a>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="hero-badge" data-hero="badge"><span class="dot"></span> Aceptando nuevos proyectos en Madrid Oeste</span>
+          <h1 class="hero__title" data-hero="title"><span class="word">Llevamos</span> <span class="word">tu</span> <span class="word">negocio</span> <span class="word">al</span> <span class="word gradient-text">nivel</span> <span class="word gradient-text">más</span> <span class="word gradient-text">alto</span></h1>
+          <p class="hero-sub" data-hero="subtitle">Auditamos tu negocio, rediseñamos tu presencia digital e implementamos IA donde de verdad aporta valor. Sin humo, con resultados medibles y casos reales.</p>
+          <div class="hero-cta" data-hero="ctas">
+            <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="/servicios/" class="btn btn-ghost btn-lg">Ver servicios</a>
+          </div>
+          <div class="hero__proof" data-hero="proof">
+            <div class="hero__proof-line"></div>
+            <!-- Stats del hero: edita el texto de cada <strong> cuando tengas cifras reales -->
+            <div class="hero__proof-stats">
+              <span><strong>Diagnósticos gratuitos</strong> disponibles</span><span class="sep">·</span>
+              <span><strong>Automatizaciones</strong> en producción</span><span class="sep">·</span>
+              <span><strong>Madrid</strong> Zona Oeste</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__proof" data-hero="proof">
-          <div class="hero__proof-line"></div>
-          <!-- Stats del hero: edita el texto de cada <strong> cuando tengas cifras reales -->
-          <div class="hero__proof-stats">
-            <span><strong>Diagnósticos gratuitos</strong> disponibles</span><span class="sep">·</span>
-            <span><strong>Automatizaciones</strong> en producción</span><span class="sep">·</span>
-            <span><strong>Madrid</strong> Zona Oeste</span>
+
+        <!-- Visual estrella: lienzo de automatización con IA (estilo n8n) -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="flowcard">
+            <div class="flowcard__bar"><span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span><em>kaelum · automatización IA</em></div>
+            <svg class="flow" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema de automatización con IA">
+              <defs>
+                <linearGradient id="flGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#6B5CE7"/><stop offset="1" stop-color="#A78BFA"/>
+                </linearGradient>
+              </defs>
+              <path id="fp1" class="flow-link" d="M168,96 C232,104 150,196 182,204"/>
+              <path id="fp2" class="flow-link" d="M168,326 C232,318 150,224 182,216"/>
+              <path id="fp3" class="flow-link" d="M300,202 C360,182 300,104 320,100"/>
+              <path id="fp4" class="flow-link" d="M300,218 C360,238 300,318 320,324"/>
+              <circle class="flow-dot" r="3.6"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#fp1"/></animateMotion></circle>
+              <circle class="flow-dot" r="3.6"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#fp2"/></animateMotion></circle>
+              <circle class="flow-dot" r="3.6"><animateMotion dur="2.2s" begin="0.6s" repeatCount="indefinite"><mpath href="#fp3"/></animateMotion></circle>
+              <circle class="flow-dot" r="3.6"><animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite"><mpath href="#fp4"/></animateMotion></circle>
+              <g class="nd"><rect x="14" y="70" width="154" height="52" rx="13"/><circle class="dot ok" cx="38" cy="96" r="5"/><text x="56" y="100">WhatsApp</text></g>
+              <g class="nd"><rect x="14" y="300" width="154" height="52" rx="13"/><circle class="dot" cx="38" cy="326" r="5"/><text x="56" y="330">Formulario web</text></g>
+              <g class="nd nd-accent"><rect x="182" y="176" width="118" height="64" rx="15"/><text x="241" y="202" class="t-c">Agente IA</text><text x="241" y="222" class="t-c sm">GPT · n8n</text></g>
+              <g class="nd"><rect x="320" y="74" width="146" height="52" rx="13"/><circle class="dot ac" cx="344" cy="100" r="5"/><text x="362" y="104">CRM Kaelum</text></g>
+              <g class="nd"><rect x="320" y="300" width="146" height="52" rx="13"/><circle class="dot ac" cx="344" cy="326" r="5"/><text x="362" y="330">Aviso · Email</text></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tira de integraciones -->
+    <section class="logos-strip">
+      <div class="container">
+        <p class="logos-strip__title">Conectamos las herramientas que ya usas</p>
+        <div class="logos-marquee">
+          <div class="logos-track">
+            <span>Google</span><span>Meta&nbsp;Ads</span><span>Instagram</span><span>WhatsApp</span><span>n8n</span><span>OpenAI</span><span>Make</span><span>Gmail</span><span>Calendar</span><span>Stripe</span>
+            <span aria-hidden="true">Google</span><span aria-hidden="true">Meta&nbsp;Ads</span><span aria-hidden="true">Instagram</span><span aria-hidden="true">WhatsApp</span><span aria-hidden="true">n8n</span><span aria-hidden="true">OpenAI</span><span aria-hidden="true">Make</span><span aria-hidden="true">Gmail</span><span aria-hidden="true">Calendar</span><span aria-hidden="true">Stripe</span>
           </div>
         </div>
       </div>
