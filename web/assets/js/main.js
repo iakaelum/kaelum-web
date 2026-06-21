@@ -159,6 +159,21 @@
     on(hero, "pointerleave", function () { glow.style.opacity = "0"; });
   }
 
+  /* ---------- Vídeo neural del hero: autoplay + parallax suave ---------- */
+  function initHeroVideo() {
+    var v = document.getElementById("hero-video");
+    if (!v) return;
+    if (reduce) { v.style.display = "none"; return; }
+    v.muted = true; v.playsInline = true;
+    var start = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    if (v.readyState >= 2) start(); else v.addEventListener("loadeddata", start, { once: true });
+    var ticking = false;
+    on(window, "scroll", function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { ticking = false; v.style.transform = "translateY(" + ((window.scrollY || 0) * 0.18).toFixed(1) + "px)"; });
+    }, { passive: true });
+  }
+
   /* ---------- Hilo de progreso de scroll (firma visual, estilo "circuito") ----------
      Réplica fiel del prototipo: segmentos V (vertical) + H (horizontal) = ángulos
      rectos, nodos en cada esquina, suavizado independiente del framerate. */
@@ -232,79 +247,6 @@
     build();
     on(window, "scroll", update, { passive: true });
     var rt; on(window, "resize", function () { clearTimeout(rt); rt = setTimeout(build, 180); });
-  }
-
-  /* ---------- Fondo neural del hero (canvas) — recrea el vídeo neural ---------- */
-  function initNeural() {
-    var canvas = document.getElementById("neural-canvas");
-    var hero = document.getElementById("top");
-    if (!canvas || !hero) return;
-    var ctx = canvas.getContext("2d");
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var W = 0, H = 0, nodes = [], DIST = 150, raf = null, visible = true;
-    var pal = ["139,92,246", "99,102,241", "59,130,246", "34,211,238"];
-    function seed() {
-      var count = Math.round(Math.min(120, Math.max(46, W * H / 13000)));
-      nodes = [];
-      for (var i = 0; i < count; i++) {
-        nodes.push({
-          x: Math.random() * W, y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
-          r: Math.random() * 1.7 + 0.6, hub: Math.random() < 0.09,
-          c: pal[(Math.random() * pal.length) | 0]
-        });
-      }
-    }
-    function resize() {
-      var r = hero.getBoundingClientRect();
-      W = Math.max(1, r.width); H = Math.max(1, r.height);
-      DIST = Math.min(170, Math.max(110, W / 11));
-      canvas.width = W * dpr; canvas.height = H * dpr;
-      canvas.style.width = W + "px"; canvas.style.height = H + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      seed(); draw();
-    }
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      var D2 = DIST * DIST, i, j, a, b, dx, dy, d2;
-      for (i = 0; i < nodes.length; i++) {
-        a = nodes[i];
-        if (!reduce && visible) {
-          a.x += a.vx; a.y += a.vy;
-          if (a.x < -20) a.x = W + 20; else if (a.x > W + 20) a.x = -20;
-          if (a.y < -20) a.y = H + 20; else if (a.y > H + 20) a.y = -20;
-        }
-        for (j = i + 1; j < nodes.length; j++) {
-          b = nodes[j]; dx = a.x - b.x; dy = a.y - b.y; d2 = dx * dx + dy * dy;
-          if (d2 < D2) {
-            var al = (1 - Math.sqrt(d2) / DIST) * 0.20;
-            ctx.strokeStyle = "rgba(150,120,250," + al.toFixed(3) + ")";
-            ctx.lineWidth = 1;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          }
-        }
-      }
-      for (i = 0; i < nodes.length; i++) {
-        a = nodes[i];
-        if (a.hub) {
-          var g = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, 9);
-          g.addColorStop(0, "rgba(" + a.c + ",0.55)"); g.addColorStop(1, "rgba(" + a.c + ",0)");
-          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(a.x, a.y, 9, 0, 6.2832); ctx.fill();
-        }
-        ctx.fillStyle = "rgba(" + a.c + "," + (a.hub ? 0.95 : 0.7) + ")";
-        ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
-      }
-    }
-    function loop() { draw(); raf = requestAnimationFrame(loop); }
-    resize();
-    on(window, "resize", function () { clearTimeout(canvas._rt); canvas._rt = setTimeout(resize, 200); });
-    if (reduce) return; // un solo frame
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) {
-        visible = es[0].isIntersecting;
-        if (visible && !raf) loop(); else if (!visible && raf) { cancelAnimationFrame(raf); raf = null; }
-      }, { threshold: 0 }).observe(hero);
-    } else loop();
   }
 
   /* ---------- Chat "Agente KAELUM" (demo, respuestas guionizadas) ---------- */
@@ -437,8 +379,8 @@
     initDropdown();
     initMenu();
     initHeroGlow();
+    initHeroVideo();
     initThread();
-    initNeural();
     initChat();
     initContactForm();
     var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
