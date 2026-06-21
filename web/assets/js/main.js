@@ -159,52 +159,152 @@
     on(hero, "pointerleave", function () { glow.style.opacity = "0"; });
   }
 
-  /* ---------- Hilo de progreso de scroll (firma visual) ---------- */
+  /* ---------- Hilo de progreso de scroll (firma visual, estilo "circuito") ----------
+     Réplica fiel del prototipo: segmentos V (vertical) + H (horizontal) = ángulos
+     rectos, nodos en cada esquina, suavizado independiente del framerate. */
   function initThread() {
     var svg = document.querySelector(".mzu-line");
-    if (!svg) return;
-    if (reduce) { svg.style.display = "none"; return; }
+    var path = svg && svg.querySelector(".mzu-prog");
+    if (!path) return;
     var track = svg.querySelector(".mzu-track");
-    var prog = svg.querySelector(".mzu-prog");
     var comet = svg.querySelector(".mzu-comet");
     var nodesG = svg.querySelector(".mzu-nodes");
-    var L = 0, nodeEls = [];
+    if (svg) svg.style.opacity = "0";
+    var L = 0, nodeEls = [], prog = null, target = 0, last = 0, looping = false;
+
     function build() {
-      var W = window.innerWidth, H = window.innerHeight;
+      var H = window.innerHeight, W = window.innerWidth;
       svg.setAttribute("viewBox", "0 0 " + W + " " + H);
       svg.setAttribute("preserveAspectRatio", "none");
-      var cx = W * 0.5, amp = Math.min(W * 0.16, 150), segs = 6, d = "M " + cx + " 0";
-      for (var i = 1; i <= segs; i++) {
-        var y0 = H * (i - 1) / segs, y = H * i / segs, dir = (i % 2 === 0) ? 1 : -1, xMid = cx + dir * amp;
-        d += " C " + xMid + " " + (y0 + (y - y0) * 0.35) + " " + xMid + " " + (y0 + (y - y0) * 0.65) + " " + cx + " " + y;
+      var cx = W < 760 ? W * 0.12 : W * 0.5;
+      var amp = W < 760 ? W * 0.06 : W * 0.10;
+      var pat = [0.6, -0.7, 0.45, -0.55, 0.6, -0.5];
+      var d = "M " + cx.toFixed(1) + " 0", corners = [];
+      for (var i = 0; i < pat.length; i++) {
+        var y = H * (i + 1) / (pat.length + 1), nx = cx + amp * pat[i];
+        d += " V " + y.toFixed(1) + " H " + nx.toFixed(1);
+        corners.push([nx, y]);
       }
-      track.setAttribute("d", d); prog.setAttribute("d", d);
-      L = prog.getTotalLength();
-      prog.style.strokeDasharray = L; prog.style.strokeDashoffset = L;
-      nodesG.innerHTML = ""; nodeEls = [];
-      [0.18, 0.4, 0.62, 0.82, 0.95].forEach(function (f) {
-        var pt = prog.getPointAtLength(L * f);
-        var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        c.setAttribute("cx", pt.x); c.setAttribute("cy", pt.y); c.setAttribute("r", "4");
-        c.setAttribute("fill", "#0A0810"); c.setAttribute("stroke", "rgba(150,210,255,0.45)"); c.setAttribute("stroke-width", "2");
-        c.style.transition = "fill .3s, filter .3s";
-        nodesG.appendChild(c); nodeEls.push({ el: c, f: f });
-      });
+      d += " V " + H.toFixed(1);
+      path.setAttribute("d", d); if (track) track.setAttribute("d", d);
+      L = path.getTotalLength(); path.style.strokeDasharray = L;
+      if (nodesG) {
+        nodesG.innerHTML = "";
+        nodeEls = corners.map(function (c) {
+          var el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+          el.setAttribute("cx", c[0].toFixed(1)); el.setAttribute("cy", c[1].toFixed(1)); el.setAttribute("r", "3.6");
+          el.setAttribute("fill", "#4B4866"); el.style.transition = "fill .3s,opacity .3s,filter .3s"; el.style.opacity = "0.5";
+          nodesG.appendChild(el); return { el: el, y: c[1] };
+        });
+      }
+      if (reduce) {
+        path.style.strokeDashoffset = 0; if (comet) comet.style.opacity = "0";
+        nodeEls.forEach(function (n) { n.el.setAttribute("fill", "#7CC2FF"); n.el.style.opacity = "1"; });
+      } else { path.style.strokeDashoffset = L; update(); }
     }
     function update() {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      var p = max > 0 ? Math.min(1, Math.max(0, (window.scrollY || 0) / max)) : 0;
-      svg.style.opacity = Math.min(0.55, p * 3.5).toFixed(3);
-      prog.style.strokeDashoffset = L * (1 - p);
-      if (L) { var pt = prog.getPointAtLength(L * p); comet.setAttribute("cx", pt.x); comet.setAttribute("cy", pt.y); comet.style.opacity = p > 0.012 ? "1" : "0"; }
-      nodeEls.forEach(function (n) {
-        if (p >= n.f) { n.el.setAttribute("fill", "#7CC2FF"); n.el.style.filter = "drop-shadow(0 0 6px rgba(124,194,255,0.9))"; }
-        else { n.el.setAttribute("fill", "#0A0810"); n.el.style.filter = "none"; }
-      });
+      if (svg) svg.style.opacity = Math.max(0, Math.min(0.55, ((window.scrollY || 0) - 240) / 360)).toFixed(2);
+      if (reduce || !L) return;
+      var max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      target = Math.min(1, Math.max(0, (window.scrollY || 0) / max));
+      if (prog == null) prog = target;
+      if (!looping) { looping = true; requestAnimationFrame(tick); }
     }
-    build(); update();
+    function tick() {
+      var now = performance.now(), dt = last ? Math.min(48, now - last) : 16; last = now;
+      var k = 1 - Math.pow(0.0022, dt / 1000);
+      prog += (target - prog) * k;
+      if (Math.abs(target - prog) < 0.0003) { prog = target; looping = false; last = 0; }
+      var H = window.innerHeight;
+      path.style.strokeDashoffset = (L * (1 - prog)).toFixed(1);
+      try {
+        var pt = path.getPointAtLength(L * prog);
+        if (comet) { comet.setAttribute("cx", pt.x.toFixed(1)); comet.setAttribute("cy", pt.y.toFixed(1)); comet.style.opacity = (prog > 0.002 && prog < 0.999) ? "1" : "0"; }
+      } catch (e) {}
+      nodeEls.forEach(function (n) {
+        var lit = prog >= (n.y / H) - 0.012;
+        n.el.setAttribute("fill", lit ? "#7CC2FF" : "#4B4866");
+        n.el.style.opacity = lit ? "1" : "0.5";
+        n.el.style.filter = lit ? "drop-shadow(0 0 6px rgba(124,194,255,0.9))" : "none";
+      });
+      if (looping) requestAnimationFrame(tick);
+    }
+    build();
     on(window, "scroll", update, { passive: true });
-    var rt; on(window, "resize", function () { clearTimeout(rt); rt = setTimeout(function () { build(); update(); }, 180); });
+    var rt; on(window, "resize", function () { clearTimeout(rt); rt = setTimeout(build, 180); });
+  }
+
+  /* ---------- Fondo neural del hero (canvas) — recrea el vídeo neural ---------- */
+  function initNeural() {
+    var canvas = document.getElementById("neural-canvas");
+    var hero = document.getElementById("top");
+    if (!canvas || !hero) return;
+    var ctx = canvas.getContext("2d");
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var W = 0, H = 0, nodes = [], DIST = 150, raf = null, visible = true;
+    var pal = ["139,92,246", "99,102,241", "59,130,246", "34,211,238"];
+    function seed() {
+      var count = Math.round(Math.min(120, Math.max(46, W * H / 13000)));
+      nodes = [];
+      for (var i = 0; i < count; i++) {
+        nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
+          r: Math.random() * 1.7 + 0.6, hub: Math.random() < 0.09,
+          c: pal[(Math.random() * pal.length) | 0]
+        });
+      }
+    }
+    function resize() {
+      var r = hero.getBoundingClientRect();
+      W = Math.max(1, r.width); H = Math.max(1, r.height);
+      DIST = Math.min(170, Math.max(110, W / 11));
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      canvas.style.width = W + "px"; canvas.style.height = H + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seed(); draw();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      var D2 = DIST * DIST, i, j, a, b, dx, dy, d2;
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        if (!reduce && visible) {
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < -20) a.x = W + 20; else if (a.x > W + 20) a.x = -20;
+          if (a.y < -20) a.y = H + 20; else if (a.y > H + 20) a.y = -20;
+        }
+        for (j = i + 1; j < nodes.length; j++) {
+          b = nodes[j]; dx = a.x - b.x; dy = a.y - b.y; d2 = dx * dx + dy * dy;
+          if (d2 < D2) {
+            var al = (1 - Math.sqrt(d2) / DIST) * 0.20;
+            ctx.strokeStyle = "rgba(150,120,250," + al.toFixed(3) + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        if (a.hub) {
+          var g = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, 9);
+          g.addColorStop(0, "rgba(" + a.c + ",0.55)"); g.addColorStop(1, "rgba(" + a.c + ",0)");
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(a.x, a.y, 9, 0, 6.2832); ctx.fill();
+        }
+        ctx.fillStyle = "rgba(" + a.c + "," + (a.hub ? 0.95 : 0.7) + ")";
+        ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+      }
+    }
+    function loop() { draw(); raf = requestAnimationFrame(loop); }
+    resize();
+    on(window, "resize", function () { clearTimeout(canvas._rt); canvas._rt = setTimeout(resize, 200); });
+    if (reduce) return; // un solo frame
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (visible && !raf) loop(); else if (!visible && raf) { cancelAnimationFrame(raf); raf = null; }
+      }, { threshold: 0 }).observe(hero);
+    } else loop();
   }
 
   /* ---------- Chat "Agente KAELUM" (demo, respuestas guionizadas) ---------- */
@@ -338,6 +438,7 @@
     initMenu();
     initHeroGlow();
     initThread();
+    initNeural();
     initChat();
     initContactForm();
     var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
