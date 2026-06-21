@@ -19,6 +19,25 @@
       on(el, "pointerenter", function () { el.style.cssText = base + ";" + hov; });
       on(el, "pointerleave", function () { el.style.cssText = base; });
     });
+    // style-focus: estilos al enfocar (inputs del formulario)
+    document.querySelectorAll("[style-focus]").forEach(function (el) {
+      var foc = el.getAttribute("style-focus");
+      var base = el.getAttribute("style") || "";
+      on(el, "focus", function () { el.style.cssText = base + ";" + foc; });
+      on(el, "blur", function () { el.style.cssText = base; });
+    });
+  }
+
+  /* ---------- Spotlight que sigue al cursor en cards (data-cardhover) ---------- */
+  function initCardHover() {
+    if (!window.matchMedia("(hover: hover)").matches) return;
+    document.querySelectorAll("[data-cardhover]").forEach(function (card) {
+      on(card, "pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
   }
 
   /* ---------- Parallax suave ---------- */
@@ -372,6 +391,7 @@
 
   function init() {
     initHover();
+    initCardHover();
     initParallax();
     initReveals();
     initAutoVideo();

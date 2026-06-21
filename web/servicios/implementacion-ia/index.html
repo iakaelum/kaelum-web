@@ -1,349 +1,553 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Implementación de IA para PYMEs — Agentes y n8n | Kaelum</title>
-  <meta name="description" content="IA aplicada con casos concretos: agentes de atención 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads. Diagnóstico de IA por ROI para PYMEs de Madrid.">
-  <link rel="canonical" href="https://kaelum.es/servicios/implementacion-ia/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Kaelum">
-  <meta property="og:title" content="Implementación de IA para PYMEs — Agentes y n8n | Kaelum">
-  <meta property="og:description" content="IA aplicada con casos concretos: agentes de atención 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads. Diagnóstico de IA por ROI para PYMEs de Madrid.">
-  <meta property="og:url" content="https://kaelum.es/servicios/implementacion-ia/">
-  <meta property="og:image" content="https://kaelum.es/assets/img/og-cover.svg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Implementación de IA",
-  "name": "Implementación de IA para PYMEs",
-  "provider": {
-    "@type": "Organization",
-    "name": "Kaelum",
-    "url": "https://kaelum.es"
-  },
-  "areaServed": "Madrid Oeste, España",
-  "description": "Diagnóstico de oportunidades por ROI, agentes de atención 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads con IA."
-}
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implementación de IA para PYMEs — Agentes y n8n | Kaelum</title>
+<meta name="description" content="IA aplicada con casos concretos: agentes 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads. Diagnóstico de IA por ROI para PYMEs de Madrid.">
+<link rel="canonical" href="https://kaelum.es/servicios/implementacion-ia/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kaelum">
+<meta property="og:title" content="Implementación de IA para PYMEs — Agentes y n8n | Kaelum">
+<meta property="og:description" content="IA aplicada con casos concretos: agentes 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads. Diagnóstico de IA por ROI para PYMEs de Madrid.">
+<meta property="og:url" content="https://kaelum.es/servicios/implementacion-ia/">
+<meta property="og:image" content="https://kaelum.es/assets/img/logo-kaelum.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0810">
+<link rel="icon" type="image/png" href="/assets/img/logo-k.png">
+<link rel="apple-touch-icon" href="/assets/img/logo-k.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="/assets/css/style.css?v=4">
 </head>
 <body>
 
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand" aria-label="Kaelum — inicio">
-        <img src="/assets/img/logo.svg" alt="Kaelum" class="brand-logo" width="200" height="40">
+<div class="mzbody" style="position:relative; width:100%; overflow-x:hidden; font-family:'Geist',-apple-system,system-ui,sans-serif; color:#F5F4F8;">
+
+  <div class="mzu-bg" aria-hidden="true"><div class="blob b1" data-parallax="0.06"></div><div class="blob b2" data-parallax="0.10"></div><div class="blob b3" data-parallax="0.04"></div><div class="dots"></div><div class="grain"></div></div>
+  <svg class="mzu-line" preserveAspectRatio="none" style="position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;"><defs><linearGradient id="mzcb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="0.5" stop-color="#3B82F6"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><path class="mzu-track" fill="none" stroke="rgba(150,210,255,0.28)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(124,194,255,0.28));"></path><path class="mzu-prog" fill="none" stroke="url(#mzcb)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="will-change:stroke-dashoffset; filter:drop-shadow(0 0 6px rgba(124,194,255,0.5));"></path><g class="mzu-nodes"></g><circle class="mzu-comet" r="5" fill="#E0F2FE" style="filter:drop-shadow(0 0 10px rgba(124,194,255,0.95));opacity:0;"></circle></svg>
+
+  <!-- FIXED NAV -->
+  <header id="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:40; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(10,8,16,0.35); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 36px; max-width:1320px; margin:0 auto; width:100%;">
+      <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img src="/assets/img/logo-k.png" alt="KAELUM" width="38" height="38" style="width:38px; height:38px; object-fit:contain; animation:kael-logopulse 3.6s ease-in-out infinite;" />
+        <span style="font-family:'General Sans',sans-serif; font-weight:600; font-size:21px; letter-spacing:0.16em; color:#F5F4F8;">KAELUM</span>
       </a>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="/">Inicio</a></li>
-          <li class="has-dropdown">
-            <a href="/servicios/" class="dropdown-trigger active" aria-haspopup="true">
-              Servicios <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </a>
-            <ul class="dropdown">
-              <li><a href="/servicios/presencia-digital/"><strong>Presencia Digital</strong><span>Web, SEO local, reservas y automatización</span></a></li>
-              <li><a href="/servicios/implementacion-ia/"><strong>Implementación de IA</strong><span>Agentes y automatizaciones con n8n</span></a></li>
-            </ul>
-          </li>
-          <li><a href="/casos-de-exito/">Casos de éxito</a></li>
-          <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
-          <li><a href="/contacto/">Contacto</a></li>
-          <li class="nav-cta-mobile"><a href="/contacto/" class="btn btn-accent">Diagnóstico gratuito</a></li>
-        </ul>
+
+      <nav class="kael-desktop" style="align-items:center; gap:28px; position:absolute; left:50%; transform:translateX(-50%);">
+        <a href="/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Inicio</a>
+        <div style="position:relative;">
+          <button data-action="toggle-servicios" style="display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer; color:rgba(245,244,248,0.85); font-family:inherit; font-size:15px; font-weight:500; padding:0;" style-hover="color:#fff;">
+            Servicios
+            <span style="display:inline-block; width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:rotate(45deg) translateY(-1px);"></span>
+          </button>
+          <div data-dd-panel style="position:absolute; top:30px; left:-12px; min-width:240px; padding:7px; border-radius:14px; background:rgba(19,17,28,0.97); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 18px 50px rgba(0,0,0,0.5);">
+            <a href="/servicios/presencia-digital/" style="display:block; padding:11px 13px; border-radius:9px; color:rgba(245,244,248,0.92); text-decoration:none; font-size:14px; font-weight:500;" style-hover="background:rgba(255,255,255,0.05);">Presencia Digital</a>
+            <a href="/servicios/implementacion-ia/" style="display:block; padding:11px 13px; border-radius:9px; color:rgba(245,244,248,0.92); text-decoration:none; font-size:14px; font-weight:500;" style-hover="background:rgba(255,255,255,0.05);">Implementación de IA</a>
+          </div>
+        </div>
+        <a href="/casos-de-exito/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Casos de éxito</a>
+        <a href="/sobre-nosotros/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Sobre nosotros</a>
+        <a href="/contacto/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Contacto</a>
       </nav>
-      <a href="/contacto/" class="btn btn-accent header-cta">Diagnóstico gratuito</a>
+
+      <a href="/contacto/" class="kael-desktop" style="align-items:center; padding:10px 20px; border-radius:9999px; background:#F5F4F8; color:#0A0A0F; font-family:inherit; font-size:14px; font-weight:600; text-decoration:none; box-shadow:0 0 26px rgba(139,92,246,0.28); transition:transform .2s;" style-hover="transform:translateY(-1px);">Diagnóstico gratuito</a>
+
+      <button class="kael-burger" data-action="toggle-menu" aria-label="Abrir menú" style="flex-direction:column; gap:5px; width:42px; height:42px; align-items:center; justify-content:center; background:none; border:none; cursor:pointer;">
+        <span style="display:block; width:22px; height:2px; background:#F5F4F8; border-radius:2px;"></span>
+        <span style="display:block; width:22px; height:2px; background:#F5F4F8; border-radius:2px;"></span>
+        <span style="display:block; width:22px; height:2px; background:#F5F4F8; border-radius:2px;"></span>
+      </button>
     </div>
   </header>
 
-  <main>
 
-    <section class="hero-page bg-glow">
-      <div class="container">
-        <p class="breadcrumb" data-reveal><a href="/servicios/">Servicios</a><span>›</span>Implementación de IA</p>
-        <span class="chip" data-reveal>Servicio · Implementación de IA</span>
-        <h1 data-reveal data-stagger="1" style="margin-top:18px">IA aplicada que <span class="gradient-text">ahorra horas</span> y multiplica capacidad</h1>
-        <p data-reveal data-stagger="2">No vendemos IA como marketing. Identificamos dónde la inteligencia artificial puede aportar valor real en tu negocio, la implementamos y nos quedamos a optimizarla. Casos concretos, resultados medibles.</p>
-        <div class="hero-cta" data-reveal data-stagger="3" style="justify-content:center;display:flex;margin-top:30px">
-          <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico gratuito <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          <a href="#casos" class="btn btn-ghost btn-lg">Ver casos de uso</a>
-        </div>
-        <div class="hero__proof" data-reveal data-stagger="4" style="margin-top:48px">
-          <div class="hero__proof-line"></div>
-          <div class="hero__proof-stats">
-            <span><strong>20+</strong> horas/mes ahorradas por cliente</span><span class="sep">·</span>
-            <span><strong>24/7</strong> atención automatizada</span><span class="sep">·</span>
-            <span><strong>6</strong> workflows en producción</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- SCROLL CIRCUIT LINE (draws on scroll) -->
+  <svg class="kael-circuit" preserveAspectRatio="none" style="position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; opacity:0.55;">
+    <defs><linearGradient id="circ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs>
+    <path fill="none" stroke="url(#circ)" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(0 0 6px rgba(139,92,246,0.6));"></path>
+    <circle r="4.5" fill="#C4B5FD" style="filter:drop-shadow(0 0 9px rgba(167,139,250,0.95)); opacity:0;"></circle>
+  </svg>
 
-    <section class="video-showcase">
-      <div class="video-showcase__inner">
-        <div class="video-showcase__header">
-          <span class="video-showcase__pill">IA en acción</span>
-          <h2 class="video-showcase__title">Una IA que trabaja para tu negocio</h2>
-          <p class="video-showcase__subtitle">No es ciencia ficción. Es lo que implementamos cada día en negocios reales: agentes que atienden clientes, automatizan procesos y aprenden mientras tu equipo se centra en lo importante.</p>
-        </div>
-        <div class="video-showcase__container">
-          <video class="video-showcase__video" muted loop playsinline preload="metadata">
-            <source src="/assets/videos/ai-robot-working.mp4" type="video/mp4">
-          </video>
-        </div>
+  <!-- PAGE BODY -->
+  <!-- BLOQUE 1 · HERO -->
+  <section id="ia-hero" style="position:relative; padding:160px 24px 90px; text-align:center;">
+    <div style="max-width:880px; margin:0 auto; animation:kael-rise .6s ease both;">
+      <p class="mzu-eye">Servicio · Implementación de IA</p>
+      <h1 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(34px,5.6vw,72px); line-height:1.08; letter-spacing:-0.02em;">IA aplicada que ahorra horas y <span style="padding-bottom:0.12em; background-image:linear-gradient(120deg,#8B5CF6,#22D3EE,#6366F1,#3B82F6,#22D3EE); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 6.5s linear infinite;">multiplica capacidad</span></h1>
+      <p style="margin:26px auto 0; max-width:42rem; font-size:19px; line-height:1.65; color:#C4C2CE;">No vendemos IA como marketing. Identificamos dónde la inteligencia artificial puede aportar valor real en tu negocio, la implementamos y nos quedamos a optimizarla. Casos concretos, resultados medibles.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
+        <a class="mzu-cta" href="/contacto/" style="padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8; box-shadow:0 0 46px rgba(139,92,246,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(139,92,246,0.55);">Solicitar diagnóstico gratuito</a>
+        <a href="#casos" style="padding:16px 28px; border-radius:9999px; background:rgba(255,255,255,0.04); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:16px; font-weight:500; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-4px);">Ver casos de uso</a>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">El problema con la IA hoy</span>
-          <h2>La IA está sobrevalorada y mal aplicada</h2>
-          <p>Todos hablan de IA pero pocos saben dónde aplicarla con sentido. Las PYMEs reciben propuestas genéricas tipo "ChatGPT para tu negocio" sin entender qué resuelve realmente. Nosotros hacemos lo contrario: primero entendemos tu operativa, después decidimos si la IA tiene cabida y dónde exactamente.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h3 style="font-size:1.1rem">Soluciones sin problema</h3><p>Muchas empresas implementan IA porque suena moderno, no porque resuelva algo real. Resultado: gasto sin retorno.</p></div>
-          <div class="card " data-reveal data-stagger="1"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h3 style="font-size:1.1rem">Chatbots que no sirven</h3><p>Bots genéricos que frustran al cliente. Mal entrenados, sin integración con sistemas reales, sin escalado a humano cuando se necesita.</p></div>
-          <div class="card " data-reveal data-stagger="2"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></div><h3 style="font-size:1.1rem">Promesas sin implementación</h3><p>Consultoras que venden estrategia de IA con PowerPoints de 100 páginas y no implementan nada ejecutable.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-glow">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Cómo lo hacemos diferente</span>
-          <h2>Diagnóstico antes que implementación</h2>
-          <p>No empezamos preguntando "¿quieres un chatbot?". Empezamos analizando tu negocio para identificar dónde la IA puede aportar valor real. Solo implementamos lo que tiene sentido.</p>
-        </div>
-        <div class="grid grid-2">
-          <div class="card" data-reveal data-stagger="0"><div class="step-num" style="margin-bottom:16px">01</div><h3 style="font-size:1.2rem">Auditoría operativa</h3><p>Analizamos procesos, cuellos de botella, tareas repetitivas y oportunidades reales de automatización inteligente.</p></div>
-          <div class="card" data-reveal data-stagger="1"><div class="step-num" style="margin-bottom:16px">02</div><h3 style="font-size:1.2rem">Identificación de casos de uso</h3><p>Detectamos dónde la IA aporta más valor: atención al cliente, procesamiento documental, ventas, operativa interna…</p></div>
-          <div class="card" data-reveal data-stagger="0"><div class="step-num" style="margin-bottom:16px">03</div><h3 style="font-size:1.2rem">Priorización por ROI</h3><p>Te entregamos un mapa de oportunidades ordenadas por retorno esperado. Empezamos por las que más impacto tienen.</p></div>
-          <div class="card" data-reveal data-stagger="1"><div class="step-num" style="margin-bottom:16px">04</div><h3 style="font-size:1.2rem">Implementación medible</h3><p>Ejecutamos casos concretos con métricas definidas. Sabemos qué esperar y medimos si funciona.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="casos">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Casos de uso reales</span>
-          <h2>Dónde aplicamos IA en negocios como el tuyo</h2>
-          <p>No teorías abstractas. Estos son los casos concretos que implementamos en PYMEs y comercio local.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card featured" data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h3 style="font-size:1.1rem">Agentes de atención al cliente 24/7</h3><p>Chatbots inteligentes en web y WhatsApp que entienden contexto, responden preguntas frecuentes, derivan a humano cuando es necesario y guían al cliente hasta reservar cita. Disponibles fuera de horario sin coste de personal.</p></div>
-          <div class="card featured" data-reveal data-stagger="1"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div><h3 style="font-size:1.1rem">Automatizaciones avanzadas con n8n</h3><p>Workflows complejos que conectan tus sistemas (CRM, calendario, email, WhatsApp, Excel) y eliminan tareas manuales. Desde gestión completa de citas hasta sincronización de datos entre plataformas.</p></div>
-          <div class="card featured" data-reveal data-stagger="2"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg></div><h3 style="font-size:1.1rem">Procesamiento documental con IA</h3><p>Extracción automática de datos de facturas, contratos y documentos. Clasificación inteligente, resúmenes automáticos y digitalización de archivos físicos con OCR avanzado.</p></div>
-          <div class="card featured" data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><h3 style="font-size:1.1rem">Cualificación automática de leads</h3><p>IA que analiza cada nuevo contacto, lo puntúa por probabilidad de conversión y lo asigna al canal correcto. Tu equipo dedica tiempo solo a leads de calidad.</p></div>
-          <div class="card featured" data-reveal data-stagger="1"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><h3 style="font-size:1.1rem">Generación de contenido optimizado</h3><p>IA aplicada a creación de contenidos para blog, redes sociales y email marketing. Tono coherente con tu marca y optimización SEO automática.</p></div>
-          <div class="card featured" data-reveal data-stagger="2"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 style="font-size:1.1rem">Asistentes internos para empleados</h3><p>Chatbots para tu equipo que responden dudas internas, generan reportes, consultan datos y automatizan tareas administrativas. Productividad multiplicada.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-glow">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Tecnología que usamos</span>
-          <h2>Stack moderno, open source y escalable</h2>
-          <p>Trabajamos con herramientas que el cliente puede mantener si algún día deja de trabajar con nosotros. Sin lock-in, sin dependencias absurdas.</p>
-        </div>
-        <div class="grid grid-3">
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div><h3 style="font-size:1.1rem">n8n</h3><p>Plataforma de automatización open source. El motor que conecta todos los sistemas.</p></div>
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg></div><h3 style="font-size:1.1rem">Claude / GPT</h3><p>Modelos de lenguaje de última generación para agentes y procesamiento de texto.</p></div>
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><h3 style="font-size:1.1rem">Supabase</h3><p>Base de datos en la nube para guardar memoria de los agentes y datos del negocio.</p></div>
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h3 style="font-size:1.1rem">WhatsApp Business API</h3><p>Integración oficial para agentes que responden por WhatsApp con escalado a humano.</p></div>
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 style="font-size:1.1rem">Make / Zapier</h3><p>Automatizaciones complementarias cuando n8n no es la mejor opción.</p></div>
-          <div class="card " data-reveal data-stagger="0"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3 style="font-size:1.1rem">Custom integrations</h3><p>APIs personalizadas y conectores a medida cuando las herramientas estándar no llegan.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proceso">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Proceso de implementación</span>
-          <h2>De la idea al sistema funcionando</h2>
-        </div>
-        <div class="timeline">
-          <div class="tl-item" data-reveal><div class="tl-num">1</div><span class="tl-week">Semana 1</span><h3>Diagnóstico operativo</h3><p>Auditamos tus procesos actuales. Identificamos dónde la IA puede aportar valor real y dónde es mejor no tocar nada. Informe con casos priorizados por ROI.</p></div>
-          <div class="tl-item" data-reveal><div class="tl-num">2</div><span class="tl-week">Semana 1-2</span><h3>Definición del proyecto</h3><p>Elegimos juntos el caso de uso a implementar primero. Definimos alcance, objetivos medibles, plazos y herramientas a usar.</p></div>
-          <div class="tl-item" data-reveal><div class="tl-num">3</div><span class="tl-week">Semanas 2-5</span><h3>Desarrollo e integración</h3><p>Construimos el sistema. Lo integramos con tus herramientas actuales. Validamos en entorno de pruebas antes de pasar a producción.</p></div>
-          <div class="tl-item" data-reveal><div class="tl-num">4</div><span class="tl-week">Semana 5-6</span><h3>Entrenamiento y lanzamiento</h3><p>Afinamos el modelo con tus datos reales, formamos a tu equipo y lanzamos a producción con monitorización continua los primeros días.</p></div>
-          <div class="tl-item" data-reveal><div class="tl-num">5</div><span class="tl-week">Mensual</span><h3>Optimización</h3><p>Medimos resultados, ajustamos prompts, mejoramos integraciones y expandimos casos de uso. La IA no se entrega, se cultiva.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-glow">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Resultados esperables</span>
-          <h2>Lo que vas a notar en los primeros 90 días</h2>
-        </div>
-        <div class="grid grid-4">
-          <div class="card result-card" data-reveal data-stagger="0"><div class="result-num gradient-text">−20h/mes</div><h3>Tareas manuales eliminadas</h3><p>Tu equipo deja de hacer copia/pegado, gestión de emails repetitivos y tareas que la IA hace mejor.</p></div>
-          <div class="card result-card" data-reveal data-stagger="1"><div class="result-num gradient-text">24/7</div><h3>Atención al cliente continua</h3><p>Tu negocio responde a leads y consultas incluso cuando tú estás durmiendo o de vacaciones.</p></div>
-          <div class="card result-card" data-reveal data-stagger="2"><div class="result-num gradient-text">+30%</div><h3>Capacidad operativa</h3><p>Mismo equipo, más trabajo gestionado. Sin contratar a nadie nuevo.</p></div>
-          <div class="card result-card" data-reveal data-stagger="3"><div class="result-num gradient-text">&lt;24h</div><h3>Tiempo de respuesta a leads</h3><p>Cada contacto recibe respuesta inmediata cualificada. Menos leads perdidos por lentitud.</p></div>
-        </div>
-        <p class="form-note" style="text-align:center;margin-top:24px" data-reveal>Métricas orientativas basadas en proyectos del sector. Tu caso concreto se mide con tus números desde el primer día.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Pricing</span>
-          <h2>Modelos de implementación</h2>
-          <p>La implementación de IA varía mucho según el caso. Ofrecemos tres modelos principales según complejidad.</p>
-        </div>
-        <div class="pricing">
-          <div class="card price-card" data-reveal data-stagger="0">
-            <div class="price-name">Diagnóstico IA</div>
-            <p class="price-tagline">Para saber por dónde empezar</p>
-            <div class="price-amount">500€ pago único</div>
-            <p class="price-commit">Sin compromiso de continuidad</p>
-            <ul class="check-list">
-              <li>Auditoría operativa completa</li>
-              <li>Identificación de casos de uso</li>
-              <li>Roadmap priorizado por ROI</li>
-              <li>Estimación de ahorro horas/mes</li>
-              <li>Estimación de inversión por caso</li>
-              <li>Reunión de presentación</li>
-            </ul>
-            <a href="/contacto/" class="btn btn-ghost">Solicitar diagnóstico IA</a>
-          </div>
-          <div class="card price-card featured" data-reveal data-stagger="1">
-            <span class="price-badge">Más popular</span>
-            <div class="price-name">Implementación estándar</div>
-            <p class="price-tagline">Casos de uso pre-definidos</p>
-            <div class="price-amount">Desde 1.500€ setup + 400€/mes</div>
-            <p class="price-commit">Diagnóstico IA incluido</p>
-            <ul class="check-list">
-              <li>Diagnóstico IA incluido</li>
-              <li>Implementación de 1-2 casos de uso</li>
-              <li>Integración con tus sistemas</li>
-              <li>Formación a tu equipo</li>
-              <li>Mantenimiento y optimización mensual</li>
-              <li>Soporte directo</li>
-            </ul>
-            <a href="/contacto/" class="btn btn-accent">Empezar implementación</a>
-          </div>
-          <div class="card price-card" data-reveal data-stagger="2">
-            <div class="price-name">Proyecto a medida</div>
-            <p class="price-tagline">Para casos complejos o múltiples</p>
-            <div class="price-amount">Presupuesto personalizado</div>
-            <p class="price-commit">Alcance y SLA a definir</p>
-            <ul class="check-list">
-              <li>Diagnóstico extendido</li>
-              <li>Implementación de múltiples casos</li>
-              <li>Desarrollo a medida</li>
-              <li>Integraciones avanzadas</li>
-              <li>Equipo dedicado</li>
-              <li>SLA garantizado</li>
-            </ul>
-            <a href="/contacto/" class="btn btn-ghost">Solicitar presupuesto</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-glow">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Preguntas frecuentes</span>
-          <h2>Resolvemos tus dudas sobre IA</h2>
-        </div>
-        <div class="faq" data-reveal>
-          <details class="faq-item"><summary>¿La IA va a sustituir a mi equipo?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>No. La IA hace las tareas repetitivas que tu equipo odia hacer para que se centren en lo que aporta más valor: atención humana, decisiones estratégicas, relación con clientes importantes. Es un complemento, no un reemplazo.</p></div></details>
-          <details class="faq-item"><summary>¿Necesito tener datos para implementar IA?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>Depende del caso. Algunos casos (chatbots de FAQ, agentes de reserva) funcionan desde el día 1. Otros (modelos predictivos, recomendadores) necesitan datos históricos. Lo evaluamos en el diagnóstico.</p></div></details>
-          <details class="faq-item"><summary>¿Es seguro? ¿Qué pasa con mis datos?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>Todos los datos del cliente se procesan en servidores europeos con cumplimiento RGPD. Si usamos modelos de OpenAI o Anthropic, se configuran con políticas de no entrenamiento. Tu información no entra en modelos públicos.</p></div></details>
-          <details class="faq-item"><summary>¿Cuánto cuesta mantener un sistema de IA?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>El mantenimiento mensual incluye monitorización, ajustes de prompts, mejoras de integraciones y soporte. El coste de los modelos (tokens de Claude/GPT) varía según uso, pero para una PYME típica está entre 20-100€/mes y lo gestionamos nosotros.</p></div></details>
-          <details class="faq-item"><summary>¿Qué pasa si la IA falla o da una mala respuesta?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>Diseñamos los sistemas con guardrails: temas que no debe tocar, escalado automático a humano cuando no está seguro, registro de todas las conversaciones para auditar. Y monitorizamos activamente los primeros meses.</p></div></details>
-          <details class="faq-item"><summary>¿Puedo empezar solo con el diagnóstico?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="faq-body"><p>Por supuesto. El diagnóstico IA (500€) tiene valor por sí solo. Te quedas con el roadmap y decides si implementas con nosotros, con otro proveedor o internamente.</p></div></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-band">
-      <div class="container">
-        <div class="cta-inner" data-reveal>
-          <h2>¿Hay IA aplicable a tu negocio?</h2>
-          <p>Probablemente sí. Pero la única forma de saberlo en serio es analizar tus procesos reales. Empezamos por ahí, sin presión por implementar nada que no tenga sentido.</p>
-          <div class="hero-cta" style="justify-content:center;display:flex">
-            <a href="/contacto/" class="btn btn-accent btn-lg">Solicitar diagnóstico de IA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            <a href="/casos-de-exito/" class="btn btn-ghost btn-lg">Ver casos de uso aplicados</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="/assets/img/logo.svg" alt="Kaelum" class="brand-logo" width="200" height="40">
-          <p>Presencia digital e implementación de IA para PYMEs y comercio local de Madrid. Resultados medibles, compromiso a largo plazo.</p>
-          <div class="footer-socials">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-9 8H7.5v7H10v-7zM8.75 7.5A1.25 1.25 0 1 0 8.75 10a1.25 1.25 0 0 0 0-2.5zM18 13.5c0-2.2-1.2-3.3-2.8-3.3-1 0-1.7.55-2 1.05V11H10.7v7H13.2v-3.7c0-1 .2-1.95 1.4-1.95s1.2 1.1 1.2 2V18H18v-4.5z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.2z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="/servicios/presencia-digital/">Presencia digital</a></li>
-            <li><a href="/servicios/implementacion-ia/">Implementación de IA</a></li>
-            <li><a href="/servicios/">Todos los servicios</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Empresa</h4>
-          <ul>
-            <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
-            <li><a href="/casos-de-exito/">Casos de éxito</a></li>
-            <li><a href="/blog/">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a href="/contacto/">Formulario</a></li>
-            <li><a href="mailto:contacto@kaelum.es">contacto@kaelum.es</a></li>
-            <li><span class="text-muted">Madrid, España</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Kaelum. Todos los derechos reservados.</span>
-        <span>Hecho en Madrid · <a href="/contacto/">Diagnóstico gratuito</a></span>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px 40px; margin-top:42px;">
+        <div><div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:30px; background-image:linear-gradient(to right,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent;">20+</div><div style="font-size:13.5px; color:rgba(245,244,248,0.6); margin-top:4px;">horas/mes ahorradas por cliente</div></div>
+        <div><div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:30px; background-image:linear-gradient(to right,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent;">24/7</div><div style="font-size:13.5px; color:rgba(245,244,248,0.6); margin-top:4px;">atención automatizada</div></div>
+        <div><div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:30px; background-image:linear-gradient(to right,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent;">6</div><div style="font-size:13.5px; color:rgba(245,244,248,0.6); margin-top:4px;">workflows en producción</div></div>
       </div>
     </div>
+  </section>
+
+  <!-- BLOQUE 2 · IA EN ACCIÓN (VÍDEO) -->
+  <section style="position:relative; padding:clamp(40px,6vw,72px) 24px;">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; text-align:center; max-width:720px; margin:0 auto 36px;">
+        <p class="mzu-eye">IA en acción</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Una IA que trabaja para tu negocio</h2>
+        <p style="margin:18px auto 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:60ch;">No es ciencia ficción. Es lo que implementamos cada día en negocios reales: agentes que atienden clientes, automatizan procesos y aprenden mientras tu equipo se centra en lo importante.</p>
+      </div>
+      <div data-reveal style="transform:translateY(30px); transition:opacity .8s ease, transform .7s ease; border-radius:20px; padding:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(139,92,246,0.25); box-shadow:0 0 70px rgba(139,92,246,0.18); position:relative;">
+        <video data-autovideo muted loop playsinline preload="metadata" poster="/assets/img/mockup-ia.png" style="width:100%; display:block; border-radius:12px;"><source src="/assets/video/implementacion-ia.mp4" type="video/mp4" /></video>
+        <div style="position:absolute; inset:10px; border-radius:12px; pointer-events:none; background:linear-gradient(to top, rgba(10,10,15,0.45), transparent 55%);"></div>
+      </div>
+      <p style="text-align:center; margin:14px 0 0; font-size:12.5px; color:rgba(245,244,248,0.4);">IA y automatizaciones en producción</p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3 · EL PROBLEMA -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">El problema con la IA hoy</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">La IA está sobrevalorada y mal aplicada</h2>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:68ch;">Todos hablan de IA pero pocos saben dónde aplicarla con sentido. Las PYMEs reciben propuestas genéricas tipo «ChatGPT para tu negocio» sin entender qué resuelve realmente. Nosotros hacemos lo contrario: primero entendemos tu operativa, después decidimos si la IA tiene cabida y dónde exactamente.</p>
+      </div>
+      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:44px;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;"><h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Soluciones sin problema</h3><p style="margin:0; font-size:16px; line-height:1.6; color:#C4C2CE;">Muchas empresas implementan IA porque suena moderno, no porque resuelva algo real. Resultado: gasto sin retorno.</p></div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;"><h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Chatbots que no sirven</h3><p style="margin:0; font-size:16px; line-height:1.6; color:#C4C2CE;">Bots genéricos que frustran al cliente. Mal entrenados, sin integración con sistemas reales, sin escalado a humano cuando se necesita.</p></div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;"><h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Promesas sin implementación</h3><p style="margin:0; font-size:16px; line-height:1.6; color:#C4C2CE;">Consultoras que venden estrategia de IA con PowerPoints de 100 páginas y no implementan nada ejecutable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 4 · CÓMO LO HACEMOS DIFERENTE -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Cómo lo hacemos diferente</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Diagnóstico antes que implementación</h2>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:64ch;">No empezamos preguntando «¿quieres un chatbot?». Empezamos analizando tu negocio para identificar dónde la IA puede aportar valor real. Solo implementamos lo que tiene sentido.</p>
+      </div>
+      <div class="kael-grid kael-grid--2" style="grid-template-columns:repeat(2,1fr); margin-top:44px;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); position:relative; overflow:hidden; border-radius:18px; padding:30px;">
+          <div style="position:absolute; top:14px; right:18px; font-family:'General Sans',sans-serif; font-weight:600; font-size:54px; line-height:1; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.28;">01</div>
+          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px; max-width:80%;">Auditoría operativa</h3>
+          <p style="margin:0; font-size:15.5px; line-height:1.6; color:#C4C2CE;">Analizamos procesos, cuellos de botella, tareas repetitivas y oportunidades reales de automatización inteligente.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); position:relative; overflow:hidden; border-radius:18px; padding:30px;">
+          <div style="position:absolute; top:14px; right:18px; font-family:'General Sans',sans-serif; font-weight:600; font-size:54px; line-height:1; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.28;">02</div>
+          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px; max-width:80%;">Identificación de casos de uso</h3>
+          <p style="margin:0; font-size:15.5px; line-height:1.6; color:#C4C2CE;">Detectamos dónde la IA aporta más valor: atención al cliente, procesamiento documental, ventas, operativa interna…</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); position:relative; overflow:hidden; border-radius:18px; padding:30px;">
+          <div style="position:absolute; top:14px; right:18px; font-family:'General Sans',sans-serif; font-weight:600; font-size:54px; line-height:1; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.28;">03</div>
+          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px; max-width:80%;">Priorización por ROI</h3>
+          <p style="margin:0; font-size:15.5px; line-height:1.6; color:#C4C2CE;">Te entregamos un mapa de oportunidades ordenadas por retorno esperado. Empezamos por las que más impacto tienen.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); position:relative; overflow:hidden; border-radius:18px; padding:30px;">
+          <div style="position:absolute; top:14px; right:18px; font-family:'General Sans',sans-serif; font-weight:600; font-size:54px; line-height:1; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.28;">04</div>
+          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px; max-width:80%;">Implementación medible</h3>
+          <p style="margin:0; font-size:15.5px; line-height:1.6; color:#C4C2CE;">Ejecutamos casos concretos con métricas definidas. Sabemos qué esperar y medimos si funciona.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 5 · CASOS DE USO -->
+  <section id="casos" style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Casos de uso reales</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Dónde aplicamos IA en negocios como el tuyo</h2>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:64ch;">No teorías abstractas. Estos son los casos concretos que implementamos en PYMEs y comercio local.</p>
+      </div>
+      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:44px;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18l-1 3 3.2-1A8 8 0 1 0 5 18Z"/><circle cx="9.5" cy="12" r="1"/><circle cx="14.5" cy="12" r="1"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Agentes de atención al cliente 24/7</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Chatbots inteligentes en web y WhatsApp que entienden contexto, responden FAQs, derivan a humano cuando hace falta y guían hasta reservar cita. Disponibles fuera de horario sin coste de personal.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6.5" r="2.4"/><circle cx="18" cy="17.5" r="2.4"/><path d="M8.2 11l7.6-3.8M8.2 13l7.6 3.8"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Automatizaciones avanzadas con n8n</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Workflows que conectan tus sistemas (CRM, calendario, email, WhatsApp, Excel) y eliminan tareas manuales. Desde gestión completa de citas hasta sincronización de datos.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7Z"/><path d="M14 3v4h4M10 12h6M10 16h6"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Procesamiento documental con IA</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Extracción automática de datos de facturas, contratos y documentos. Clasificación inteligente, resúmenes y digitalización con OCR avanzado.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4-2v-4Z"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Cualificación automática de leads</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">IA que analiza cada contacto, lo puntúa por probabilidad de conversión y lo asigna al canal correcto. Tu equipo dedica tiempo solo a leads de calidad.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19l2.5-.6L18 7.9a2 2 0 0 0-2.8-2.8L4.6 15.5Z"/><path d="M13.5 6.5l3 3"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Generación de contenido optimizado</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">IA para crear contenido de blog, redes y email marketing. Tono coherente con tu marca y optimización SEO automática.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:26px;">
+          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="9.5" r="2.2"/><path d="M16 19a4 4 0 0 1 6-3"/></svg></div>
+          <h3 style="margin:0 0 8px; font-family:'General Sans',sans-serif; font-weight:600; font-size:18px; line-height:1.3;">Asistentes internos para empleados</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Chatbots para tu equipo que responden dudas internas, generan reportes, consultan datos y automatizan tareas administrativas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 6 · TECNOLOGÍA -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Tecnología que usamos</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Stack moderno, open source y escalable</h2>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:64ch;">Trabajamos con herramientas que el cliente puede mantener si algún día deja de trabajar con nosotros. Sin lock-in, sin dependencias absurdas.</p>
+      </div>
+      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:44px;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><img src="/assets/logos/n8n.svg" alt="n8n" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">n8n</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Plataforma de automatización open source. El motor que conecta todos los sistemas.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><img src="/assets/logos/claude.svg" alt="Claude / GPT" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Claude / GPT</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Modelos de lenguaje de última generación para agentes y procesamiento de texto.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><img src="/assets/logos/supabase.svg" alt="Supabase" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Supabase</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Base de datos en la nube para la memoria de los agentes y los datos del negocio.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><img src="/assets/logos/whatsapp.svg" alt="WhatsApp Business API" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">WhatsApp Business API</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Integración oficial para agentes que responden por WhatsApp con escalado a humano.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><img src="/assets/logos/make.svg" alt="Make / Zapier" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Make / Zapier</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Automatizaciones complementarias cuando n8n no es la mejor opción.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10);"><span style="font-family:'Geist',monospace; font-weight:700; font-size:15px; color:#A78BFA;">&lt;/&gt;</span></div>
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Custom integrations</h3>
+          </div>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">APIs personalizadas y conectores a medida cuando las herramientas estándar no llegan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 7 · PROCESO -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:980px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Proceso de implementación</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">De la idea al sistema funcionando</h2>
+      </div>
+      <div style="margin-top:36px;">
+        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">1</div>
+          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Diagnóstico operativo</h3><span style="font-size:12.5px; font-weight:600; color:#9B8CFF; padding:4px 11px; border-radius:9999px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.3);">Semana 1</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#C4C2CE;">Auditamos tus procesos actuales. Identificamos dónde la IA aporta valor real y dónde es mejor no tocar nada. Informe con casos priorizados por ROI.</p></div>
+        </div>
+        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">2</div>
+          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Definición del proyecto</h3><span style="font-size:12.5px; font-weight:600; color:#9B8CFF; padding:4px 11px; border-radius:9999px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.3);">Semana 1-2</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#C4C2CE;">Elegimos juntos el caso de uso a implementar primero. Definimos alcance, objetivos medibles, plazos y herramientas.</p></div>
+        </div>
+        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">3</div>
+          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Desarrollo e integración</h3><span style="font-size:12.5px; font-weight:600; color:#9B8CFF; padding:4px 11px; border-radius:9999px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.3);">Semanas 2-5</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#C4C2CE;">Construimos el sistema y lo integramos con tus herramientas. Validamos en pruebas antes de pasar a producción.</p></div>
+        </div>
+        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">4</div>
+          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Entrenamiento y lanzamiento</h3><span style="font-size:12.5px; font-weight:600; color:#9B8CFF; padding:4px 11px; border-radius:9999px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.3);">Semana 5-6</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#C4C2CE;">Afinamos el modelo con tus datos reales, formamos a tu equipo y lanzamos con monitorización continua los primeros días.</p></div>
+        </div>
+        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08);">
+          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#A78BFA,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">5</div>
+          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Optimización</h3><span style="font-size:12.5px; font-weight:600; color:#9B8CFF; padding:4px 11px; border-radius:9999px; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.3);">Mensual</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#C4C2CE;">Medimos resultados, ajustamos prompts, mejoramos integraciones y expandimos casos. La IA no se entrega, se cultiva.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 8 · RESULTADOS -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Resultados esperables</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Lo que vas a notar en los primeros 90 días</h2>
+      </div>
+      <div class="kael-grid kael-grid--4" style="grid-template-columns:repeat(4,1fr); margin-top:44px;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
+          <div data-count="20" data-prefix="−" data-suffix="h/mes" style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,46px); line-height:1; background-image:linear-gradient(120deg,#8B5CF6,#22D3EE,#6366F1,#3B82F6,#22D3EE); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 7s linear infinite;">−20h/mes</div>
+          <h3 style="margin:12px 0 6px; font-family:'General Sans',sans-serif; font-weight:600; font-size:16px;">Tareas manuales eliminadas</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Tu equipo deja de hacer copia/pegado, gestión de emails repetitivos y tareas que la IA hace mejor.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
+          <div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,46px); line-height:1; background-image:linear-gradient(120deg,#8B5CF6,#22D3EE,#6366F1,#3B82F6,#22D3EE); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 7s linear infinite;">24/7</div>
+          <h3 style="margin:12px 0 6px; font-family:'General Sans',sans-serif; font-weight:600; font-size:16px;">Atención al cliente continua</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Tu negocio responde a leads y consultas incluso cuando estás durmiendo o de vacaciones.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
+          <div data-count="30" data-prefix="+" data-suffix="%" style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,46px); line-height:1; background-image:linear-gradient(120deg,#8B5CF6,#22D3EE,#6366F1,#3B82F6,#22D3EE); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 7s linear infinite;">+30%</div>
+          <h3 style="margin:12px 0 6px; font-family:'General Sans',sans-serif; font-weight:600; font-size:16px;">Capacidad operativa</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Mismo equipo, más trabajo gestionado. Sin contratar a nadie nuevo.</p>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
+          <div data-count="24" data-prefix="&lt;" data-suffix="h" style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,46px); line-height:1; background-image:linear-gradient(120deg,#8B5CF6,#22D3EE,#6366F1,#3B82F6,#22D3EE); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 7s linear infinite;">&lt;24h</div>
+          <h3 style="margin:12px 0 6px; font-family:'General Sans',sans-serif; font-weight:600; font-size:16px;">Tiempo de respuesta a leads</h3>
+          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#A9A6B8;">Cada contacto recibe respuesta inmediata cualificada. Menos leads perdidos por lentitud.</p>
+        </div>
+      </div>
+      <p style="margin:26px 0 0; font-size:13.5px; line-height:1.6; color:rgba(245,244,248,0.45); max-width:70ch;">Métricas orientativas basadas en proyectos del sector. Tu caso concreto se mide con tus números desde el primer día.</p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 9 · PRICING -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Pricing</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Modelos de implementación</h2>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#C4C2CE; max-width:64ch;">La implementación de IA varía mucho según el caso. Ofrecemos tres modelos principales según complejidad.</p>
+      </div>
+      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:48px; align-items:start;">
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:22px; padding:32px;">
+          <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Diagnóstico IA</h3>
+          <p style="margin:6px 0 0; font-size:14.5px; color:#9B8CFF; font-weight:500;">Para saber por dónde empezar</p>
+          <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:26px;">500€ <span style="font-size:15px; color:#A9A6B8; font-weight:500;">pago único</span></div>
+          <div style="margin:0 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Sin compromiso de continuidad</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#C4C2CE;">
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Auditoría operativa completa</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Identificación de casos de uso</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Roadmap priorizado por ROI</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Estimación de ahorro horas/mes</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Estimación de inversión por caso</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Reunión de presentación</div>
+          </div>
+          <a href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; transition:border-color .25s ease;" style-hover="border-color:rgba(255,255,255,0.4);">Solicitar diagnóstico IA</a>
+        </div>
+        <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; position:relative; border-radius:24px; padding:1.6px; background:linear-gradient(160deg,#8B5CF6,#6366F1,#3B82F6); box-shadow:0 0 60px rgba(139,92,246,0.28);">
+          <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); padding:5px 14px; border-radius:9999px; background:linear-gradient(to right,#8B5CF6,#3B82F6); color:#fff; font-size:12px; font-weight:600; letter-spacing:0.04em; white-space:nowrap;">★ Más popular</div>
+          <div style="display:flex; flex-direction:column; height:100%; background:#100d1b; border-radius:22px; padding:32px;">
+            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Implementación estándar</h3>
+            <p style="margin:6px 0 0; font-size:14.5px; color:#9B8CFF; font-weight:500;">Casos de uso pre-definidos</p>
+            <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:23px;">Desde 1.500€ <span style="font-size:14px; color:#A9A6B8; font-weight:500;">setup</span></div>
+            <div style="font-size:18px; color:#C4C2CE;">+ 400€<span style="font-size:14px; color:#A9A6B8;">/mes</span></div>
+            <div style="margin:6px 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Diagnóstico IA incluido</div>
+            <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#C4C2CE;">
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Diagnóstico IA incluido</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Implementación de 1-2 casos de uso</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Integración con tus sistemas</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Formación a tu equipo</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Mantenimiento y optimización mensual</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Soporte directo</div>
+            </div>
+            <a class="mzu-cta" href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:#F5F4F8; color:#0A0A0F; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; box-shadow:0 0 36px rgba(139,92,246,0.35); transition:transform .25s ease;" style-hover="transform:translateY(-3px);">Empezar implementación</a>
+          </div>
+        </div>
+        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:22px; padding:32px;">
+          <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Proyecto a medida</h3>
+          <p style="margin:6px 0 0; font-size:14.5px; color:#9B8CFF; font-weight:500;">Para casos complejos o múltiples</p>
+          <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:23px;">Presupuesto personalizado</div>
+          <div style="margin:0 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Alcance y SLA a definir</div>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#C4C2CE;">
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Diagnóstico extendido</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Implementación de múltiples casos</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Desarrollo a medida</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Integraciones avanzadas</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> Equipo dedicado</div>
+            <div style="display:flex; gap:10px;"><span style="color:#A78BFA;">✓</span> SLA garantizado</div>
+          </div>
+          <a href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; transition:border-color .25s ease;" style-hover="border-color:rgba(255,255,255,0.4);">Solicitar presupuesto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 10 · FAQ -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px;">
+    <div style="max-width:840px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+        <p class="mzu-eye">Preguntas frecuentes</p>
+        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Resolvemos tus dudas sobre IA</h2>
+      </div>
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; margin-top:36px;">
+        
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿La IA va a sustituir a mi equipo?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">No. La IA hace las tareas repetitivas que tu equipo odia para que se centren en lo que aporta más valor: atención humana, decisiones estratégicas, relación con clientes importantes. Es un complemento, no un reemplazo.</p>
+          </details>
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿Necesito tener datos para implementar IA?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">Depende del caso. Algunos (chatbots de FAQ, agentes de reserva) funcionan desde el día 1. Otros (modelos predictivos, recomendadores) necesitan datos históricos. Lo evaluamos en el diagnóstico.</p>
+          </details>
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿Es seguro? ¿Qué pasa con mis datos?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">Todos los datos se procesan en servidores europeos con cumplimiento RGPD. Si usamos modelos de OpenAI o Anthropic, se configuran con políticas de no entrenamiento. Tu información no entra en modelos públicos.</p>
+          </details>
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿Cuánto cuesta mantener un sistema de IA?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">El mantenimiento mensual incluye monitorización, ajustes de prompts, mejoras de integraciones y soporte. El coste de los modelos (tokens de Claude/GPT) varía según uso; para una PYME típica está entre 20-100€/mes y lo gestionamos nosotros.</p>
+          </details>
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿Qué pasa si la IA falla o da una mala respuesta?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">Diseñamos los sistemas con guardrails: temas que no debe tocar, escalado automático a humano cuando no está seguro, registro de todas las conversaciones para auditar. Y monitorizamos activamente los primeros meses.</p>
+          </details>
+          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
+              <span>¿Puedo empezar solo con el diagnóstico?</span>
+              <span class="kf-icon" style="font-size:26px; color:#9B8CFF; line-height:1; flex:none;">+</span>
+            </summary>
+            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#C4C2CE;">Por supuesto. El diagnóstico IA (500€) tiene valor por sí solo. Te quedas con el roadmap y decides si implementas con nosotros, con otro proveedor o internamente.</p>
+          </details>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE 11 · CTA FINAL -->
+  <section style="position:relative; padding:clamp(80px,11vw,140px) 24px; overflow:hidden;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:760px; height:420px; max-width:92vw; border-radius:50%; filter:blur(130px); background:radial-gradient(ellipse, rgba(139,92,246,0.20), rgba(59,130,246,0.10) 55%, transparent 75%); pointer-events:none; z-index:0;" data-parallax="0.04"></div>
+    <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; position:relative; z-index:1; max-width:680px; margin:0 auto; text-align:center;">
+      <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">¿Hay IA aplicable a tu negocio?</h2>
+      <p style="margin:22px 0 0; font-size:19px; line-height:1.6; color:#C4C2CE;">Probablemente sí. Pero la única forma de saberlo en serio es analizar tus procesos reales. Empezamos por ahí, sin presión por implementar nada que no tenga sentido.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
+        <a class="mzu-cta" href="/contacto/" style="padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8; box-shadow:0 0 50px rgba(139,92,246,0.45); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 66px rgba(139,92,246,0.6);">Solicitar diagnóstico de IA</a>
+        <a href="/casos-de-exito/" style="padding:16px 28px; border-radius:9999px; background:rgba(255,255,255,0.04); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:16px; font-weight:500; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-4px);">Ver casos de uso aplicados</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.08); padding:56px 24px 40px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px;" class="kael-grid kael-grid--footer">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <img src="/assets/img/logo-k.png" alt="KAELUM" width="34" height="34" style="width:34px; height:34px; object-fit:contain;" />
+          <span style="font-family:'General Sans',sans-serif; font-weight:600; font-size:19px; letter-spacing:0.16em;">KAELUM</span>
+        </div>
+        <p style="margin:0 0 18px; font-size:15px; line-height:1.6; color:rgba(245,244,248,0.55); max-width:36ch;">Presencia digital e implementación de IA para PYMEs y comercio local de Madrid. Resultados medibles, compromiso a largo plazo.</p>
+        <div style="display:flex; gap:10px;">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#C4C2CE; text-decoration:none; font-size:13px; font-weight:600;" style-hover="border-color:rgba(139,92,246,0.5); color:#fff;">in</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" style="width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#C4C2CE; text-decoration:none; font-size:13px; font-weight:600;" style-hover="border-color:rgba(139,92,246,0.5); color:#fff;">Ig</a>
+          <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" style="width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#C4C2CE; text-decoration:none; font-size:13px; font-weight:600;" style-hover="border-color:rgba(139,92,246,0.5); color:#fff;">Wa</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Servicios</h4>
+        <a href="/servicios/presencia-digital/" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Presencia digital</a>
+        <a href="/servicios/implementacion-ia/" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Implementación de IA</a>
+        <a href="/#para-quien" style="display:block; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Sectores</a>
+      </div>
+      <div>
+        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Empresa</h4>
+        <a href="/sobre-nosotros/" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Sobre nosotros</a>
+        <a href="/casos-de-exito/" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Casos de éxito</a>
+        <a href="/contacto/" style="display:block; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Contacto</a>
+      </div>
+      <div>
+        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Contacto</h4>
+        <a href="/contacto/" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">Diagnóstico gratuito</a>
+        <a href="mailto:contacto@kaelum.es" style="display:block; margin-bottom:11px; font-size:15px; color:#C4C2CE; text-decoration:none;" style-hover="color:#fff;">contacto@kaelum.es</a>
+        <span style="display:block; font-size:15px; color:#C4C2CE;">Madrid, España</span>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06); font-size:13.5px; color:rgba(245,244,248,0.4);">© <span id="year">2026</span> KAELUM. Todos los derechos reservados. Hecho en Madrid.</div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <!-- KAELUM AGENT — chat widget -->
+  <div style="position:fixed; right:22px; bottom:22px; z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:14px;">
+    <div class="kael-chatpanel" style="width:min(370px,92vw); max-height:min(560px,78vh); flex-direction:column; border-radius:20px; overflow:hidden; background:rgba(15,13,22,0.95); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.10); box-shadow:0 24px 70px rgba(0,0,0,0.55);">
+      <div style="display:flex; align-items:center; gap:12px; padding:15px 16px; border-bottom:1px solid rgba(255,255,255,0.08); background:linear-gradient(135deg, rgba(139,92,246,0.18), rgba(59,130,246,0.10));">
+        <span style="position:relative; width:40px; height:40px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 32% 28%, #211c34, #100d1b); border:1px solid rgba(255,255,255,0.12); box-shadow:0 0 16px rgba(139,92,246,0.45);">
+          <img src="/assets/img/logo-k.png" alt="" width="26" height="26" style="width:26px; height:26px; object-fit:contain;" />
+        </span>
+        <div style="flex:1;">
+          <div style="font-size:15px; font-weight:600; color:#F5F4F8; font-family:'General Sans',sans-serif;">Agente KAELUM</div>
+          <div style="display:flex; align-items:center; gap:6px; font-size:12px; color:rgba(245,244,248,0.6);">
+            <span style="width:7px; height:7px; border-radius:9999px; background:#34D399; box-shadow:0 0 8px #34D399;"></span> En línea
+          </div>
+        </div>
+        <button data-action="close-chat" aria-label="Cerrar chat" style="width:32px; height:32px; border-radius:9999px; background:rgba(255,255,255,0.06); border:none; color:#D9D7E4; font-size:20px; line-height:1; cursor:pointer;" style-hover="background:rgba(255,255,255,0.12);">×</button>
+      </div>
+
+      <div id="kael-chat-scroll" style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:10px; min-height:200px;"></div>
+
+      <div id="kael-chat-quick" style="display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 12px;">
+        <button style="padding:8px 13px; border-radius:9999px; cursor:pointer; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.35); color:#CFC8FF; font-family:inherit; font-size:13px; font-weight:500;" style-hover="background:rgba(139,92,246,0.22);">Quiero un diagnóstico gratuito</button>
+        <button style="padding:8px 13px; border-radius:9999px; cursor:pointer; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.35); color:#CFC8FF; font-family:inherit; font-size:13px; font-weight:500;" style-hover="background:rgba(139,92,246,0.22);">¿Qué servicios ofrecéis?</button>
+        <button style="padding:8px 13px; border-radius:9999px; cursor:pointer; background:rgba(139,92,246,0.12); border:1px solid rgba(139,92,246,0.35); color:#CFC8FF; font-family:inherit; font-size:13px; font-weight:500;" style-hover="background:rgba(139,92,246,0.22);">Hablar con una persona</button>
+      </div>
+
+      <form id="kael-chat-form" style="display:flex; align-items:center; gap:8px; padding:12px 14px; border-top:1px solid rgba(255,255,255,0.08);">
+        <input id="kael-chat-input" type="text" placeholder="Escribe tu mensaje…" autocomplete="off" style="flex:1; padding:11px 14px; border-radius:9999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); color:#F5F4F8; font-family:inherit; font-size:14px; outline:none;" />
+        <button type="submit" aria-label="Enviar" style="width:40px; height:40px; flex:none; border-radius:9999px; border:none; cursor:pointer; background:linear-gradient(135deg,#8B5CF6,#3B82F6); display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px rgba(139,92,246,0.4);">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 11 L21 3 L13 21 L11 13 Z" fill="#fff"/></svg>
+        </button>
+      </form>
+      <div style="padding:0 16px 12px; text-align:center; font-size:11px; color:rgba(245,244,248,0.35);">Demo · IA real próximamente</div>
+    </div>
+
+    <button data-action="toggle-chat" aria-label="Abrir chat" aria-expanded="false" style="position:relative; width:64px; height:64px; border-radius:9999px; border:1px solid rgba(255,255,255,0.12); cursor:pointer; background:radial-gradient(circle at 32% 28%, #221d36, #0e0b18); box-shadow:0 10px 34px rgba(139,92,246,0.5); display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:scale(1.06);">
+      <span style="position:absolute; inset:0; border-radius:9999px; background:rgba(139,92,246,0.5); animation:kael-ping 2.4s ease-out infinite; z-index:0;"></span>
+      <img src="/assets/img/logo-k.png" alt="" width="38" height="38" style="position:relative; z-index:1; width:38px; height:38px; object-fit:contain; animation:kael-logopulse 3.6s ease-in-out infinite;" />
+    </button>
+  </div>
+
+  <!-- mobile overlay menu -->
+  <div class="kael-mobilemenu" style="position:fixed; inset:0; z-index:80; background:rgba(10,10,15,0.97); backdrop-filter:blur(18px); flex-direction:column; padding:24px 32px;">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <span style="display:flex; align-items:center; gap:10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px; letter-spacing:0.16em;"><img src="/assets/img/logo-k.png" alt="" width="36" height="36" style="width:36px; height:36px; object-fit:contain;" />KAELUM</span>
+      <button data-action="close-menu" aria-label="Cerrar menú" style="width:42px; height:42px; background:none; border:none; color:#F5F4F8; font-size:30px; cursor:pointer; line-height:1;">×</button>
+    </div>
+    <nav style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:22px;">
+      <a href="/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Inicio</a>
+      <a href="/servicios/presencia-digital/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Presencia Digital</a>
+      <a href="/servicios/implementacion-ia/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Implementación de IA</a>
+      <a href="/casos-de-exito/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Casos de éxito</a>
+      <a href="/sobre-nosotros/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Sobre nosotros</a>
+      <a href="/contacto/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Contacto</a>
+    </nav>
+    <a href="/contacto/" style="padding:16px; border-radius:9999px; text-align:center; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8;">Diagnóstico gratuito</a>
+  </div>
+</div>
+
+<script src="/assets/js/main.js?v=4" defer></script>
 </body>
 </html>
