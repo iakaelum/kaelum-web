@@ -269,7 +269,49 @@
   }
 
   /* ---------- Chat "Agente KAELUM" (demo, respuestas guionizadas) ---------- */
+  // Markup del widget: ÚNICO punto de definición. Se inyecta en <body> al cargar
+  // (en todas las páginas que cargan main.js, salvo las que tengan data-no-chat,
+  // p. ej. la 404). Para cambiar el widget, edita solo este template + los estilos
+  // .kael-chat-* en style.css. Nunca vuelvas a copiarlo en el HTML de las páginas.
+  var CHAT_WIDGET_HTML =
+    '<div class="kael-chat-root">' +
+      '<div class="kael-chatpanel">' +
+        '<div class="kael-chat-header">' +
+          '<span class="kael-chat-avatar"><img src="/assets/img/logo-k.png" alt="" width="26" height="26" /></span>' +
+          '<div class="kael-chat-headtext">' +
+            '<div class="kael-chat-title">Agente KAELUM</div>' +
+            '<div class="kael-chat-status"><span class="kael-chat-status-dot"></span> En línea</div>' +
+          '</div>' +
+          '<button data-action="close-chat" aria-label="Cerrar chat" class="kael-chat-close">×</button>' +
+        '</div>' +
+        '<div id="kael-chat-scroll" class="kael-chat-scroll"></div>' +
+        '<div id="kael-chat-quick" class="kael-chat-quick">' +
+          '<button class="kael-chat-quickbtn">Quiero un diagnóstico gratuito</button>' +
+          '<button class="kael-chat-quickbtn">¿Qué servicios ofrecéis?</button>' +
+          '<button class="kael-chat-quickbtn">Hablar con una persona</button>' +
+        '</div>' +
+        '<form id="kael-chat-form" class="kael-chat-form">' +
+          '<input id="kael-chat-input" class="kael-chat-input" type="text" placeholder="Escribe tu mensaje…" autocomplete="off" />' +
+          '<button type="submit" aria-label="Enviar" class="kael-chat-send"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 11 L21 3 L13 21 L11 13 Z" fill="#fff"/></svg></button>' +
+        '</form>' +
+        '<div class="kael-chat-note">Demo · IA real próximamente</div>' +
+      '</div>' +
+      '<button data-action="toggle-chat" aria-label="Abrir chat" aria-expanded="false" class="kael-chat-fab">' +
+        '<span class="kael-chat-fab-ping"></span>' +
+        '<img src="/assets/img/logo-k.png" alt="" width="38" height="38" class="kael-chat-fab-logo" />' +
+      '</button>' +
+    '</div>';
+
+  function injectChatWidget() {
+    if (document.body.hasAttribute("data-no-chat")) return;  // páginas que lo excluyen (404)
+    if (document.querySelector(".kael-chatpanel")) return;    // evita doble inyección
+    var wrap = document.createElement("div");
+    wrap.innerHTML = CHAT_WIDGET_HTML;
+    document.body.appendChild(wrap.firstElementChild);
+  }
+
   function initChat() {
+    injectChatWidget();
     var panel = document.querySelector(".kael-chatpanel");
     var scroll = document.getElementById("kael-chat-scroll");
     if (!panel || !scroll) return;
@@ -279,21 +321,20 @@
     var typing = false;
 
     function bubble(text, who) {
+      var w = who === "user" ? "user" : "bot";
       var row = document.createElement("div");
-      row.style.cssText = "display:flex;justify-content:" + (who === "user" ? "flex-end" : "flex-start") + ";";
+      row.className = "kael-chat-row kael-chat-row--" + w;
       var b = document.createElement("div");
+      b.className = "kael-chat-msg kael-chat-msg--" + w;
       b.textContent = text;
-      b.style.cssText = who === "user"
-        ? "max-width:80%;padding:10px 14px;border-radius:15px 15px 4px 15px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);color:#fff;font-size:14px;line-height:1.5;"
-        : "max-width:84%;padding:10px 14px;border-radius:15px 15px 15px 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#EDECF2;font-size:14px;line-height:1.5;";
       row.appendChild(b); scroll.appendChild(row); scroll.scrollTop = scroll.scrollHeight;
     }
     function showTyping() {
       typing = true;
       var row = document.createElement("div");
       row.id = "kael-typing";
-      row.style.cssText = "display:flex;justify-content:flex-start;";
-      row.innerHTML = '<div style="display:flex;gap:4px;padding:12px 14px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);"><span style="width:6px;height:6px;border-radius:9999px;background:#A9A6C0;animation:kael-blink 1.2s infinite;"></span><span style="width:6px;height:6px;border-radius:9999px;background:#A9A6C0;animation:kael-blink 1.2s infinite .2s;"></span><span style="width:6px;height:6px;border-radius:9999px;background:#A9A6C0;animation:kael-blink 1.2s infinite .4s;"></span></div>';
+      row.className = "kael-chat-row kael-chat-row--bot";
+      row.innerHTML = '<div class="kael-chat-typing"><span></span><span></span><span></span></div>';
       scroll.appendChild(row); scroll.scrollTop = scroll.scrollHeight;
     }
     function hideTyping() { typing = false; var t = document.getElementById("kael-typing"); if (t) t.remove(); }
