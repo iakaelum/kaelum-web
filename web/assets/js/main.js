@@ -7,6 +7,11 @@
    ============================================================ */
 (function () {
   "use strict";
+
+  // Endpoint del agente IA (Cloudflare Worker proxy → OpenRouter).
+  // TODO: sustituir TU-SUBDOMINIO por la URL real del Worker tras `wrangler deploy`.
+  var CHAT_API = "https://kaelum-chat.TU-SUBDOMINIO.workers.dev/";
+
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var on = function (el, ev, fn, o) { el && el.addEventListener(ev, fn, o); };
@@ -294,7 +299,6 @@
           '<input id="kael-chat-input" class="kael-chat-input" type="text" placeholder="Escribe tu mensaje…" autocomplete="off" />' +
           '<button type="submit" aria-label="Enviar" class="kael-chat-send"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 11 L21 3 L13 21 L11 13 Z" fill="#fff"/></svg></button>' +
         '</form>' +
-        '<div class="kael-chat-note">Demo · IA real próximamente</div>' +
       '</div>' +
       '<button data-action="toggle-chat" aria-label="Abrir chat" aria-expanded="false" class="kael-chat-fab">' +
         '<span class="kael-chat-fab-ping"></span>' +
@@ -338,21 +342,43 @@
       scroll.appendChild(row); scroll.scrollTop = scroll.scrollHeight;
     }
     function hideTyping() { typing = false; var t = document.getElementById("kael-typing"); if (t) t.remove(); }
-    function reply(text) {
-      var t = text.toLowerCase(), r;
-      if (/diagn|gratis|gratu|auditor/.test(t)) r = "Genial. Cuéntanos tu negocio en la página de Contacto y te preparamos un diagnóstico gratuito, sin compromiso.";
-      else if (/servici|presencia|web|ia|agente|automatiz/.test(t)) r = "Trabajamos dos líneas: Presencia Digital (web, SEO, reservas) e Implementación de IA (agentes, n8n). ¿Cuál encaja mejor contigo?";
-      else if (/person|human|hablar|llam|tel/.test(t)) r = "Claro. Escríbenos a contacto@kaelum.es y te responde un humano en menos de 24 h.";
-      else if (/precio|cuest|cuánto|cuanto|tarifa/.test(t)) r = "Depende del alcance, pero empezamos siempre por un diagnóstico gratuito. Con él te damos un presupuesto cerrado, sin sorpresas.";
-      else r = "Buena pregunta. Lo más útil es un diagnóstico gratuito: cuéntanoslo en Contacto y te orientamos con honestidad.";
-      if (quickWrap) quickWrap.style.display = "none";
-      showTyping();
-      setTimeout(function () { hideTyping(); bubble(r, "bot"); }, 900 + Math.random() * 500);
-    }
-    function pushUser(text) { if (!text || !text.trim()) return; bubble(text.trim(), "user"); reply(text); }
 
-    // mensaje inicial
-    bubble("¡Hola! Soy el agente de KAELUM 👋 ¿En qué te ayudo? (Demo · IA real próximamente)", "bot");
+    // Historial de la conversación que se envía al Worker en cada turno.
+    var history = [];   // [{ role: "user" | "assistant", content: "..." }]
+    var sending = false;
+
+    function send(text) {
+      text = (text || "").trim();
+      if (!text || sending) return;
+      sending = true;
+      if (quickWrap) quickWrap.style.display = "none";
+      bubble(text, "user");
+      history.push({ role: "user", content: text });
+      showTyping();
+      fetch(CHAT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          hideTyping();
+          if (data && data.reply) {
+            bubble(data.reply, "bot");
+            history.push({ role: "assistant", content: data.reply });
+          } else {
+            bubble((data && data.error) || "Disculpa, no he podido responder. Inténtalo de nuevo en unos segundos.", "bot");
+          }
+        })
+        .catch(function () {
+          hideTyping();
+          bubble("Disculpa, hay un problema de conexión. Inténtalo de nuevo en unos segundos.", "bot");
+        })
+        .then(function () { sending = false; });
+    }
+
+    // mensaje inicial (solo UI; no entra en el historial enviado al modelo)
+    bubble("¡Hola! Soy el agente de KAELUM 👋 ¿En qué te ayudo?", "bot");
 
     document.querySelectorAll('[data-action="toggle-chat"]').forEach(function (b) {
       on(b, "click", function () {
@@ -365,9 +391,9 @@
       on(b, "click", function () { panel.classList.remove("open"); });
     });
     if (quickWrap) quickWrap.querySelectorAll("button").forEach(function (q) {
-      on(q, "click", function () { pushUser(q.textContent); });
+      on(q, "click", function () { send(q.textContent); });
     });
-    on(form, "submit", function (e) { e.preventDefault(); var v = input.value; input.value = ""; pushUser(v); });
+    on(form, "submit", function (e) { e.preventDefault(); var v = input.value; input.value = ""; send(v); });
   }
 
   /* ---------- Formulario de Contacto (validación + Formspree AJAX) ---------- */

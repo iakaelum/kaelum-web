@@ -1,0 +1,11 @@
+name = "kaelum-chat"
+main = "src/index.js"
+compatibility_date = "2026-06-22"
+
+# La API key de OpenRouter NO va aquí. Se configura como secreto del Worker:
+#   wrangler secret put OPENROUTER_API_KEY
+#
+# Despliegue:
+#   wrangler login
+#   wrangler secret put OPENROUTER_API_KEY
+#   wrangler deploy
