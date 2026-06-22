@@ -9,8 +9,7 @@
   "use strict";
 
   // Endpoint del agente IA (Cloudflare Worker proxy → OpenRouter).
-  // TODO: sustituir TU-SUBDOMINIO por la URL real del Worker tras `wrangler deploy`.
-  var CHAT_API = "https://kaelum-chat.TU-SUBDOMINIO.workers.dev/";
+  var CHAT_API = "https://kaelum-chat.iakaelum.workers.dev/";
 
   document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
