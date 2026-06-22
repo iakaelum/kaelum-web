@@ -164,7 +164,9 @@ a{color:inherit;}
    El markup se inyecta desde main.js (injectChatWidget); aquí vive
    todo su estilo. Único punto de definición visual del widget.
    ============================================================ */
-.kael-chat-root{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+/* Geist explícito: el widget se inyecta en <body>, fuera del contenedor
+   .mzbody que fija la fuente del sitio, así que la heredamos aquí. */
+.kael-chat-root{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:14px;font-family:'Geist',-apple-system,system-ui,sans-serif;}
 
 /* Panel (display lo controlan .kael-chatpanel / .open más arriba) */
 .kael-chatpanel{width:min(370px,92vw);max-height:min(560px,78vh);flex-direction:column;border-radius:20px;overflow:hidden;background:rgba(15,13,22,0.95);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);box-shadow:0 24px 70px rgba(0,0,0,0.55);}
@@ -201,9 +203,19 @@ a{color:inherit;}
 .kael-chat-row{display:flex;}
 .kael-chat-row--user{justify-content:flex-end;}
 .kael-chat-row--bot{justify-content:flex-start;}
-.kael-chat-msg{padding:10px 14px;font-size:14px;line-height:1.5;}
+.kael-chat-msg{padding:10px 14px;font-size:14px;line-height:1.5;overflow-wrap:anywhere;}
 .kael-chat-msg--user{max-width:80%;border-radius:15px 15px 4px 15px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);color:#fff;}
 .kael-chat-msg--bot{max-width:84%;border-radius:15px 15px 15px 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#EDECF2;}
+/* Markdown renderizado dentro de los mensajes del agente */
+.kael-chat-msg strong{font-weight:600;}
+.kael-chat-msg em{font-style:italic;}
+.kael-chat-msg p{margin:8px 0;}
+.kael-chat-msg p:first-child{margin-top:0;}
+.kael-chat-msg p:last-child{margin-bottom:0;}
+.kael-chat-msg ul,.kael-chat-msg ol{margin:6px 0;padding-left:20px;}
+.kael-chat-msg li{margin:3px 0;}
+.kael-chat-msg a{color:#B9A9FF;text-decoration:none;}
+.kael-chat-msg a:hover{text-decoration:underline;}
 .kael-chat-typing{display:flex;gap:4px;padding:12px 14px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);}
 .kael-chat-typing span{width:6px;height:6px;border-radius:9999px;background:#A9A6C0;animation:kael-blink 1.2s infinite;}
 .kael-chat-typing span:nth-child(2){animation-delay:.2s;}

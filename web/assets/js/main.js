@@ -313,6 +313,49 @@
     document.body.appendChild(wrap.firstElementChild);
   }
 
+  // Escapa <, >, & ANTES de cualquier conversión: así el texto del agente
+  // nunca puede inyectar HTML arbitrario en el chat.
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Convierte el Markdown que devuelve el agente a HTML (negrita, cursiva,
+  // listas, enlaces y saltos de línea/párrafo). Se aplica SOLO a los mensajes
+  // del agente (el texto del usuario va siempre como textContent).
+  function renderMarkdown(text) {
+    var s = escapeHtml(text).replace(/\r\n/g, "\n");
+
+    // Inline: enlaces [texto](url), negrita **t**, cursiva *t*
+    s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
+
+    // Bloques: listas (-/*, y 1.) y párrafos separados por línea en blanco.
+    var lines = s.split("\n"), html = "", run = [], i = 0;
+    function flush() { if (run.length) { html += "<p>" + run.join("<br>") + "</p>"; run = []; } }
+    while (i < lines.length) {
+      var ln = lines[i];
+      if (/^\s*[-*]\s+/.test(ln)) {
+        flush();
+        var ul = "";
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { ul += "<li>" + lines[i].replace(/^\s*[-*]\s+/, "").trim() + "</li>"; i++; }
+        html += "<ul>" + ul + "</ul>";
+      } else if (/^\s*\d+\.\s+/.test(ln)) {
+        flush();
+        var ol = "";
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { ol += "<li>" + lines[i].replace(/^\s*\d+\.\s+/, "").trim() + "</li>"; i++; }
+        html += "<ol>" + ol + "</ol>";
+      } else if (ln.trim() === "") {
+        flush(); i++;            // línea en blanco → separación de párrafo
+      } else {
+        run.push(ln); i++;       // salto simple → <br> dentro del párrafo
+      }
+    }
+    flush();
+    return html;
+  }
+
   function initChat() {
     injectChatWidget();
     var panel = document.querySelector(".kael-chatpanel");
@@ -324,12 +367,13 @@
     var typing = false;
 
     function bubble(text, who) {
-      var w = who === "user" ? "user" : "bot";
+      var isUser = who === "user";
       var row = document.createElement("div");
-      row.className = "kael-chat-row kael-chat-row--" + w;
+      row.className = "kael-chat-row kael-chat-row--" + (isUser ? "user" : "bot");
       var b = document.createElement("div");
-      b.className = "kael-chat-msg kael-chat-msg--" + w;
-      b.textContent = text;
+      b.className = "kael-chat-msg kael-chat-msg--" + (isUser ? "user" : "bot");
+      if (isUser) b.textContent = text;             // usuario: texto plano (seguridad)
+      else b.innerHTML = renderMarkdown(text);       // agente: Markdown → HTML escapado
       row.appendChild(b); scroll.appendChild(row); scroll.scrollTop = scroll.scrollHeight;
     }
     function showTyping() {
