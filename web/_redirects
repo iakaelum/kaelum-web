@@ -1,0 +1,4 @@
+# Cloudflare Pages — redirecciones
+# Casos de éxito retirado del público (jun 2026). La página sigue en el repo
+# pero no se enlaza; cualquier acceso se redirige a contacto.
+/casos-de-exito/* /contacto/ 301
