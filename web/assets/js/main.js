@@ -135,10 +135,10 @@
     var base = nav.style.background;
     function upd() {
       if ((window.scrollY || 0) > 40) {
-        nav.style.background = "rgba(10,8,16,0.82)";
+        nav.style.background = "rgba(10, 8, 32,0.82)";
         nav.style.borderBottomColor = "rgba(255,255,255,0.10)";
       } else {
-        nav.style.background = base || "rgba(10,8,16,0.35)";
+        nav.style.background = base || "rgba(10, 8, 32,0.35)";
         nav.style.borderBottomColor = "rgba(255,255,255,0.06)";
       }
     }
@@ -231,13 +231,13 @@
         nodeEls = corners.map(function (c) {
           var el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
           el.setAttribute("cx", c[0].toFixed(1)); el.setAttribute("cy", c[1].toFixed(1)); el.setAttribute("r", "3.6");
-          el.setAttribute("fill", "#4B4866"); el.style.transition = "fill .3s,opacity .3s,filter .3s"; el.style.opacity = "0.5";
+          el.setAttribute("fill", "#2A2148"); el.style.transition = "fill .3s,opacity .3s,filter .3s"; el.style.opacity = "0.5";
           nodesG.appendChild(el); return { el: el, y: c[1] };
         });
       }
       if (reduce) {
         path.style.strokeDashoffset = 0; if (comet) comet.style.opacity = "0";
-        nodeEls.forEach(function (n) { n.el.setAttribute("fill", "#7CC2FF"); n.el.style.opacity = "1"; });
+        nodeEls.forEach(function (n) { n.el.setAttribute("fill", "#B8A3FF"); n.el.style.opacity = "1"; });
       } else { path.style.strokeDashoffset = L; update(); }
     }
     function update() {
@@ -261,9 +261,9 @@
       } catch (e) {}
       nodeEls.forEach(function (n) {
         var lit = prog >= (n.y / H) - 0.012;
-        n.el.setAttribute("fill", lit ? "#7CC2FF" : "#4B4866");
+        n.el.setAttribute("fill", lit ? "#B8A3FF" : "#2A2148");
         n.el.style.opacity = lit ? "1" : "0.5";
-        n.el.style.filter = lit ? "drop-shadow(0 0 6px rgba(124,194,255,0.9))" : "none";
+        n.el.style.filter = lit ? "drop-shadow(0 0 6px rgba(184, 163, 255,0.9))" : "none";
       });
       if (looping) requestAnimationFrame(tick);
     }
@@ -529,8 +529,33 @@
     });
   }
 
+  /* ---------- Hero typewriter: "Compite con [frase]" ---------- */
+  function initTyped() {
+    var el = document.getElementById("typed");
+    if (!el) return;
+    var phrases = ["los grandes.", "menos humo.", "menos esfuerzo.", "más datos."];
+    el.textContent = phrases[0];
+    if (reduce) return; // sin animación: deja la primera frase fija
+    var idx = 0;
+    function fadeOut() { el.style.opacity = "0"; setTimeout(next, 450); }
+    function next() {
+      idx = (idx + 1) % phrases.length;
+      el.textContent = "";
+      el.style.opacity = "1";
+      setTimeout(function () { typeStep(0); }, 120);
+    }
+    function typeStep(i) {
+      var p = phrases[idx];
+      el.textContent = p.slice(0, i + 1);
+      if (i + 1 < p.length) setTimeout(function () { typeStep(i + 1); }, 75);
+      else setTimeout(fadeOut, 2800);
+    }
+    setTimeout(fadeOut, 2800); // arranca el ciclo tras mostrar la 1ª frase
+  }
+
   function init() {
     initHover();
+    initTyped();
     initCardHover();
     initParallax();
     initReveals();
