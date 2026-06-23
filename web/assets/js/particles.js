@@ -17,7 +17,7 @@
   var mouse = { x: -9999, y: -9999, active: false };
   var REPEL_RADIUS = isMobile ? 90 : 140;
   var REPEL_FORCE = 0.9;
-  var COLORS = ["#6B5CE7", "#A78BFA", "#4338CA", "#818cf8"];
+  var COLORS = ["#6B5CE7", "#B8A3FF", "#4338CA", "#818cf8"];
 
   function size() {
     var rect = canvas.getBoundingClientRect();
