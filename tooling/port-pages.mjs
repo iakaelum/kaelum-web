@@ -17,7 +17,9 @@ const LINKS = {
   "Inicio.dc.html": "/",
   "Presencia-Digital.dc.html": "/servicios/presencia-digital/",
   "Implementacion-IA.dc.html": "/servicios/implementacion-ia/",
-  "Casos-de-exito.dc.html": "/casos-de-exito/",
+  // Casos de éxito retirado del público (jun 2026): cualquier enlace al handoff de casos
+  // se reescribe a /contacto/, coherente con la regla 301 de web/_redirects.
+  "Casos-de-exito.dc.html": "/contacto/",
   "Sobre-nosotros.dc.html": "/sobre-nosotros/",
   "Contacto.dc.html": "/contacto/",
 };
@@ -85,9 +87,11 @@ const PAGES = [
   { file: "Implementacion-IA.dc.html", out: "servicios/implementacion-ia/index.html", url: "/servicios/implementacion-ia/",
     title: "Implementación de IA para PYMEs — Agentes y n8n | Kaelum",
     desc: "IA aplicada con casos concretos: agentes 24/7, automatizaciones con n8n, procesamiento documental y cualificación de leads. Diagnóstico de IA por ROI para PYMEs de Madrid." },
-  { file: "Casos-de-exito.dc.html", out: "casos-de-exito/index.html", url: "/casos-de-exito/",
-    title: "Casos de éxito | Kaelum",
-    desc: "Casos reales de PYMEs que mejoran su presencia digital y automatizan procesos con Kaelum. Pronto publicaremos nuestros primeros casos de estudio verificables." },
+  // Casos de éxito retirado del público (jun 2026): la página se conserva en el repo pero
+  // ya no se regenera ni se enlaza (_redirects la manda 301 a /contacto/). Descomentar para retomarla.
+  // { file: "Casos-de-exito.dc.html", out: "casos-de-exito/index.html", url: "/casos-de-exito/",
+  //   title: "Casos de éxito | Kaelum",
+  //   desc: "Casos reales de PYMEs que mejoran su presencia digital y automatizan procesos con Kaelum. Pronto publicaremos nuestros primeros casos de estudio verificables." },
   { file: "Sobre-nosotros.dc.html", out: "sobre-nosotros/index.html", url: "/sobre-nosotros/",
     title: "Sobre nosotros — Jaime y Rodrigo, fundadores de Kaelum",
     desc: "Somos Jaime y Rodrigo. Kaelum nace en 2026 para poner la IA y la presencia digital de las grandes empresas al alcance de las PYMEs de Madrid Oeste. Con honestidad." },

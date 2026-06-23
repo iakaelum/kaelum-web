@@ -20,7 +20,7 @@ web/        → sitio (lo que despliega Cloudflare Pages, build output dir = web
   servicios/index.html                → Servicios (índice)
   servicios/presencia-digital/        → Servicio: Presencia Digital
   servicios/implementacion-ia/        → Servicio: Implementación de IA
-  casos-de-exito/index.html           → Casos de éxito
+  casos-de-exito/index.html           → Casos de éxito (RETIRADA del público: no enlazada en menú/footer; _redirects la manda 301 a /contacto/. El archivo se conserva por si se retoma)
   contacto/index.html                 → Contacto
   sobre-nosotros/index.html           → Sobre nosotros
   blog/index.html                     → Blog
