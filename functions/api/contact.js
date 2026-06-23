@@ -66,7 +66,7 @@ export async function onRequest(context) {
   try {
     const res = await fetch(webhookUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json; charset=utf-8" },
       body: JSON.stringify(payload),
     });
     if (!res.ok) {
