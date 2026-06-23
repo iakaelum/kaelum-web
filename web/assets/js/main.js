@@ -439,7 +439,7 @@
     on(form, "submit", function (e) { e.preventDefault(); var v = input.value; input.value = ""; send(v); });
   }
 
-  /* ---------- Formulario de Contacto (validación + Formspree AJAX) ---------- */
+  /* ---------- Formulario de Contacto (validación + proxy /api/contact → n8n) ---------- */
   function initContactForm() {
     var form = document.querySelector("[data-contact-form]");
     if (!form) return;
@@ -447,10 +447,11 @@
       nombre: "Dinos cómo te llamas.",
       email_empty: "Necesitamos un email para enviarte el informe.",
       email_bad: "Ese email no parece válido.",
-      telefono: "Déjanos un teléfono para poder contactarte.",
       negocio: "¿Cómo se llama tu negocio?",
+      mensaje: "Cuéntanos brevemente qué necesitas.",
       rgpd: "Marca la casilla para que podamos contactarte."
     };
+    function get(n) { var x = form.elements[n]; return x ? (x.value || "").trim() : ""; }
     function setError(field, text) {
       var wrap = form.querySelector('[data-field="' + field + '"]');
       if (!wrap) return null;
@@ -464,15 +465,20 @@
     }
     function validate() {
       var first = null, el;
-      var get = function (n) { var x = form.elements[n]; return x ? (x.value || "").trim() : ""; };
       el = setError("nombre", get("nombre") ? "" : msgs.nombre); first = first || el;
       var email = get("email");
       el = setError("email", !email ? msgs.email_empty : (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? msgs.email_bad : "")); first = first || el;
-      el = setError("telefono", get("telefono") ? "" : msgs.telefono); first = first || el;
       el = setError("negocio", get("negocio") ? "" : msgs.negocio); first = first || el;
+      el = setError("mensaje", get("mensaje") ? "" : msgs.mensaje); first = first || el;
       var rgpd = form.elements["rgpd"];
       el = setError("rgpd", rgpd && rgpd.checked ? "" : msgs.rgpd); first = first || el;
       return first;
+    }
+    function note(text, ok) {
+      var n = form.querySelector(".kael-formnote");
+      if (!n) { n = document.createElement("p"); n.className = "kael-formnote"; form.appendChild(n); }
+      n.style.cssText = "margin:14px 0 0;font-size:14.5px;line-height:1.55;" + (ok ? "color:#A7F3D0;" : "color:#FCA5A5;");
+      n.textContent = text;
     }
     var btn = form.querySelector('[type="submit"]');
     on(form, "submit", function (e) {
@@ -481,20 +487,44 @@
       if (bad) { bad.focus(); return; }
       var label = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Enviando…"; }
-      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+      var rgpdEl = form.elements["rgpd"];
+      var payload = {
+        nombre: get("nombre"),
+        apellidos: get("apellidos"),
+        email: get("email"),
+        telefono: get("telefono"),
+        mensaje: get("mensaje"),
+        negocio: get("negocio"),
+        sector: get("sector"),
+        interes: get("interes"),
+        web: get("web"),
+        rgpd: !!(rgpdEl && rgpdEl.checked),
+        empresa: get("empresa") // honeypot: el servidor lo evalúa y NO lo reenvía a n8n
+      };
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
         .then(function (r) {
-          if (r.ok) {
-            form.innerHTML = '<div style="text-align:center;padding:20px 6px;">' +
-              '<div style="width:60px;height:60px;margin:0 auto 18px;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8B5CF6,#22D3EE);"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-11"/></svg></div>' +
-              '<h3 style="margin:0 0 8px;font-family:\'General Sans\',sans-serif;font-weight:600;font-size:24px;color:#F5F4F8;">¡Recibido!</h3>' +
-              '<p style="margin:0;color:#B9B6C8;font-size:16px;line-height:1.6;">Te respondemos en menos de 24 h con los siguientes pasos. Mientras, <a href="/servicios/presencia-digital/" style="color:#A78BFA;">mira nuestros servicios</a>.</p></div>';
-          } else { netError(); }
+          return r.json().catch(function () { return null; }).then(function (d) {
+            return { ok: r.ok && d && d.ok === true, data: d };
+          });
         })
-        .catch(netError);
-      function netError() {
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            ["nombre", "email", "negocio", "mensaje", "rgpd"].forEach(function (f) { setError(f, ""); });
+            if (btn) { btn.disabled = false; btn.textContent = label; }
+            note("Mensaje enviado, te responderemos pronto.", true);
+          } else {
+            netError(res.data && res.data.error);
+          }
+        })
+        .catch(function () { netError(); });
+      function netError(serverMsg) {
         if (btn) { btn.disabled = false; btn.textContent = label; }
-        var note = form.querySelector(".kael-formnote") || (function () { var n = document.createElement("p"); n.className = "kael-formnote"; n.style.cssText = "margin:14px 0 0;font-size:14px;color:#FCA5A5;"; form.appendChild(n); return n; })();
-        note.textContent = "No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos a contacto@kaelum.es.";
+        note(serverMsg || "No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos a contacto@kaelum.es.", false);
       }
     });
   }
