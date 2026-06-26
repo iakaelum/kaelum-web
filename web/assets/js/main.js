@@ -202,6 +202,10 @@
      rectos, nodos en cada esquina, suavizado independiente del framerate. */
   function initThread() {
     var svg = document.querySelector(".mzu-line");
+    // En páginas donde el hilo está oculto (p. ej. /contacto/, con display:none),
+    // medir la geometría del SVG (getTotalLength) puede lanzar en algunos navegadores.
+    // No aporta nada ahí, así que lo saltamos.
+    if (svg && getComputedStyle(svg).display === "none") return;
     var path = svg && svg.querySelector(".mzu-prog");
     if (!path) return;
     var track = svg.querySelector(".mzu-track");
@@ -530,19 +534,14 @@
   }
 
   function init() {
-    initHover();
-    initCardHover();
-    initParallax();
-    initReveals();
-    initAutoVideo();
-    initNav();
-    initDropdown();
-    initMenu();
-    initHeroGlow();
-    initHeroVideo();
-    initThread();
-    initChat();
-    initContactForm();
+    // Cada widget corre aislado: si uno falla (p. ej. initThread sobre un SVG oculto
+    // en algún navegador), no impide que se conecten los demás —incluido el
+    // formulario de contacto y su envío—.
+    [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
+     initNav, initDropdown, initMenu, initHeroGlow, initHeroVideo,
+     initThread, initChat, initContactForm].forEach(function (fn) {
+      try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
+    });
     var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
