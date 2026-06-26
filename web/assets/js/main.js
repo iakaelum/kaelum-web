@@ -485,12 +485,9 @@
       n.textContent = text;
     }
     var btn = form.querySelector('[type="submit"]');
-    console.log("[CONTACTO] initContactForm: handler de submit CONECTADO. btn submit:", btn ? (btn.getAttribute("data-step-submit") != null ? "(botón paso 3)" : btn.outerHTML.slice(0, 50)) : "NO ENCONTRADO ✗");
     on(form, "submit", function (e) {
-      console.log("[CONTACTO] >>> evento 'submit' del <form> DISPARADO. submitter:", e.submitter ? (e.submitter.getAttribute("data-step-submit") != null ? "botón paso 3 ✓" : e.submitter.outerHTML.slice(0, 40)) : "(desconocido)");
       e.preventDefault();
       var bad = validate();
-      console.log("[CONTACTO] validate() →", bad ? ("BLOQUEA (campo vacío/erróneo: " + (bad.name || bad.id || "?") + ")") : "OK, todos los obligatorios válidos");
       if (bad) { bad.focus(); return; }
       var label = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Enviando…"; }
@@ -508,7 +505,6 @@
         rgpd: !!(rgpdEl && rgpdEl.checked),
         empresa: get("empresa") // honeypot: el servidor lo evalúa y NO lo reenvía a n8n
       };
-      console.log("[CONTACTO] llamando fetch('/api/contact')…", payload);
       fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
