@@ -122,60 +122,80 @@
               <h2 style="margin:0 0 6px; font-family:'General Sans',sans-serif; font-weight:600; font-size:24px; letter-spacing:-0.01em;">Solicita tu diagnóstico</h2>
               <p style="margin:0 0 24px; font-size:14.5px; color:#A9A6B8;">Respuesta en menos de 24 horas. Campos con * son obligatorios.</p>
 
-              <form action="/api/contact" method="POST" data-contact-form novalidate style="display:flex; flex-direction:column; gap:16px;">
-                <div style="display:flex; flex-wrap:wrap; gap:16px;">
-                  <div style="flex:1 1 180px;" data-field="nombre">
-                    <label for="ct-nombre" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Nombre *</label>
-                    <input id="ct-nombre" name="nombre" type="text" autocomplete="given-name" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+              <form action="/api/contact" method="POST" data-contact-form data-multistep novalidate style="display:flex; flex-direction:column; gap:16px;">
+
+                <!-- Indicador de progreso -->
+                <div data-step-progress style="margin-bottom:2px;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:9px;">
+                    <span data-step-label style="font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#C4B5FD;">Paso 1 de 3 · Empecemos</span>
+                    <span data-step-count style="flex:none; font-size:13px; color:#A9A6B8;">1 / 3</span>
                   </div>
-                  <div style="flex:1 1 180px;" data-field="apellidos">
-                    <label for="ct-apellidos" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Apellidos</label>
-                    <input id="ct-apellidos" name="apellidos" type="text" autocomplete="family-name" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                  <div style="height:6px; border-radius:9999px; background:rgba(255,255,255,0.08); overflow:hidden;">
+                    <div data-step-bar style="height:100%; width:33.33%; border-radius:9999px; background:linear-gradient(90deg,#8B5CF6,#3B82F6,#22D3EE); transition:width .35s ease;"></div>
                   </div>
                 </div>
-                <div style="display:flex; flex-wrap:wrap; gap:16px;">
-                  <div style="flex:1 1 180px;" data-field="email">
+
+                <!-- PASO 1 · Empecemos -->
+                <div data-step="1" style="display:flex; flex-direction:column; gap:16px;">
+                  <div style="display:flex; flex-wrap:wrap; gap:16px;">
+                    <div style="flex:1 1 180px;" data-field="nombre">
+                      <label for="ct-nombre" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Nombre *</label>
+                      <input id="ct-nombre" name="nombre" type="text" autocomplete="given-name" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                    </div>
+                    <div style="flex:1 1 180px;" data-field="apellidos">
+                      <label for="ct-apellidos" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Apellidos</label>
+                      <input id="ct-apellidos" name="apellidos" type="text" autocomplete="family-name" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                    </div>
+                  </div>
+                  <div data-field="email">
                     <label for="ct-email" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Email *</label>
-                    <input id="ct-email" name="email" type="email" autocomplete="email" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                    <input id="ct-email" name="email" type="email" autocomplete="email" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
                   </div>
-                  <div style="flex:1 1 180px;" data-field="telefono">
+                </div>
+
+                <!-- PASO 2 · Tu negocio -->
+                <div data-step="2" style="display:none; flex-direction:column; gap:16px;">
+                  <div data-field="negocio">
+                    <label for="ct-negocio" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Nombre del negocio *</label>
+                    <input id="ct-negocio" name="negocio" type="text" autocomplete="organization" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                  </div>
+                  <div style="display:flex; flex-wrap:wrap; gap:16px;">
+                    <div style="flex:1 1 180px;">
+                      <label for="ct-sector" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Sector</label>
+                      <select id="ct-sector" name="sector" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(20,17,32,0.6); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);">
+                        <option>Clínica / salud</option><option>Fisioterapia</option><option>Academia / formación</option><option>Inmobiliaria</option><option>Comercio local</option><option>Restauración / hostelería</option><option>Servicios profesionales</option><option>Otro</option>
+                      </select>
+                    </div>
+                    <div style="flex:1 1 180px;">
+                      <label for="ct-interes" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">¿Qué te interesa?</label>
+                      <select id="ct-interes" name="interes" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(20,17,32,0.6); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);">
+                        <option>Presencia digital</option><option>Implementación de IA</option><option>Las dos</option><option>Aún no lo sé</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="ct-web" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Web actual</label>
+                    <input id="ct-web" name="web" type="url" placeholder="https:// (si tienes)" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                  </div>
+                </div>
+
+                <!-- PASO 3 · Cuéntanos -->
+                <div data-step="3" style="display:none; flex-direction:column; gap:16px;">
+                  <div data-field="telefono">
                     <label for="ct-tel" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Teléfono</label>
-                    <input id="ct-tel" name="telefono" type="tel" autocomplete="tel" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                    <input id="ct-tel" name="telefono" type="tel" autocomplete="tel" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
+                  </div>
+                  <div data-field="mensaje">
+                    <label for="ct-msg" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Cuéntanos brevemente *</label>
+                    <textarea id="ct-msg" name="mensaje" rows="3" placeholder="¿Qué te gustaría mejorar o resolver?" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:16px; outline:none; resize:vertical; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);"></textarea>
+                  </div>
+                  <div data-field="rgpd">
+                    <label style="display:flex; align-items:flex-start; gap:11px; cursor:pointer; font-size:14px; line-height:1.5; color:#C4C2CE;">
+                      <input name="rgpd" type="checkbox" value="si" style="flex:none; width:18px; height:18px; margin-top:1px; accent-color:#8B5CF6;" />
+                      <span>Acepto que Kaelum trate mis datos para responder a esta solicitud. <a href="/privacidad/" style="color:#A78BFA; text-decoration:none;" style-hover="text-decoration:underline;">Política de privacidad</a>.</span>
+                    </label>
                   </div>
                 </div>
-                <div data-field="negocio">
-                  <label for="ct-negocio" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Nombre del negocio *</label>
-                  <input id="ct-negocio" name="negocio" type="text" autocomplete="organization" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
-                </div>
-                <div style="display:flex; flex-wrap:wrap; gap:16px;">
-                  <div style="flex:1 1 180px;">
-                    <label for="ct-sector" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Sector</label>
-                    <select id="ct-sector" name="sector" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(20,17,32,0.6); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);">
-                      <option>Clínica / salud</option><option>Fisioterapia</option><option>Academia / formación</option><option>Inmobiliaria</option><option>Comercio local</option><option>Restauración / hostelería</option><option>Servicios profesionales</option><option>Otro</option>
-                    </select>
-                  </div>
-                  <div style="flex:1 1 180px;">
-                    <label for="ct-interes" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">¿Qué te interesa?</label>
-                    <select id="ct-interes" name="interes" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(20,17,32,0.6); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);">
-                      <option>Presencia digital</option><option>Implementación de IA</option><option>Las dos</option><option>Aún no lo sé</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label for="ct-web" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Web actual</label>
-                  <input id="ct-web" name="web" type="url" placeholder="https:// (si tienes)" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);" />
-                </div>
-                <div data-field="mensaje">
-                  <label for="ct-msg" style="display:block; margin-bottom:7px; font-size:13.5px; font-weight:600; color:#D9D7E4;">Cuéntanos brevemente *</label>
-                  <textarea id="ct-msg" name="mensaje" rows="3" placeholder="¿Qué te gustaría mejorar o resolver?" style="width:100%; padding:13px 15px; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); color:#F5F4F8; font-family:inherit; font-size:15px; outline:none; resize:vertical; transition:border-color .2s, box-shadow .2s;" style-focus="border-color:rgba(139,92,246,0.75); box-shadow:0 0 0 3px rgba(139,92,246,0.18);"></textarea>
-                </div>
-                <div data-field="rgpd">
-                  <label style="display:flex; align-items:flex-start; gap:11px; cursor:pointer; font-size:14px; line-height:1.5; color:#C4C2CE;">
-                    <input name="rgpd" type="checkbox" value="si" style="flex:none; width:18px; height:18px; margin-top:1px; accent-color:#8B5CF6;" />
-                    <span>Acepto que Kaelum trate mis datos para responder a esta solicitud. <a href="/privacidad/" style="color:#A78BFA; text-decoration:none;" style-hover="text-decoration:underline;">Política de privacidad</a>.</span>
-                  </label>
-                </div>
-                
 
                 <!-- Honeypot antispam: oculto fuera de pantalla (no display:none). Los humanos no lo ven ni lo tabulan; los bots tienden a rellenarlo. NO se envía a n8n. -->
                 <div aria-hidden="true" style="position:absolute; left:-9999px; top:0; width:1px; height:1px; overflow:hidden;">
@@ -183,7 +203,12 @@
                   <input id="ct-empresa" name="empresa" type="text" tabindex="-1" autocomplete="off" />
                 </div>
 
-                <button type="submit" class="mzu-cta" style="width:100%; margin-top:4px; padding:15px 22px; border-radius:9999px; border:none; cursor:pointer; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8; box-shadow:0 0 40px rgba(139,92,246,0.35); transition:transform .2s;" style-hover="transform:translateY(-2px);">Solicitar diagnóstico gratuito</button>
+                <!-- Navegación de pasos -->
+                <div style="display:flex; gap:12px; align-items:stretch; margin-top:6px;">
+                  <button type="button" data-step-back style="display:none; align-items:center; justify-content:center; padding:15px 22px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; transition:border-color .2s, transform .2s;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-2px);">Atrás</button>
+                  <button type="button" data-step-next style="flex:1; padding:15px 22px; border-radius:9999px; border:none; cursor:pointer; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8; box-shadow:0 0 40px rgba(139,92,246,0.35); transition:transform .2s;" style-hover="transform:translateY(-2px);">Siguiente</button>
+                  <button type="submit" class="mzu-cta" data-step-submit style="display:none; flex:1; padding:15px 22px; border-radius:9999px; border:none; cursor:pointer; font-family:inherit; font-size:16px; font-weight:600; color:#0A0A0F; background:#F5F4F8; box-shadow:0 0 40px rgba(139,92,246,0.35); transition:transform .2s;" style-hover="transform:translateY(-2px);">Solicitar diagnóstico gratuito</button>
+                </div>
               </form>
             </div>
           
@@ -255,5 +280,91 @@
 </div>
 
 <script src="/assets/js/main.js?v=4" defer></script>
+<!-- Navegación multipaso del formulario de contacto. Solo controla qué paso se ve
+     y valida los obligatorios de cada paso antes de avanzar. NO toca el envío:
+     el botón type="submit" del paso 3 sigue disparando el handler de main.js
+     (validación completa + honeypot + fetch a /api/contact + éxito/error/reset). -->
+<script>
+(function () {
+  var form = document.querySelector('[data-contact-form][data-multistep]');
+  if (!form) return;
+  var steps = Array.prototype.slice.call(form.querySelectorAll('[data-step]'));
+  if (steps.length < 2) return;
+  var total = steps.length;
+  var labels = { 1: 'Empecemos', 2: 'Tu negocio', 3: 'Cuéntanos' };
+  var bar = form.querySelector('[data-step-bar]');
+  var labelEl = form.querySelector('[data-step-label]');
+  var countEl = form.querySelector('[data-step-count]');
+  var backBtn = form.querySelector('[data-step-back]');
+  var nextBtn = form.querySelector('[data-step-next]');
+  var submitBtn = form.querySelector('[data-step-submit]');
+  var current = 1;
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var msgs = {
+    nombre: 'Dinos cómo te llamas.',
+    email_empty: 'Necesitamos un email para enviarte el informe.',
+    email_bad: 'Ese email no parece válido.',
+    negocio: '¿Cómo se llama tu negocio?',
+    mensaje: 'Cuéntanos brevemente qué necesitas.',
+    rgpd: 'Marca la casilla para que podamos contactarte.'
+  };
+  function val(n) { var x = form.elements[n]; return x ? (x.value || '').trim() : ''; }
+  function setError(field, text) {
+    var wrap = form.querySelector('[data-field="' + field + '"]');
+    if (!wrap) return null;
+    var err = wrap.querySelector('.kael-err');
+    if (!err) { err = document.createElement('p'); err.className = 'kael-err'; err.style.cssText = 'margin:6px 0 0;font-size:13px;color:#FCA5A5;'; wrap.appendChild(err); }
+    err.textContent = text || '';
+    err.style.display = text ? 'block' : 'none';
+    var input = wrap.querySelector('input,select,textarea');
+    if (input) input.style.borderColor = text ? '#FCA5A5' : '';
+    return text ? input : null;
+  }
+  function validateStep(n) {
+    var first = null, el;
+    if (n === 1) {
+      el = setError('nombre', val('nombre') ? '' : msgs.nombre); first = first || el;
+      var email = val('email');
+      el = setError('email', !email ? msgs.email_empty : (!emailRe.test(email) ? msgs.email_bad : '')); first = first || el;
+    } else if (n === 2) {
+      el = setError('negocio', val('negocio') ? '' : msgs.negocio); first = first || el;
+    } else if (n === 3) {
+      el = setError('mensaje', val('mensaje') ? '' : msgs.mensaje); first = first || el;
+      var rgpd = form.elements['rgpd'];
+      el = setError('rgpd', rgpd && rgpd.checked ? '' : msgs.rgpd); first = first || el;
+    }
+    return first;
+  }
+  function show(n) {
+    current = n;
+    for (var i = 0; i < steps.length; i++) {
+      steps[i].style.display = (parseInt(steps[i].getAttribute('data-step'), 10) === n) ? 'flex' : 'none';
+    }
+    if (bar) bar.style.width = (n / total * 100) + '%';
+    if (labelEl) labelEl.textContent = 'Paso ' + n + ' de ' + total + ' · ' + (labels[n] || '');
+    if (countEl) countEl.textContent = n + ' / ' + total;
+    if (backBtn) backBtn.style.display = (n > 1) ? 'inline-flex' : 'none';
+    if (nextBtn) nextBtn.style.display = (n < total) ? 'inline-flex' : 'none';
+    if (submitBtn) submitBtn.style.display = (n === total) ? 'inline-flex' : 'none';
+  }
+  function goNext() {
+    var bad = validateStep(current);
+    if (bad) { bad.focus(); return; }
+    if (current < total) show(current + 1);
+  }
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (backBtn) backBtn.addEventListener('click', function () { if (current > 1) show(current - 1); });
+  // Enter en un campo (que no sea el textarea) avanza de paso en vez de enviar.
+  form.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && current < total && e.target && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      goNext();
+    }
+  });
+  // main.js hace form.reset() tras un envío correcto: volvemos al paso 1.
+  form.addEventListener('reset', function () { setTimeout(function () { show(1); }, 0); });
+  show(1);
+})();
+</script>
 </body>
 </html>
