@@ -2,3 +2,9 @@
 # Casos de éxito retirado del público (jun 2026). La página sigue en el repo
 # pero no se enlaza; cualquier acceso se redirige a contacto.
 /casos-de-exito/* /contacto/ 301
+
+# Política de privacidad — BORRADOR pendiente de datos legales reales (razón
+# social, NIF, domicilio). No debe servirse en producción hasta completarla.
+# El dev-server local ignora este archivo, así que sigue visible en preview.
+# Para publicar: completar los datos legales y ELIMINAR esta regla.
+/privacidad/* / 302
