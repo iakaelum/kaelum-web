@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="/assets/css/style.css?v=5">
+<link rel="stylesheet" href="/assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -279,7 +279,7 @@
   </div>
 </div>
 
-<script src="/assets/js/main.js?v=5" defer></script>
+<script src="/assets/js/main.js?v=6" defer></script>
 <!-- Navegación multipaso del formulario de contacto. Solo controla qué paso se ve
      y valida los obligatorios de cada paso antes de avanzar. NO toca el envío:
      el botón type="submit" del paso 3 sigue disparando el handler de main.js
@@ -346,12 +346,26 @@
     if (backBtn) backBtn.style.display = (n > 1) ? 'inline-flex' : 'none';
     if (nextBtn) nextBtn.style.display = (n < total) ? 'inline-flex' : 'none';
     if (submitBtn) submitBtn.style.display = (n === total) ? 'inline-flex' : 'none';
+    console.log("[CONTACTO] show(paso " + n + "/" + total + ") → next:" + (nextBtn && nextBtn.style.display) + " submit:" + (submitBtn && submitBtn.style.display) + " back:" + (backBtn && backBtn.style.display));
   }
   function goNext() {
+    console.log("[CONTACTO] goNext() ejecutado en el paso", current, "(SOLO debería ocurrir en pasos 1 y 2)");
     var bad = validateStep(current);
-    if (bad) { bad.focus(); return; }
+    if (bad) { console.log("[CONTACTO] goNext: validación del paso", current, "BLOQUEA en", (bad.name || bad.id)); bad.focus(); return; }
     if (current < total) show(current + 1);
   }
+  // Diagnóstico: registra CUALQUIER click en un botón del formulario, qué botón es y en qué paso.
+  form.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('button');
+    if (!b) return;
+    console.log("[CONTACTO] click en <button>:",
+      "type=" + b.type,
+      "| next=" + (b.getAttribute('data-step-next') != null),
+      "submit=" + (b.getAttribute('data-step-submit') != null),
+      "back=" + (b.getAttribute('data-step-back') != null),
+      "| display=" + (b.style.display || '(default)'),
+      "| paso actual=" + current);
+  }, true);
   if (nextBtn) nextBtn.addEventListener('click', goNext);
   if (backBtn) backBtn.addEventListener('click', function () { if (current > 1) show(current - 1); });
   // Enter en un campo (que no sea el textarea) avanza de paso en vez de enviar.
