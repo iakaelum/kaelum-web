@@ -72,24 +72,6 @@ html, body { margin: 0; padding: 0; background: radial-gradient(95% 60% at 12% 0
   @media (max-width:860px){.mz-time{grid-template-columns:1fr;gap:18px;}.mz-step{padding:30px 26px;}}
   @media (max-width:420px){.mz-meta>div{flex-direction:column;gap:3px;}.mz-meta .k{padding-top:0;}}
 
-  /* Punto 4 — superficie CLARA para romper el dark-on-dark y dar cadencia al scroll.
-     Scopeado a #como-trabajamos: no afecta a ninguna otra sección. */
-  #como-trabajamos{background:#F5F0E6;}
-  #como-trabajamos h2{color:#1A1A1A;}
-  #como-trabajamos .mz-eyebrow{background:none;-webkit-text-fill-color:#6D28D9;color:#6D28D9;}
-  #como-trabajamos .mz-eyebrow::before{background:#6D28D9;}
-  #como-trabajamos .mz-num{background:linear-gradient(140deg,#7C3AED,#4F46E5,#2563EB);-webkit-background-clip:text;background-clip:text;}
-  #como-trabajamos .mz-step{background:#FFFFFF;border-color:rgba(20,20,19,0.10);box-shadow:0 1px 2px rgba(20,20,19,0.04),0 14px 32px -20px rgba(20,20,19,0.28);}
-  #como-trabajamos .mz-step h3{color:#1A1A1A;}
-  #como-trabajamos .mz-desc{color:#4A4A47;}
-  #como-trabajamos .mz-list-label{color:rgba(20,20,19,0.55);}
-  #como-trabajamos .mz-list li{color:#3A3A40;}
-  #como-trabajamos .mz-tag{color:#5B21B6;background:rgba(139,92,246,0.12);border-color:rgba(139,92,246,0.30);}
-  #como-trabajamos .mz-meta{border-top-color:rgba(20,20,19,0.12);}
-  #como-trabajamos .mz-meta .k{color:rgba(20,20,19,0.5);}
-  #como-trabajamos .mz-meta .v{color:#3A3A40;}
-  #como-trabajamos .mz-time-foot{color:#4A4A47;}
-
   /* stat strip */
   .mz-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border:1px solid rgba(255,255,255,0.09);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));}
   .mz-strip>div{padding:38px 30px;border-left:1px solid rgba(255,255,255,0.07);}
