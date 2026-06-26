@@ -285,7 +285,7 @@
     '<div class="kael-chat-root">' +
       '<div class="kael-chatpanel">' +
         '<div class="kael-chat-header">' +
-          '<span class="kael-chat-avatar"><img src="/assets/img/logo-k.png" alt="" width="26" height="26" /></span>' +
+          '<span class="kael-chat-avatar"><img src="/assets/img/logo-mark.webp?v=8" alt="" width="26" height="26" /></span>' +
           '<div class="kael-chat-headtext">' +
             '<div class="kael-chat-title">Agente KAELUM</div>' +
             '<div class="kael-chat-status"><span class="kael-chat-status-dot"></span> En línea</div>' +
@@ -305,7 +305,7 @@
       '</div>' +
       '<button data-action="toggle-chat" aria-label="Abrir chat" aria-expanded="false" class="kael-chat-fab">' +
         '<span class="kael-chat-fab-ping"></span>' +
-        '<img src="/assets/img/logo-k.png" alt="" width="38" height="38" class="kael-chat-fab-logo" />' +
+        '<img src="/assets/img/logo-mark.webp?v=8" alt="" width="38" height="38" class="kael-chat-fab-logo" />' +
       '</button>' +
     '</div>';
 
