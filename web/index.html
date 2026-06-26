@@ -74,7 +74,7 @@
     <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/img/hero-neural.jpg" style="position:absolute; left:0; top:-7%; width:100%; height:114%; object-fit:cover; z-index:0; opacity:1; will-change:transform;">
       <source src="/assets/video/neural.mp4" type="video/mp4" />
     </video>
-    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:rgba(10,10,15,0.55);"></div>
+    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:rgba(10,10,15,0.64);"></div>
     <div style="position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(55% 55% at 12% 6%, rgba(139,92,246,0.30) 0%, rgba(99,102,241,0.12) 38%, transparent 68%), radial-gradient(50% 50% at 96% 30%, rgba(59,130,246,0.14) 0%, transparent 60%);"></div>
     <div style="position:absolute; inset:0; z-index:2; pointer-events:none; background:radial-gradient(ellipse at 50% 42%, transparent 38%, rgba(10,10,15,0.6) 100%);"></div>
     <div style="position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(to top, rgba(10,8,16,0.96) 0%, transparent 36%);"></div>
@@ -82,12 +82,12 @@
     <div id="hero-glow" style="position:absolute; width:620px; height:620px; left:50%; top:40%; border-radius:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(139,92,246,0.22) 0%, rgba(99,102,241,0.08) 42%, transparent 66%); filter:blur(22px); pointer-events:none; opacity:0; transition:opacity .35s ease; z-index:3;"></div>
     <div style="position:relative; z-index:10; display:flex; flex-direction:column; width:100%; min-height:100vh; padding-top:92px;">
       <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 24px 12px;">
-        <div style="display:inline-flex; align-items:center; gap:12px; padding:8px 18px 8px 9px; border-radius:9999px; background:rgba(19,17,28,0.6); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.10); margin-bottom:30px; animation:kael-rise .6s ease both;">
+        <button data-action="toggle-chat" aria-label="Abrir el chat con el agente de IA de KAELUM" style="display:inline-flex; align-items:center; gap:12px; padding:8px 18px 8px 9px; border-radius:9999px; background:rgba(19,17,28,0.6); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.10); margin-bottom:30px; animation:kael-rise .6s ease both; cursor:pointer; color:inherit; font-family:inherit; -webkit-appearance:none; appearance:none; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(139,92,246,0.6); transform:translateY(-1px);">
           <span style="width:32px; height:32px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 32% 28%, #211c34, #100d1b); border:1px solid rgba(255,255,255,0.12); box-shadow:0 0 14px rgba(139,92,246,0.4);">
             <img src="/assets/img/logo-k.png" alt="" width="22" height="22" style="width:22px; height:22px; object-fit:contain; animation:kael-logopulse 3.6s ease-in-out infinite;" />
           </span>
-          <span style="font-size:14.5px; color:#D9D7E4; font-weight:500;">«Hola, ¿en qué puedo ayudarte?»</span>
-        </div>
+          <span style="font-size:14.5px; color:#D9D7E4; font-weight:500;">«Hola, ¿en qué puedo ayudarte?» <span style="color:#C4B5FD; font-weight:600;">Pruébalo →</span></span>
+        </button>
 
         <h1 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; line-height:1.1; letter-spacing:-0.02em; font-size:clamp(40px,7.4vw,94px); max-width:14ch; text-shadow:0 2px 40px rgba(0,0,0,0.5); animation:kael-rise .6s ease .05s both;">
           <span style="display:block; color:#F5F4F8;">Compite con</span>
@@ -101,17 +101,17 @@
           <a href="#que-hacemos" style="padding:16px 30px; border-radius:9999px; background:rgba(255,255,255,0.04); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:16px; font-weight:500; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-4px);">Ver servicios</a>
         </div>
 
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; margin-top:30px; font-size:13.5px; color:rgba(245,244,248,0.55); animation:kael-rise .6s ease .24s both;">
-          <span><strong style="color:#9B8CFF; font-weight:600;">Diagnósticos gratuitos</strong> disponibles</span>
-          <span style="opacity:0.4;">·</span>
-          <span><strong style="color:#9B8CFF; font-weight:600;">Automatizaciones</strong> en producción</span>
-          <span style="opacity:0.4;">·</span>
-          <span><strong style="color:#9B8CFF; font-weight:600;">Madrid</strong> Zona Oeste</span>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; margin-top:30px; font-size:13.5px; color:rgba(245,244,248,0.82); animation:kael-rise .6s ease .24s both;">
+          <span><strong style="color:#F5F4F8; font-weight:600;">Diagnósticos gratuitos</strong> disponibles</span>
+          <span style="opacity:0.5;">·</span>
+          <span><strong style="color:#F5F4F8; font-weight:600;">Automatizaciones</strong> en producción</span>
+          <span style="opacity:0.5;">·</span>
+          <span><strong style="color:#F5F4F8; font-weight:600;">Madrid</strong> Zona Oeste</span>
         </div>
       </div>
 
       <div style="padding:8px 24px 40px;">
-        <p style="text-align:center; margin:0 0 22px; font-size:12.5px; font-weight:600; letter-spacing:0.18em; color:rgba(245,244,248,0.45);">EL STACK CON EL QUE CONSTRUIMOS</p>
+        <p style="text-align:center; margin:0 0 22px; font-size:12.5px; font-weight:600; letter-spacing:0.18em; color:rgba(245,244,248,0.62);">EL STACK CON EL QUE CONSTRUIMOS</p>
         <div style="max-width:62rem; margin:0 auto; overflow:hidden; -webkit-mask:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); mask:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);">
           <div class="kael-marquee-track" style="display:flex; width:max-content; gap:60px; animation:kael-marquee 24s linear infinite;">
             <div style="display:flex; align-items:center; gap:11px; flex:none;"><img src="/assets/logos/n8n.svg" alt="n8n" width="26" height="26" style="width:26px; height:26px; border-radius:8px; display:block;" /><span style="font-size:16px; font-weight:600; color:rgba(245,244,248,0.85); white-space:nowrap;">n8n</span></div>
@@ -175,7 +175,7 @@
       <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
         <span class="mz-eyebrow">Cómo trabajamos</span>
         <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(32px,4.6vw,58px); line-height:1.06; letter-spacing:-0.025em;">Un proceso claro, <span class="mz-gword">sin humo</span>, en cuatro fases</h2>
-        <p style="margin:20px 0 0; font-size:18px; line-height:1.6; color:#B9B6C8; max-width:60ch;">Cuatro fases para pasar de «tengo una web que no me trae clientes» a un sistema que trabaja por ti.</p>
+        <p style="margin:20px 0 0; font-size:18px; line-height:1.6; color:#4A4A47; max-width:60ch;">Cuatro fases para pasar de «tengo una web que no me trae clientes» a un sistema que trabaja por ti.</p>
       </div>
 
       <div class="mz-time">
