@@ -115,9 +115,12 @@ a{color:inherit;}
 .kael-hero-logo-glow{position:absolute;width:80%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,rgba(11,132,243,0.32) 0%,rgba(11,132,243,0.10) 42%,transparent 70%);filter:blur(48px);z-index:0;animation:kael-logoglow 6s ease-in-out infinite;}
 /* Partículas muy sutiles alrededor de la K (detrás, sin tapar gemas ni texto).
    El contenedor lo desplaza un poco el JS (parallax); cada punto hace su propio drift. */
-.kael-hero-particles{position:absolute;inset:-12%;z-index:0;pointer-events:none;will-change:transform;}
-.kp{position:absolute;width:var(--s,3px);height:var(--s,3px);border-radius:50%;background:var(--c,#9CD3FF);box-shadow:0 0 6px var(--c,#9CD3FF);opacity:0;transform:translate(-50%,-50%);animation:kael-kp var(--t,9s) ease-in-out var(--dl,0s) infinite;will-change:transform,opacity;}
-@keyframes kael-kp{0%,100%{opacity:0;transform:translate(-50%,-50%) scale(.8)}30%{opacity:calc(var(--o,.22)*1.3)}50%{opacity:calc(var(--o,.22)*1.3);transform:translate(calc(-50% + var(--mx,5px)),calc(-50% + var(--my,-7px))) scale(1.12)}70%{opacity:calc(var(--o,.22)*.75)}}
+.kael-hero-particles{position:absolute;inset:-12%;z-index:0;pointer-events:none;}
+/* Exterior: posición + repulsión (translate vía --rx/--ry que pone el JS). */
+.kp{position:absolute;transform:translate(-50%,-50%) translate(var(--rx,0px),var(--ry,0px));will-change:transform;}
+/* Interior: el punto visible, con flotar mínimo + titileo de opacidad (CSS). */
+.kp-dot{display:block;width:var(--s,3px);height:var(--s,3px);border-radius:50%;background:var(--c,#9CD3FF);box-shadow:0 0 6px var(--c,#9CD3FF);opacity:0;animation:kael-kp-dot var(--t,9s) ease-in-out var(--dl,0s) infinite;will-change:opacity,transform;}
+@keyframes kael-kp-dot{0%,100%{opacity:0;transform:translate(0,0) scale(.85)}30%{opacity:calc(var(--o,.22)*1.3)}50%{opacity:calc(var(--o,.22)*1.3);transform:translate(calc(var(--mx,4px)*.4),calc(var(--my,-5px)*.4)) scale(1.06)}70%{opacity:calc(var(--o,.22)*.75)}}
 .kael-hero-logo-float{transform-style:preserve-3d;animation:kael-logofloat 7.5s ease-in-out infinite;will-change:transform;pointer-events:none;}
 .kael-hero-logo-tilt{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));will-change:transform;pointer-events:none;}
 /* La K (base) + 9 gemas con destello individual al hover, alineadas al 100% */
@@ -147,7 +150,7 @@ a{color:inherit;}
 @media (prefers-reduced-motion:reduce){
   .kael-hero-logo-float,.kael-hero-logo-glow{animation:none !important;}
   .kael-gem::before{animation:none !important;}
-  .kp{animation:none !important;opacity:.12 !important;}
+  .kp-dot{animation:none !important;opacity:.14 !important;}
 }
 
 /* Footer responsive */

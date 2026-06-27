@@ -190,25 +190,15 @@
     if (!tilt) return;
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     var hero = document.getElementById("top") || tilt;
-    var particles = document.querySelector("[data-hero-particles]"); // parallax suave (opcional)
     var MAX = 20; // grados máximos de inclinación (más vivo)
-    var PMAX = 24; // desplazamiento máx. de las partículas (px), perceptible pero suave
-    var rx = 0, ry = 0, tx = 0, ty = 0;       // tilt (actual/objetivo)
-    var px2 = 0, py2 = 0, ptx = 0, pty = 0;    // partículas (actual/objetivo)
-    var raf = null;
+    var rx = 0, ry = 0, tx = 0, ty = 0, raf = null;
     function loop() {
       raf = null;
       rx += (tx - rx) * 0.14; // easing hacia el objetivo (un poco más reactivo)
       ry += (ty - ry) * 0.14;
       tilt.style.setProperty("--rx", rx.toFixed(2) + "deg");
       tilt.style.setProperty("--ry", ry.toFixed(2) + "deg");
-      if (particles) {
-        px2 += (ptx - px2) * 0.085; // parallax suave (un poco más reactivo)
-        py2 += (pty - py2) * 0.085;
-        particles.style.transform = "translate3d(" + px2.toFixed(1) + "px," + py2.toFixed(1) + "px,0)";
-      }
-      if (Math.abs(tx - rx) > 0.03 || Math.abs(ty - ry) > 0.03 ||
-          Math.abs(ptx - px2) > 0.05 || Math.abs(pty - py2) > 0.05) raf = requestAnimationFrame(loop);
+      if (Math.abs(tx - rx) > 0.03 || Math.abs(ty - ry) > 0.03) raf = requestAnimationFrame(loop);
     }
     on(hero, "pointermove", function (e) {
       var r = hero.getBoundingClientRect();
@@ -216,11 +206,52 @@
       var py = (e.clientY - r.top) / r.height - 0.5;
       ty = px * MAX * 2;   // rotateY sigue el eje X del cursor
       tx = -py * MAX * 2;  // rotateX sigue el eje Y (invertido)
-      ptx = px * PMAX * 2; // partículas se desplazan con el cursor (sutil)
-      pty = py * PMAX * 2;
       if (!raf) raf = requestAnimationFrame(loop);
     }, { passive: true });
-    on(hero, "pointerleave", function () { tx = 0; ty = 0; ptx = 0; pty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+    on(hero, "pointerleave", function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+  }
+
+  /* ---------- Partículas del hero: repulsión LOCAL al cursor (muelle suave) ----------
+     Solo desktop con puntero fino. Cada partícula tiene vida propia: si el cursor se
+     acerca, se aparta; al alejarse, vuelve despacio. Eficiente: el rAF solo corre
+     mientras el cursor está sobre el hero o quedan partículas asentándose. */
+  function initHeroParticles() {
+    if (reduce) return;
+    var wrap = document.querySelector("[data-hero-particles]");
+    if (!wrap) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return; // móvil: solo flotar CSS
+    var hero = document.getElementById("top") || wrap;
+    var pts = [].slice.call(wrap.querySelectorAll(".kp")).map(function (el) {
+      return { el: el, lf: parseFloat(el.style.left) / 100, tf: parseFloat(el.style.top) / 100, cx: 0, cy: 0 };
+    });
+    if (!pts.length) return;
+    var R = 130, R2 = R * R, STR = 42; // radio de influencia y fuerza (px)
+    var mx = -1e6, my = -1e6, active = false, raf = null;
+    function loop() {
+      raf = null;
+      var r = wrap.getBoundingClientRect(); // una sola medición por frame (barato; cubre scroll/resize)
+      var moving = false;
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var bx = r.left + p.lf * r.width, by = r.top + p.tf * r.height; // posición base de la partícula
+        var dx = bx - mx, dy = by - my, d2 = dx * dx + dy * dy;
+        var tx = 0, ty = 0;
+        if (d2 < R2) {                       // solo las cercanas reaccionan
+          var d = Math.sqrt(d2) || 0.001;
+          var f = 1 - d / R;                 // 0..1
+          var push = f * f * STR;            // caída cuadrática → efecto bien local
+          tx = (dx / d) * push; ty = (dy / d) * push;
+        }
+        var e = (tx === 0 && ty === 0) ? 0.06 : 0.2; // empuje rápido, retorno lento (muelle)
+        p.cx += (tx - p.cx) * e; p.cy += (ty - p.cy) * e;
+        if (Math.abs(p.cx) > 0.15 || Math.abs(p.cy) > 0.15 || tx !== 0 || ty !== 0) moving = true;
+        p.el.style.setProperty("--rx", p.cx.toFixed(1) + "px");
+        p.el.style.setProperty("--ry", p.cy.toFixed(1) + "px");
+      }
+      if (active || moving) raf = requestAnimationFrame(loop);
+    }
+    on(hero, "pointermove", function (ev) { mx = ev.clientX; my = ev.clientY; active = true; if (!raf) raf = requestAnimationFrame(loop); }, { passive: true });
+    on(hero, "pointerleave", function () { active = false; mx = -1e6; my = -1e6; if (!raf) raf = requestAnimationFrame(loop); });
   }
 
   /* ---------- Vídeo neural del hero: autoplay + parallax suave ---------- */
@@ -579,7 +610,7 @@
     // en algún navegador), no impide que se conecten los demás —incluido el
     // formulario de contacto y su envío—.
     [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
-     initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroVideo,
+     initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroParticles, initHeroVideo,
      initThread, initChat, initContactForm].forEach(function (fn) {
       try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
     });
