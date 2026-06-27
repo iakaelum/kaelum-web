@@ -190,15 +190,25 @@
     if (!tilt) return;
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     var hero = document.getElementById("top") || tilt;
+    var particles = document.querySelector("[data-hero-particles]"); // parallax suave (opcional)
     var MAX = 20; // grados máximos de inclinación (más vivo)
-    var rx = 0, ry = 0, tx = 0, ty = 0, raf = null;
+    var PMAX = 24; // desplazamiento máx. de las partículas (px), perceptible pero suave
+    var rx = 0, ry = 0, tx = 0, ty = 0;       // tilt (actual/objetivo)
+    var px2 = 0, py2 = 0, ptx = 0, pty = 0;    // partículas (actual/objetivo)
+    var raf = null;
     function loop() {
       raf = null;
       rx += (tx - rx) * 0.14; // easing hacia el objetivo (un poco más reactivo)
       ry += (ty - ry) * 0.14;
       tilt.style.setProperty("--rx", rx.toFixed(2) + "deg");
       tilt.style.setProperty("--ry", ry.toFixed(2) + "deg");
-      if (Math.abs(tx - rx) > 0.03 || Math.abs(ty - ry) > 0.03) raf = requestAnimationFrame(loop);
+      if (particles) {
+        px2 += (ptx - px2) * 0.085; // parallax suave (un poco más reactivo)
+        py2 += (pty - py2) * 0.085;
+        particles.style.transform = "translate3d(" + px2.toFixed(1) + "px," + py2.toFixed(1) + "px,0)";
+      }
+      if (Math.abs(tx - rx) > 0.03 || Math.abs(ty - ry) > 0.03 ||
+          Math.abs(ptx - px2) > 0.05 || Math.abs(pty - py2) > 0.05) raf = requestAnimationFrame(loop);
     }
     on(hero, "pointermove", function (e) {
       var r = hero.getBoundingClientRect();
@@ -206,9 +216,11 @@
       var py = (e.clientY - r.top) / r.height - 0.5;
       ty = px * MAX * 2;   // rotateY sigue el eje X del cursor
       tx = -py * MAX * 2;  // rotateX sigue el eje Y (invertido)
+      ptx = px * PMAX * 2; // partículas se desplazan con el cursor (sutil)
+      pty = py * PMAX * 2;
       if (!raf) raf = requestAnimationFrame(loop);
     }, { passive: true });
-    on(hero, "pointerleave", function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+    on(hero, "pointerleave", function () { tx = 0; ty = 0; ptx = 0; pty = 0; if (!raf) raf = requestAnimationFrame(loop); });
   }
 
   /* ---------- Vídeo neural del hero: autoplay + parallax suave ---------- */
