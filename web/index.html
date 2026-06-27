@@ -24,7 +24,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="/assets/css/style.css?v=8">
+<link rel="preload" as="image" href="/assets/img/k-hero.webp?v=9" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="/assets/css/style.css?v=9">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Kaelum","url":"https://kaelum.es","logo":"https://kaelum.es/assets/img/apple-touch-icon.png?v=8","description":"Implementación de IA y aumento de presencia digital para PYMEs y comercio local.","email":"contacto@kaelum.es","areaServed":"Madrid, España","address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"}}
 </script>
@@ -73,28 +74,51 @@
   <!-- HERO -->
   <section id="top" data-screen-label="Hero" style="position:relative; min-height:100vh; overflow:hidden; display:flex;">
     <div class="kael-herobg" aria-hidden="true"></div>
-    <!-- Hero limpio sin imagen de nodos: charcoal + resplandor azul muy sutil (único acento) -->
-    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(58% 48% at 50% 20%, rgba(11,132,243,0.10) 0%, transparent 62%);"></div>
-    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(to top, #18191A 0%, transparent 44%);"></div>
+    <!-- Resplandor azul de fondo, desplazado hacia el logo (sutil) -->
+    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(56% 50% at 72% 44%, rgba(11,132,243,0.10) 0%, transparent 62%);"></div>
+    <div style="position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(to top, #18191A 0%, transparent 46%);"></div>
 
-    <div id="hero-glow" style="position:absolute; width:620px; height:620px; left:50%; top:40%; border-radius:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(11,132,243,0.22) 0%, rgba(59,130,246,0.08) 42%, transparent 66%); filter:blur(22px); pointer-events:none; opacity:0; transition:opacity .35s ease; z-index:3;"></div>
-    <div style="position:relative; z-index:10; display:flex; flex-direction:column; width:100%; min-height:100vh; padding-top:92px;">
-      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px 24px 12px;">
-        <h1 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; line-height:1.1; letter-spacing:-0.02em; font-size:clamp(40px,7.4vw,94px); max-width:14ch; text-shadow:0 2px 40px rgba(0,0,0,0.5); animation:kael-rise .6s ease .05s both;">
-          <span style="display:block; color:#F5F4F8;">Compite con</span>
-          <span style="display:block; padding-bottom:0.14em; background-image:linear-gradient(120deg,#0B84F3,#4DA6F7,#3B82F6,#3B82F6,#4DA6F7); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 6.5s linear infinite;">los grandes</span>
-        </h1>
+    <div style="position:relative; z-index:10; display:flex; align-items:center; width:100%; min-height:100vh; padding:88px 0 32px;">
+      <div class="kael-hero-grid">
 
-        <p style="max-width:38rem; margin:26px 0 0; font-size:19px; line-height:1.6; color:#CFCFD3; animation:kael-rise .6s ease .12s both;">Webs que captan clientes y automatización con IA que te ahorra horas. Para pymes y comercio local de Madrid.</p>
-
-        <div style="display:flex; flex-wrap:wrap; gap:14px 26px; align-items:center; justify-content:center; margin-top:36px; animation:kael-rise .6s ease .18s both;">
-          <a class="mzu-cta" href="/contacto/" style="padding:16px 34px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
-          <a href="#que-hacemos" style="display:inline-flex; align-items:center; gap:7px; color:rgba(245,244,248,0.78); text-decoration:none; font-family:inherit; font-size:15.5px; font-weight:500; transition:gap .2s ease, color .2s ease;" style-hover="color:#fff; gap:11px;">Ver servicios <span aria-hidden="true">→</span></a>
+        <!-- TEXTO (izquierda) -->
+        <div class="kael-hero-text" style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span class="mz-eyebrow" style="margin-bottom:14px; animation:kael-rise .6s ease both;">KAELUM</span>
+          <h1 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; line-height:1.05; letter-spacing:-0.02em; font-size:clamp(40px,6vw,82px); text-shadow:0 2px 40px rgba(0,0,0,0.5); animation:kael-rise .6s ease .05s both;">
+            <span style="display:block; color:#F5F4F8;">Compite con</span>
+            <span style="display:block; padding-bottom:0.12em; background-image:linear-gradient(120deg,#0B84F3,#4DA6F7,#3B82F6,#3B82F6,#4DA6F7); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 6.5s linear infinite;">los grandes</span>
+          </h1>
+          <p style="max-width:30rem; margin:24px 0 0; font-size:18.5px; line-height:1.6; color:#CFCFD3; animation:kael-rise .6s ease .12s both;">Presencia digital que convierte e IA que te ahorra horas. Para pymes y comercio local de Madrid.</p>
+          <div class="kael-hero-cta-row" style="display:flex; flex-wrap:wrap; gap:14px 24px; align-items:center; margin-top:34px; animation:kael-rise .6s ease .18s both;">
+            <a class="mzu-cta" href="/contacto/" style="padding:16px 34px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
+            <a href="#que-hacemos" style="display:inline-flex; align-items:center; gap:7px; color:rgba(245,244,248,0.78); text-decoration:none; font-family:inherit; font-size:15.5px; font-weight:500; transition:gap .2s ease, color .2s ease;" style-hover="color:#fff; gap:11px;">Ver servicios <span aria-hidden="true">→</span></a>
+          </div>
+          <p style="margin-top:26px; font-size:13.5px; line-height:1.5; color:rgba(245,244,248,0.7); animation:kael-rise .6s ease .24s both;">Diagnóstico gratuito · Respuesta en 24h · Sin compromiso</p>
         </div>
 
-        <p style="margin-top:24px; font-size:13.5px; line-height:1.5; color:rgba(245,244,248,0.7); animation:kael-rise .6s ease .24s both;">Diagnóstico gratuito · Respuesta en 24h · Sin compromiso</p>
-      </div>
+        <!-- LOGO protagonista con fake 3D (parallax al ratón en desktop; flotar/glow auto en móvil) -->
+        <div class="kael-hero-logo-wrap" style="animation:kael-rise .7s ease .1s both;">
+          <div class="kael-hero-logo-glow" aria-hidden="true"></div>
+          <div class="kael-hero-logo-float">
+            <div class="kael-hero-logo-tilt" data-hero-tilt>
+              <div class="kael-hero-k">
+                <img class="kael-hero-k-base" src="/assets/img/k-hero.webp?v=9" alt="Logo de KAELUM" width="460" height="460" fetchpriority="high" decoding="async" />
+                <!-- 9 gemas: cada una su zona sensible (hover individual) + glow propio -->
+                <span class="kael-gem" style="left:45.5%; top:8.5%;  --d:0s;"></span>
+                <span class="kael-gem" style="left:22.5%; top:16%;   --d:.5s;"></span>
+                <span class="kael-gem" style="left:68%;   top:17.5%; --d:1s;"></span>
+                <span class="kael-gem" style="left:12%;   top:27%;   --d:1.5s;"></span>
+                <span class="kael-gem" style="left:56%;   top:25%;   --d:2s;"></span>
+                <span class="kael-gem" style="left:31%;   top:31.5%; --d:2.5s;"></span>
+                <span class="kael-gem" style="left:19%;   top:40%;   --d:3s;"></span>
+                <span class="kael-gem" style="left:6.5%;  top:46%;   --d:3.5s;"></span>
+                <span class="kael-gem" style="left:17.5%; top:53%;   --d:4s;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
     </div>
   </section>
 
@@ -402,6 +426,6 @@
   </div>
 </div>
 
-<script src="/assets/js/main.js?v=8" defer></script>
+<script src="/assets/js/main.js?v=9" defer></script>
 </body>
 </html>

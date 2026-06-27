@@ -182,6 +182,35 @@
     on(hero, "pointerleave", function () { glow.style.opacity = "0"; });
   }
 
+  /* ---------- Fake 3D del logo del hero: inclina según el ratón (solo desktop) ----------
+     En móvil/táctil no se engancha: el logo usa la animación CSS de flotar/glow. */
+  function initHeroLogo3D() {
+    if (reduce) return;
+    var tilt = document.querySelector("[data-hero-tilt]");
+    if (!tilt) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var hero = document.getElementById("top") || tilt;
+    var MAX = 20; // grados máximos de inclinación (más vivo)
+    var rx = 0, ry = 0, tx = 0, ty = 0, raf = null;
+    function loop() {
+      raf = null;
+      rx += (tx - rx) * 0.14; // easing hacia el objetivo (un poco más reactivo)
+      ry += (ty - ry) * 0.14;
+      tilt.style.setProperty("--rx", rx.toFixed(2) + "deg");
+      tilt.style.setProperty("--ry", ry.toFixed(2) + "deg");
+      if (Math.abs(tx - rx) > 0.03 || Math.abs(ty - ry) > 0.03) raf = requestAnimationFrame(loop);
+    }
+    on(hero, "pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      ty = px * MAX * 2;   // rotateY sigue el eje X del cursor
+      tx = -py * MAX * 2;  // rotateX sigue el eje Y (invertido)
+      if (!raf) raf = requestAnimationFrame(loop);
+    }, { passive: true });
+    on(hero, "pointerleave", function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(loop); });
+  }
+
   /* ---------- Vídeo neural del hero: autoplay + parallax suave ---------- */
   function initHeroVideo() {
     var v = document.getElementById("hero-video");
@@ -538,7 +567,7 @@
     // en algún navegador), no impide que se conecten los demás —incluido el
     // formulario de contacto y su envío—.
     [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
-     initNav, initDropdown, initMenu, initHeroGlow, initHeroVideo,
+     initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroVideo,
      initThread, initChat, initContactForm].forEach(function (fn) {
       try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
     });
