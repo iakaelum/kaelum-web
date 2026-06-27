@@ -605,13 +605,53 @@
     });
   }
 
+  /* ---------- Consentimiento de cookies (RGPD) ----------
+     Microsoft Clarity (cookies + grabación de sesión) NO se carga hasta que el
+     usuario pulsa "Aceptar". Si rechaza o ignora, no se activa. La elección se
+     recuerda en localStorage para no volver a preguntar. */
+  var CONSENT_KEY = "kael-cookie-consent";
+  function loadClarity() {
+    if (window.clarity) return; // ya cargado
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "xdow2458hl");
+  }
+  function initCookieConsent() {
+    var choice = null;
+    try { choice = localStorage.getItem(CONSENT_KEY); } catch (e) {}
+    if (choice === "granted") { loadClarity(); return; } // ya aceptó: cargar
+    if (choice === "denied") return;                     // ya rechazó: nada
+    if (!document.body) return;
+    var bar = document.createElement("div");
+    bar.className = "kael-cookie";
+    bar.setAttribute("role", "dialog");
+    bar.setAttribute("aria-label", "Consentimiento de cookies");
+    bar.innerHTML =
+      '<p class="kael-cookie-text">Usamos cookies para entender cómo se usa la web y mejorarla. Tú decides. <a href="/privacidad/">Política de privacidad</a>.</p>' +
+      '<div class="kael-cookie-actions">' +
+      '<button type="button" class="kael-cookie-reject">Rechazar</button>' +
+      '<button type="button" class="kael-cookie-accept">Aceptar</button>' +
+      '</div>';
+    function decide(value) {
+      try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+      if (value === "granted") loadClarity();
+      bar.classList.add("kael-cookie--out");
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 320);
+    }
+    on(bar.querySelector(".kael-cookie-accept"), "click", function () { decide("granted"); });
+    on(bar.querySelector(".kael-cookie-reject"), "click", function () { decide("denied"); });
+    document.body.appendChild(bar);
+  }
+
   function init() {
     // Cada widget corre aislado: si uno falla (p. ej. initThread sobre un SVG oculto
     // en algún navegador), no impide que se conecten los demás —incluido el
     // formulario de contacto y su envío—.
     [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
      initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroParticles, initHeroVideo,
-     initThread, initChat, initContactForm].forEach(function (fn) {
+     initThread, initChat, initContactForm, initCookieConsent].forEach(function (fn) {
       try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
     });
     var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();

@@ -278,3 +278,22 @@ a{color:inherit;}
 .kael-chat-typing span{width:6px;height:6px;border-radius:9999px;background:#9A9AA0;animation:kael-blink 1.2s infinite;}
 .kael-chat-typing span:nth-child(2){animation-delay:.2s;}
 .kael-chat-typing span:nth-child(3){animation-delay:.4s;}
+
+/* ============================================================
+   Banner de consentimiento de cookies (RGPD) — lo inyecta main.js
+   ============================================================ */
+.kael-cookie{position:fixed;left:20px;bottom:20px;z-index:70;max-width:430px;width:calc(100% - 40px);display:flex;flex-direction:column;gap:14px;padding:18px 20px;border-radius:16px;background:rgba(24,25,26,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.10);box-shadow:0 18px 50px rgba(0,0,0,0.55);font-family:'Geist',-apple-system,system-ui,sans-serif;animation:kael-cookie-in .45s cubic-bezier(.2,.7,.2,1) both;}
+.kael-cookie--out{animation:kael-cookie-out .3s ease forwards;}
+@keyframes kael-cookie-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes kael-cookie-out{to{opacity:0;transform:translateY(14px)}}
+.kael-cookie-text{margin:0;font-size:14px;line-height:1.55;color:#CFCFD3;}
+.kael-cookie-text a{color:#4DA6F7;text-decoration:none;}
+.kael-cookie-text a:hover{text-decoration:underline;}
+.kael-cookie-actions{display:flex;gap:10px;justify-content:flex-end;}
+.kael-cookie button{font-family:inherit;font-size:14px;font-weight:600;padding:10px 22px;border-radius:9999px;cursor:pointer;border:none;transition:transform .2s ease,background .2s ease,border-color .2s ease;}
+.kael-cookie-accept{background:#0A6FD0;color:#fff;box-shadow:0 0 24px rgba(11,132,243,0.3);}
+.kael-cookie-accept:hover{transform:translateY(-1px);box-shadow:0 0 32px rgba(11,132,243,0.45);}
+.kael-cookie-reject{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);color:#E8E8EB;}
+.kael-cookie-reject:hover{border-color:rgba(255,255,255,0.4);}
+@media (max-width:520px){.kael-cookie{left:12px;right:12px;bottom:12px;width:auto;max-width:none;}.kael-cookie-actions{justify-content:stretch;}.kael-cookie button{flex:1;}}
+@media (prefers-reduced-motion:reduce){.kael-cookie,.kael-cookie--out{animation:none;}}
