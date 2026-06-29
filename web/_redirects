@@ -2,3 +2,8 @@
 # Casos de éxito retirado del público (jun 2026). La página sigue en el repo
 # pero no se enlaza; cualquier acceso se redirige a contacto.
 /casos-de-exito/* /contacto/ 301
+
+# Página índice /servicios/ huérfana (no enlazada en el menú, se veía sin estilos).
+# Regla EXACTA (sin comodín) para no afectar a las subpáginas reales:
+# /servicios/presencia-digital/ y /servicios/implementacion-ia/.
+/servicios/ / 301
