@@ -7,3 +7,7 @@
 # Regla EXACTA (sin comodín) para no afectar a las subpáginas reales:
 # /servicios/presencia-digital/ y /servicios/implementacion-ia/.
 /servicios/ / 301
+
+# Índice del blog huérfano (no enlazado en el menú, legacy sin estilos).
+# Regla EXACTA (sin comodín) por si hubiera subpáginas en el futuro.
+/blog/ / 301
