@@ -297,3 +297,12 @@ a{color:inherit;}
 .kael-cookie-reject:hover{border-color:rgba(255,255,255,0.4);}
 @media (max-width:520px){.kael-cookie{left:12px;right:12px;bottom:12px;width:auto;max-width:none;}.kael-cookie-actions{justify-content:stretch;}.kael-cookie button{flex:1;}}
 @media (prefers-reduced-motion:reduce){.kael-cookie,.kael-cookie--out{animation:none;}}
+
+/* Acordeón de servicios */
+.kael-acc summary{list-style:none;cursor:pointer;}
+.kael-acc summary::-webkit-details-marker{display:none;}
+.kael-acc summary:focus-visible{outline:2px solid #4DA6F7;outline-offset:3px;border-radius:6px;}
+.kael-acc .kf-icon{transition:transform .3s ease;}
+.kael-acc[open] .kf-icon{transform:rotate(45deg);}
+.kael-acc[open] .kael-acc-body{animation:kael-accIn .28s ease;}
+@keyframes kael-accIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:translateY(0);}}

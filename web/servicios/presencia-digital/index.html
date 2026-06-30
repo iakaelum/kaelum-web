@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js");</script>
-<link rel="stylesheet" href="/assets/css/style.css?v=12">
+<link rel="stylesheet" href="/assets/css/style.css?v=13">
 </head>
 <body>
 
@@ -125,70 +125,212 @@
     </div>
   </section>
 
-  <!-- BLOQUE 3 · QUÉ INCLUYE -->
-  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:1180px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
+  <!-- INTRO · A MEDIDA -->
+  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px 0;">
+    <div style="max-width:900px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; border-radius:24px; padding:1.6px; background:linear-gradient(160deg,#0B84F3,#3B82F6,#3B82F6); box-shadow:0 0 60px rgba(11,132,243,0.22);">
+        <div style="background:#1C1D1E; border-radius:22px; padding:clamp(30px,4vw,48px); text-align:center;">
+          <h2 style="margin:0 auto; max-width:22ch; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(24px,3.4vw,36px); line-height:1.12; letter-spacing:-0.02em;">Cada negocio es único. Tu plan también.</h2>
+          <p style="margin:18px auto 0; max-width:64ch; font-size:17px; line-height:1.6; color:#CFCFD3;">No hay dos negocios iguales. Empezamos por entender el tuyo en el diagnóstico gratuito, detectamos qué te aporta más valor, y montamos un plan y un presupuesto a tu medida — solo con lo que de verdad necesitas.</p>
+          <a class="mzu-cta" href="/contacto/" style="display:inline-block; margin-top:28px; padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS (ACORDEÓN) -->
+  <section id="servicios" style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease;">
         <p class="mzu-eye">Qué incluye el servicio</p>
         <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Todo lo que necesitas, en un solo sistema</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">No vendemos servicios sueltos. Implementamos un sistema completo de captación y fidelización que funciona de forma integrada.</p>
+        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">No vendemos servicios sueltos: montamos un sistema completo de captación y fidelización. Despliega cada servicio para ver el detalle.</p>
       </div>
-      <div class="mzu-bento3" style="margin-top:44px;">
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Auditoría de presencia digital</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Análisis exhaustivo de web, SEO, Google Business, redes, publicidad y captación. Informe profesional con plan de acción.</p>
+      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; margin-top:36px;">
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Auditoría de Presencia Digital</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <p style="margin:0 0 14px; font-size:15px; line-height:1.6; color:#CFCFD3;">Analizamos a fondo cómo está hoy tu negocio en internet.</p>
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Tu página web</strong> <span style="color:#9A9AA0;">— experiencia de uso (UX), conversión, velocidad y SEO técnico (si está bien preparada para Google)</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Posicionamiento en Google</strong> <span style="color:#9A9AA0;">— SEO local y orgánico (aparecer sin pagar)</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Business Profile</strong> <span style="color:#9A9AA0;">— tu ficha de Google Maps</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Redes sociales</strong> <span style="color:#9A9AA0;">— Facebook, Instagram, LinkedIn, TikTok</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Reseñas online y reputación</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Publicidad</strong> <span style="color:#9A9AA0;">— Meta Ads y Google Ads (anuncios de pago)</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sistemas de captación y contacto</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Análisis de la competencia en tu zona</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Entregable</strong> <span style="color:#9A9AA0;">— informe profesional (web/PDF) con puntuación, problemas detectados y plan de acción</span></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.5 2.4 2.5 14.6 0 17M12 3.5c-2.5 2.4-2.5 14.6 0 17"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Rediseño web profesional</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Web moderna, rápida y optimizada para conversión. Mobile-first, SEO friendly, con CTAs y elementos de confianza.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Diseño y Optimización Web</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Auditoría técnica de la web actual</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Rediseño orientado a conversión</strong> <span style="color:#9A9AA0;">— que las visitas se conviertan en clientes, con diseño moderno (UX/UI)</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización móvil</strong> <span style="color:#9A9AA0;">— mobile-first: pensada primero para el móvil</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Velocidad de carga</strong> <span style="color:#9A9AA0;">— medida con Lighthouse, el test de rendimiento de Google</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estructura preparada para Google</strong> <span style="color:#9A9AA0;">— SEO friendly</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Textos optimizados por sección</strong> <span style="color:#9A9AA0;">— copy</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Elementos de confianza</strong> <span style="color:#9A9AA0;">— testimonios, reseñas, casos</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Llamadas a la acción</strong> <span style="color:#9A9AA0;">— CTAs: botones que invitan a contactar o reservar</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Página de equipo</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Versión en varios idiomas cuando aplique</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Google Business Profile</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Configuración completa, fotos profesionales, publicaciones semanales y estrategia para subir en Google Maps.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Google Business Profile <span style="color:#9A9AA0; font-weight:500;">(ficha de Google Maps)</span></span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Configuración o reactivación de tu ficha</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Descripción y categorías optimizadas</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Fotos profesionales del negocio</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Horarios, servicios y atributos</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Mensajes directos activados</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Publicaciones semanales</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">SEO local</strong> <span style="color:#9A9AA0;">— aparecer en las búsquedas de tu zona</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estrategia para subir de posición en Google Maps</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Sistema de reservas online</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Cal.com personalizado: múltiples tipos de cita, sincronización con tu Google Calendar y confirmaciones automáticas.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Sistema de Reservas Online <span style="color:#9A9AA0; font-weight:500;">(Cal.com)</span></span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Cal.com</strong> <span style="color:#9A9AA0;">— herramienta de reservas profesional</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Varios tipos de cita</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Integración con tu Google Calendar</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Personalización con tu marca</strong> <span style="color:#9A9AA0;">— logo y colores</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Confirmaciones automáticas por email</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Recordatorios automáticos antes de la cita</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Gestión de cancelaciones y cambios de cita</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email post-cita para pedir reseña</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18l-1 3 3.2-1A8 8 0 1 0 5 18Z"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">WhatsApp Business pro</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Catálogo, mensajes automáticos, respuestas rápidas y botón flotante en la web. Atención profesional sin esfuerzo.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">WhatsApp Business Profesional</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Perfil de empresa configurado</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Catálogo de servicios</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Mensajes automáticos de bienvenida y ausencia</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Respuestas rápidas a preguntas frecuentes</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Botón flotante de WhatsApp en la web</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Enlaces directos con mensaje ya escrito</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 3 3 7-7"/><path d="M16 7h4v4"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">SEO local</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Optimización para búsquedas de tu zona: estructura, palabras clave, schema markup y páginas por servicio.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">SEO Local</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Palabras clave por zona geográfica</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización on-page</strong> <span style="color:#9A9AA0;">— títulos, descripciones y contenido de cada página</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">URLs preparadas para Google</strong> <span style="color:#9A9AA0;">— SEO friendly</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sitemap.xml y robots.txt</strong> <span style="color:#9A9AA0;">— archivos que ayudan a Google a entender tu web</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Datos estructurados</strong> <span style="color:#9A9AA0;">— Schema markup: etiquetas que ayudan a Google a mostrar tu negocio, horarios y reseñas</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Páginas individuales por servicio</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Indexación en Google Search Console</strong> <span style="color:#9A9AA0;">— la herramienta de Google para seguir tu web</span></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="2.2" stroke-linecap="round"><path d="M5 20V12M10 20V6M15 20v-8M20 20V9"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Analítica y tracking</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Google Analytics 4 + Meta Pixel con eventos personalizados. Reportes mensuales con métricas accionables.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Analítica y Seguimiento</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Analytics 4</strong> <span style="color:#9A9AA0;">— medir las visitas y qué hacen en tu web</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Meta Pixel</strong> <span style="color:#9A9AA0;">— medir los resultados de los anuncios de Facebook/Instagram</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Eventos de conversión</strong> <span style="color:#9A9AA0;">— registrar cuándo alguien reserva o contacta</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Paneles mensuales de rendimiento</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Informes claros con métricas accionables</strong> <span style="color:#9A9AA0;">— datos que sirven para decidir</span></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16l-6 7v6l-4-2v-4Z"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Captación de leads</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Formularios optimizados, newsletter integrada y captura automática a base de datos. Cada visitante es una oportunidad.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Formularios y Captación de Leads</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Formularios optimizados</strong> <span style="color:#9A9AA0;">— con Formspree, un sistema fiable de envío de formularios</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Captación automática a tu base de datos</strong> <span style="color:#9A9AA0;">— los contactos se guardan solos</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email de bienvenida automático</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Seguimiento de clientes potenciales</strong> <span style="color:#9A9AA0;">— leads</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Imanes de captación opcionales</strong> <span style="color:#9A9AA0;">— lead magnets: guías o descuentos a cambio del email</span></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4.5 7l7.5 6 7.5-6"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Email marketing</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Newsletter periódica, campañas automatizadas y emails de fidelización con Brevo. Tu base de datos trabaja para ti.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Email Marketing</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Brevo o Mailchimp</strong> <span style="color:#9A9AA0;">— plataformas de email marketing</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Plantillas de email profesionales</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Segmentación de audiencia</strong> <span style="color:#9A9AA0;">— enviar a cada grupo lo que le interesa</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Campañas mensuales automatizadas</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Emails post-venta y de fidelización</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.3 4.8 5.2.7-3.8 3.6.9 5.1L12 16.8 7.4 18.8l.9-5.1L4.5 9.5l5.2-.7Z"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Gestión de reseñas</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Sistema automatizado que pide reseñas en el momento óptimo. Plantillas de respuesta y estrategia de reputación.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Gestión de Reseñas</span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sistema automático para pedir reseñas en Google</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email post-servicio en el momento óptimo</strong> <span style="color:#9A9AA0;">— poco después de la visita</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Plantillas de respuesta</strong> <span style="color:#9A9AA0;">— a reseñas positivas y negativas</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estrategia para mejorar tu puntuación general</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Reseñas visibles en la web</strong></span></li>
+          </ul>
         </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3); margin-bottom:16px;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 L5 13 H11 L10 21 L19 10 H13 Z"/></svg></div>
-          <h3 style="margin:0 0 7px; font-family:'General Sans',sans-serif; font-weight:600; font-size:17px;">Automatizaciones de marketing</h3>
-          <p style="margin:0; font-size:14.5px; line-height:1.55; color:#9A9AA0;">Recordatorios de cita, gestión de cancelaciones, emails post-venta, reactivación de inactivos. Marketing en piloto automático.</p>
+      </details>
+      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
+        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
+          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Publicidad Digital <span style="font-size:11px; font-weight:600; letter-spacing:0.04em; color:#4DA6F7; padding:3px 9px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Opcional</span></span>
+          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
+        </summary>
+        <div class="kael-acc-body" style="padding:0 4px 26px;">
+          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Meta Ads</strong> <span style="color:#9A9AA0;">— anuncios en Facebook e Instagram</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Ads</strong> <span style="color:#9A9AA0;">— anuncios en Google</span></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Segmentación avanzada por zona geográfica</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización de coste por clic y conversiones</strong></span></li>
+            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Informes mensuales con el retorno de la inversión</strong> <span style="color:#9A9AA0;">— ROAS: cuánto vendes por cada euro invertido en anuncios</span></span></li>
+          </ul>
         </div>
+      </details>
       </div>
     </div>
   </section>
@@ -259,72 +401,6 @@
         </div>
       </div>
       <p style="margin:26px 0 0; font-size:13.5px; line-height:1.6; color:rgba(245,244,248,0.6); max-width:70ch;">Estos datos provienen de auditorías reales del sector. Tu caso concreto lo medimos con tus números desde el día 1.</p>
-    </div>
-  </section>
-
-  <!-- BLOQUE 6 · PLANES -->
-  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:1180px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">Planes</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Planes a tu medida</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">Tres planes según el momento de tu negocio. Cada uno marca el alcance; el presupuesto lo cerramos a medida tras tu diagnóstico gratuito.</p>
-      </div>
-      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:48px; align-items:start;">
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:22px; padding:32px;">
-          <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Esencial</h3>
-          <p style="margin:6px 0 0; font-size:14.5px; color:#4DA6F7; font-weight:500;">Para empezar con buen pie</p>
-          <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:26px;">Presupuesto a medida</div>
-          <div style="margin:6px 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Compromiso 6 meses</div>
-          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#CFCFD3;">
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Auditoría completa</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Google Business optimizado</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> WhatsApp Business</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Cal.com básico</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Formulario de contacto</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Mantenimiento mensual</div>
-          </div>
-          <a href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; transition:border-color .25s ease;" style-hover="border-color:rgba(255,255,255,0.4);">Empezar con Esencial</a>
-        </div>
-        <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; position:relative; border-radius:24px; padding:1.6px; background:linear-gradient(160deg,#0B84F3,#3B82F6,#3B82F6); box-shadow:0 0 60px rgba(11,132,243,0.28);">
-          <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); padding:5px 14px; border-radius:9999px; background:linear-gradient(to right,#0B84F3,#3B82F6); color:#fff; font-size:12px; font-weight:600; letter-spacing:0.04em; white-space:nowrap;">★ Más popular</div>
-          <div style="display:flex; flex-direction:column; height:100%; background:#1C1D1E; border-radius:22px; padding:32px;">
-            <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Profesional</h3>
-            <p style="margin:6px 0 0; font-size:14.5px; color:#4DA6F7; font-weight:500;">El que recomendamos a la mayoría</p>
-            <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:26px;">Presupuesto a medida</div>
-            <div style="margin:6px 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Compromiso 6 meses</div>
-            <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#CFCFD3;">
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Todo lo del Esencial</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Rediseño web completo</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Cal.com con workflows automáticos</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Captación de leads + Newsletter</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Analytics + Meta Pixel</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Gestión de reseñas</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> SEO local básico</div>
-              <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Soporte WhatsApp directo</div>
-            </div>
-            <a class="mzu-cta" href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:#0A6FD0; color:#FFFFFF; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; box-shadow:0 0 36px rgba(11,132,243,0.35); transition:transform .25s ease;" style-hover="transform:translateY(-3px);">Empezar con Profesional</a>
-          </div>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:22px; padding:32px;">
-          <h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:22px;">Premium</h3>
-          <p style="margin:6px 0 0; font-size:14.5px; color:#4DA6F7; font-weight:500;">Para crecimiento agresivo</p>
-          <div style="margin:22px 0 4px; font-family:'General Sans',sans-serif; font-weight:600; font-size:26px;">Presupuesto a medida</div>
-          <div style="margin:6px 0 22px; font-size:13px; color:rgba(245,244,248,0.5);">Compromiso 6 meses</div>
-          <div style="display:flex; flex-direction:column; gap:11px; font-size:14.5px; line-height:1.45; color:#CFCFD3;">
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Todo lo del Profesional</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Implementación de IA personalizada</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Agente WhatsApp con IA</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Automatizaciones avanzadas n8n</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> SEO local avanzado + contenido</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Campañas Meta Ads gestionadas</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Dashboard inteligente</div>
-            <div style="display:flex; gap:10px;"><span style="color:#4DA6F7;">✓</span> Reuniones mensuales estratégicas</div>
-          </div>
-          <a href="/contacto/" style="margin-top:28px; text-align:center; padding:13px 20px; border-radius:9999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:15px; font-weight:600; transition:border-color .25s ease;" style-hover="border-color:rgba(255,255,255,0.4);">Empezar con Premium</a>
-        </div>
-      </div>
-      <p data-reveal style="transform:translateY(20px); transition:opacity .7s ease, transform .6s ease; margin:30px 0 0; font-size:15px; color:#CFCFD3; text-align:center; max-width:70ch; margin-left:auto; margin-right:auto;">¿No sabes cuál encaja con tu negocio? Empezamos por el <a href="/contacto/" style="color:#4DA6F7; font-weight:600; text-decoration:none;" style-hover="text-decoration:underline;">diagnóstico gratuito</a> y te recomendamos el paquete adecuado según lo que detectemos.</p>
     </div>
   </section>
 
