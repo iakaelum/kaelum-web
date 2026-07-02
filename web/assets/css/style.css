@@ -1,3 +1,12 @@
+/* ===== Fuentes self-host (font-display:swap) ===== */
+@font-face{font-family:'General Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/generalsans-500.woff2') format('woff2');}
+@font-face{font-family:'General Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/generalsans-600.woff2') format('woff2');}
+@font-face{font-family:'General Sans';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/generalsans-700.woff2') format('woff2');}
+@font-face{font-family:'Geist';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/geist-400.woff2') format('woff2');}
+@font-face{font-family:'Geist';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/geist-500.woff2') format('woff2');}
+@font-face{font-family:'Geist';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/geist-600.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/jetbrainsmono-600.woff2') format('woff2');}
+
 /* ============================================================
    KAELUM — Sistema de diseño (rediseño 2026, handoff Claude Design)
    Atmósfera oscura + aurora. Portado a estático (sin runtime).
