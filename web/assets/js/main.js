@@ -645,13 +645,22 @@
     document.body.appendChild(bar);
   }
 
+  function initHeroReady() {
+    // La K del hero se pinta QUIETA (mejor LCP): su flotación se activa tras el primer
+    // pintado, añadiendo .hero-ready al <html>. Así la animación no retrasa el
+    // Largest Contentful Paint (que en móvil es la propia K).
+    var go = function () { requestAnimationFrame(function () { document.documentElement.classList.add("hero-ready"); }); };
+    if (document.readyState === "complete") go();
+    else window.addEventListener("load", go, { once: true });
+  }
+
   function init() {
     // Cada widget corre aislado: si uno falla (p. ej. initThread sobre un SVG oculto
     // en algún navegador), no impide que se conecten los demás —incluido el
     // formulario de contacto y su envío—.
     [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
      initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroParticles, initHeroVideo,
-     initThread, initChat, initContactForm, initCookieConsent].forEach(function (fn) {
+     initThread, initChat, initContactForm, initCookieConsent, initHeroReady].forEach(function (fn) {
       try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
     });
     var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();

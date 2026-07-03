@@ -22,10 +22,10 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=14">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=14">
 <script>document.documentElement.classList.add("js");</script>
-<link rel="preload" as="image" href="/assets/img/k-hero.webp?v=9" type="image/webp" fetchpriority="high">
-
-<link rel="preload" href="/assets/fonts/generalsans-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.css?v=13">
+<link rel="preload" as="image" href="/assets/img/k-hero.webp?v=9" imagesrcset="/assets/img/k-hero-480.webp?v=9 480w, /assets/img/k-hero.webp?v=9 680w" imagesizes="(max-width:700px) 240px, 440px" type="image/webp" fetchpriority="high">
+
+<link rel="preload" href="/assets/fonts/generalsans-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.css?v=14">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Kaelum","url":"https://kaelum.es","logo":"https://kaelum.es/assets/img/apple-touch-icon.png?v=14","description":"Implementación de IA y aumento de presencia digital para PYMEs y comercio local.","email":"contacto@kaelum.es","areaServed":"Madrid, España","address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"}}
 </script>
@@ -97,7 +97,7 @@
         </div>
 
         <!-- LOGO protagonista con fake 3D (parallax al ratón en desktop; flotar/glow auto en móvil) -->
-        <div class="kael-hero-logo-wrap" style="animation:kael-rise .7s ease .1s both;">
+        <div class="kael-hero-logo-wrap">
           <div class="kael-hero-logo-glow" aria-hidden="true"></div>
           <!-- Partículas muy sutiles alrededor de la K (parallax suave con el ratón) -->
           <div class="kael-hero-particles" data-hero-particles aria-hidden="true">
@@ -129,7 +129,7 @@
           <div class="kael-hero-logo-float">
             <div class="kael-hero-logo-tilt" data-hero-tilt>
               <div class="kael-hero-k">
-                <img class="kael-hero-k-base" src="/assets/img/k-hero.webp?v=9" alt="Logo de KAELUM" width="460" height="460" fetchpriority="high" decoding="async" />
+                <img class="kael-hero-k-base" src="/assets/img/k-hero.webp?v=9" srcset="/assets/img/k-hero-480.webp?v=9 480w, /assets/img/k-hero.webp?v=9 680w" sizes="(max-width:700px) 240px, 440px" alt="Logo de KAELUM" width="460" height="460" fetchpriority="high" decoding="async" />
                 <!-- 9 gemas: cada una su zona sensible (hover individual) + glow propio -->
                 <span class="kael-gem" style="left:45.5%; top:8.5%;  --d:0s;"></span>
                 <span class="kael-gem" style="left:22.5%; top:16%;   --d:.5s;"></span>
@@ -582,6 +582,6 @@
   </div>
 </div>
 
-<script src="/assets/js/main.js?v=12" defer></script>
+<script src="/assets/js/main.js?v=13" defer></script>
 </body>
 </html>
