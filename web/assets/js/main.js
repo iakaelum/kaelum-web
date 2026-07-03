@@ -545,7 +545,7 @@
       var email = get("email");
       el = setError("email", !email ? msgs.email_empty : (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? msgs.email_bad : "")); first = first || el;
       el = setError("negocio", get("negocio") ? "" : msgs.negocio); first = first || el;
-      el = setError("mensaje", get("mensaje") ? "" : msgs.mensaje); first = first || el;
+      // "mensaje" es OPCIONAL (coherente con el label del formulario): no se valida.
       var rgpd = form.elements["rgpd"];
       el = setError("rgpd", rgpd && rgpd.checked ? "" : msgs.rgpd); first = first || el;
       return first;
@@ -555,6 +555,22 @@
       if (!n) { n = document.createElement("p"); n.className = "kael-formnote"; form.appendChild(n); }
       n.style.cssText = "margin:14px 0 0;font-size:14.5px;line-height:1.55;" + (ok ? "color:#A7F3D0;" : "color:#FCA5A5;");
       n.textContent = text;
+    }
+    function showSuccess() {
+      // Sustituye TODO el bloque del formulario (título + intro + <form>) por el
+      // estado de éxito. Solo se llama cuando el webhook responde OK de verdad.
+      var host = form.parentNode;
+      host.setAttribute("role", "status");
+      host.setAttribute("aria-live", "polite");
+      host.innerHTML =
+        '<div style="text-align:center; padding:clamp(24px,5vw,44px) 8px;">' +
+          '<div style="width:66px; height:66px; margin:0 auto 22px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.45); box-shadow:0 0 40px rgba(52,211,153,0.18);">' +
+            '<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#34D399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></svg>' +
+          '</div>' +
+          '<h2 style="margin:0; font-family:\'General Sans\',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.01em; color:#F5F4F8;">¡Mensaje enviado!</h2>' +
+          '<p style="margin:14px auto 0; max-width:38ch; font-size:16px; line-height:1.6; color:#CFCFD3;">Gracias por escribirnos. Te responderemos en menos de 24h. Revisa tu email (y la carpeta de spam, por si acaso).</p>' +
+        '</div>';
+      try { host.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
     }
     var btn = form.querySelector('[type="submit"]');
     on(form, "submit", function (e) {
@@ -589,10 +605,7 @@
         })
         .then(function (res) {
           if (res.ok) {
-            form.reset();
-            ["nombre", "email", "negocio", "mensaje", "rgpd"].forEach(function (f) { setError(f, ""); });
-            if (btn) { btn.disabled = false; btn.textContent = label; }
-            note("Mensaje enviado, te responderemos pronto.", true);
+            showSuccess();
           } else {
             netError(res.data && res.data.error);
           }

@@ -19,6 +19,13 @@ const TYPES = {
 
 createServer(async (req, res) => {
   try {
+    // Dev-only: mock del endpoint del formulario para probar el estado de éxito en
+    // local. En producción /api/contact lo sirve Cloudflare; esto NO se despliega.
+    if (req.method === 'POST' && req.url.split('?')[0] === '/api/contact') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+      return;
+    }
     let urlPath = decodeURIComponent(req.url.split('?')[0]);
     if (urlPath.endsWith('/')) urlPath += 'index.html';
     const filePath = normalize(join(ROOT, urlPath));
