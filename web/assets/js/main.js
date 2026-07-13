@@ -1,8 +1,8 @@
 /* ============================================================
    KAELUM — Interacciones (rediseño 2026). Vanilla, sin dependencias.
    Recrea el runtime del prototipo: hilo de progreso SVG, style-hover,
-   parallax, reveals, contadores, autovídeo en viewport, nav-on-scroll,
-   dropdown, menú móvil, glow del hero, chat (demo) y formulario.
+   parallax, reveals, contadores, nav-on-scroll, dropdown, menú móvil,
+   fake 3D del logo del hero, partículas del hero, chat y formulario.
    Respeta prefers-reduced-motion.
    ============================================================ */
 (function () {
@@ -113,21 +113,6 @@
     counters.forEach(function (el) { if (!el.closest("[data-reveal]")) cio.observe(el); });
   }
 
-  /* ---------- Autovídeo: play/pause según viewport ---------- */
-  function initAutoVideo() {
-    var vids = document.querySelectorAll("[data-autovideo]");
-    if (!vids.length) return;
-    if (reduce || !("IntersectionObserver" in window)) return; // muestran póster
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var v = e.target;
-        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        else v.pause();
-      });
-    }, { threshold: 0.35 });
-    vids.forEach(function (v) { io.observe(v); });
-  }
-
   /* ---------- Nav: oscurece el fondo al hacer scroll ---------- */
   function initNav() {
     var nav = document.getElementById("site-nav");
@@ -165,21 +150,6 @@
     });
     menu.querySelectorAll('a, [data-action="close-menu"]').forEach(function (el) { on(el, "click", close); });
     on(document, "keydown", function (e) { if (e.key === "Escape") close(); });
-  }
-
-  /* ---------- Glow del hero que sigue al cursor ---------- */
-  function initHeroGlow() {
-    if (reduce) return;
-    var glow = document.getElementById("hero-glow");
-    var hero = document.getElementById("top");
-    if (!glow || !hero) return;
-    on(hero, "pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      glow.style.left = (e.clientX - r.left) + "px";
-      glow.style.top = (e.clientY - r.top) + "px";
-      glow.style.opacity = "1";
-    });
-    on(hero, "pointerleave", function () { glow.style.opacity = "0"; });
   }
 
   /* ---------- Fake 3D del logo del hero: inclina según el ratón (solo desktop) ----------
@@ -252,21 +222,6 @@
     }
     on(hero, "pointermove", function (ev) { mx = ev.clientX; my = ev.clientY; active = true; if (!raf) raf = requestAnimationFrame(loop); }, { passive: true });
     on(hero, "pointerleave", function () { active = false; mx = -1e6; my = -1e6; if (!raf) raf = requestAnimationFrame(loop); });
-  }
-
-  /* ---------- Vídeo neural del hero: autoplay + parallax suave ---------- */
-  function initHeroVideo() {
-    var v = document.getElementById("hero-video");
-    if (!v) return;
-    if (reduce) { v.style.display = "none"; return; }
-    v.muted = true; v.playsInline = true;
-    var start = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
-    if (v.readyState >= 2) start(); else v.addEventListener("loadeddata", start, { once: true });
-    var ticking = false;
-    on(window, "scroll", function () {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(function () { ticking = false; v.style.transform = "translateY(" + ((window.scrollY || 0) * 0.18).toFixed(1) + "px)"; });
-    }, { passive: true });
   }
 
   /* ---------- Hilo de progreso de scroll (firma visual, estilo "circuito") ----------
@@ -350,9 +305,11 @@
 
   /* ---------- Chat "Agente KAELUM" (demo, respuestas guionizadas) ---------- */
   // Markup del widget: ÚNICO punto de definición. Se inyecta en <body> al cargar
-  // (en todas las páginas que cargan main.js, salvo las que tengan data-no-chat,
-  // p. ej. la 404). Para cambiar el widget, edita solo este template + los estilos
-  // .kael-chat-* en style.css. Nunca vuelvas a copiarlo en el HTML de las páginas.
+  // en TODAS las páginas que cargan main.js —incluida la 404, a propósito, para
+  // rescatar a quien haya llegado a un enlace roto—. Una página puede excluirlo
+  // añadiendo el atributo data-no-chat al <body> (hoy ninguna lo usa). Para cambiar
+  // el widget, edita solo este template + los estilos .kael-chat-* en style.css.
+  // Nunca vuelvas a copiarlo en el HTML de las páginas.
   var CHAT_WIDGET_HTML =
     '<div class="kael-chat-root">' +
       '<div class="kael-chatpanel">' +
@@ -382,7 +339,7 @@
     '</div>';
 
   function injectChatWidget() {
-    if (document.body.hasAttribute("data-no-chat")) return;  // páginas que lo excluyen (404)
+    if (document.body.hasAttribute("data-no-chat")) return;  // opt-out por página (hoy ninguna lo usa)
     if (document.querySelector(".kael-chatpanel")) return;    // evita doble inyección
     var wrap = document.createElement("div");
     wrap.innerHTML = CHAT_WIDGET_HTML;
@@ -671,8 +628,8 @@
     // Cada widget corre aislado: si uno falla (p. ej. initThread sobre un SVG oculto
     // en algún navegador), no impide que se conecten los demás —incluido el
     // formulario de contacto y su envío—.
-    [initHover, initCardHover, initParallax, initReveals, initAutoVideo,
-     initNav, initDropdown, initMenu, initHeroGlow, initHeroLogo3D, initHeroParticles, initHeroVideo,
+    [initHover, initCardHover, initParallax, initReveals,
+     initNav, initDropdown, initMenu, initHeroLogo3D, initHeroParticles,
      initThread, initChat, initContactForm, initCookieConsent, initHeroReady].forEach(function (fn) {
       try { fn(); } catch (e) { if (window.console && console.error) console.error("init: " + fn.name, e); }
     });

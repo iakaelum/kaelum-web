@@ -6,14 +6,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
-# IMPORTANTE: los assets NO llevan hash en el nombre (style.css, main.js,
-# ai-robot-working.mp4 …). Por eso NO usamos "immutable": forzamos revalidación
-# para que cualquier cambio se propague siempre y no se sirvan versiones viejas.
+# IMPORTANTE: los assets NO llevan hash en el nombre (style.css, main.js, fuentes…).
+# Por eso NO usamos "immutable": forzamos revalidación para que cualquier cambio se
+# propague siempre y no se sirvan versiones viejas. CSS y JS se cache-bustean con ?v=.
 /assets/css/*
   Cache-Control: public, max-age=0, must-revalidate
 /assets/js/*
   Cache-Control: public, max-age=0, must-revalidate
 /assets/img/*
   Cache-Control: public, max-age=86400, must-revalidate
-/assets/videos/*
+/assets/fonts/*
+  Cache-Control: public, max-age=604800, must-revalidate
+/assets/logos/*
   Cache-Control: public, max-age=86400, must-revalidate

@@ -113,9 +113,8 @@ a{color:inherit;}
 ::selection{background:rgba(11,132,243,0.4);color:#fff;}
 :focus-visible{outline:2px solid #0B84F3;outline-offset:3px;border-radius:4px;}
 
-/* Fondo neural del hero (canvas) sobre base oscura — recrea el vídeo neural */
+/* Fondo del hero: degradado radial oscuro (sin canvas ni vídeo) */
 .kael-herobg{position:absolute;inset:0;z-index:0;overflow:hidden;background:radial-gradient(120% 95% at 50% -5%, #1C1D1E 0%, #161718 52%, #18191A 100%);}
-#neural-canvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block;}
 
 /* ===== HERO rediseñado: logo protagonista + fake 3D (CSS transforms, sin librerías) ===== */
 .kael-hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;gap:clamp(32px,5vw,72px);max-width:1280px;margin:0 auto;width:100%;padding:0 36px;}
