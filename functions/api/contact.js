@@ -44,9 +44,10 @@ export async function onRequest(context) {
   const web = str(data.web);
   const rgpd = data.rgpd === true || data.rgpd === "si" || data.rgpd === "true" || data.rgpd === "on";
 
-  // Validación: nombre, email y mensaje son obligatorios.
-  if (!nombre || !email || !mensaje) {
-    return json({ ok: false, error: "Faltan campos obligatorios: nombre, email y mensaje." }, 400);
+  // Validación: solo nombre y email son obligatorios (mensaje es OPCIONAL,
+  // coherente con la UI del formulario que lo marca como "(opcional)").
+  if (!nombre || !email) {
+    return json({ ok: false, error: "Faltan campos obligatorios: nombre y email." }, 400);
   }
   // El email debe tener formato válido.
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
