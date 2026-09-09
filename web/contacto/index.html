@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=14">
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preload" href="/assets/fonts/generalsans-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/light.css?v=1">
+<link rel="stylesheet" href="/assets/css/light.css?v=2">
 </head>
 <body>
 
@@ -62,12 +62,12 @@
       <div class="contact-aside">
         <div data-reveal>
           <h2>Qué incluye el diagnóstico</h2>
-          <div class="check-list">
-            <div class="check-item"><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg></span><p>Auditoría de tu presencia digital (web, SEO, Google Business, redes, reseñas).</p></div>
-            <div class="check-item"><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg></span><p>Detección de procesos automatizables con IA.</p></div>
-            <div class="check-item"><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg></span><p>Informe profesional con puntuación y problemas priorizados.</p></div>
-            <div class="check-item"><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg></span><p>Plan de acción concreto y recomendación de siguiente paso.</p></div>
-          </div>
+          <ul class="mk-list">
+            <li>Auditoría de tu presencia digital (web, SEO, Google Business, redes, reseñas).</li>
+            <li>Detección de procesos automatizables con IA.</li>
+            <li>Informe profesional con puntuación y problemas priorizados.</li>
+            <li>Plan de acción concreto y recomendación de siguiente paso.</li>
+          </ul>
         </div>
 
         <div data-reveal>
@@ -189,7 +189,7 @@
 <!-- ===== NOTA DE CIERRE ===== -->
 <section class="section" style="padding-top:0;text-align:center;">
   <div class="wrap">
-    <p class="contact-note" data-reveal>Diagnóstico gratuito de verdad. No es una llamada de ventas disfrazada: es un informe profesional que te entregamos sin compromiso.</p>
+    <p class="contact-note" data-reveal>Diagnóstico gratuito de verdad: un informe profesional que te entregamos sin compromiso.</p>
   </div>
 </section>
 </main>
@@ -238,7 +238,7 @@
   <a href="/contacto/" class="mm-cta">Diagnóstico gratuito</a>
 </div>
 
-<script src="/assets/js/main.js?v=16" defer></script>
+<script src="/assets/js/main.js?v=17" defer></script>
 <!-- Navegación multipaso del formulario de contacto. Solo controla qué paso se ve
      y valida los obligatorios de cada paso antes de avanzar. NO toca el envío:
      el botón type="submit" del paso 3 sigue disparando el handler de main.js
@@ -272,11 +272,20 @@
     var wrap = form.querySelector('[data-field="' + field + '"]');
     if (!wrap) return null;
     var err = wrap.querySelector('.kael-err');
-    if (!err) { err = document.createElement('p'); err.className = 'kael-err'; err.style.cssText = 'margin:6px 0 0;font-size:13px;color:#DC2626;'; wrap.appendChild(err); }
+    if (!err) {
+      err = document.createElement('p'); err.className = 'kael-err';
+      err.id = 'kael-err-' + field; err.setAttribute('role', 'alert');
+      err.style.cssText = 'margin:6px 0 0;font-size:13px;color:#DC2626;';
+      wrap.appendChild(err);
+    }
     err.textContent = text || '';
     err.style.display = text ? 'block' : 'none';
     var input = wrap.querySelector('input,select,textarea');
-    if (input) input.style.borderColor = text ? '#DC2626' : '';
+    if (input) {
+      input.style.borderColor = text ? '#DC2626' : '';
+      if (text) { input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', err.id); }
+      else { input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby'); }
+    }
     return text ? input : null;
   }
   function validateStep(n) {

@@ -105,6 +105,15 @@
     }, { threshold: 0.16, rootMargin: "0px 0px -7% 0px" });
     items.forEach(function (el) { io.observe(el); });
 
+    // Red de seguridad: si el observer nunca llega a dispararse (pestaña en
+    // segundo plano, navegador embebido que no pinta, motor raro), el contenido
+    // se quedaría en opacity:0 e invisible. A los 3 s lo mostramos todo.
+    setTimeout(function () {
+      items.forEach(function (el) {
+        if (!el.classList.contains("is-visible")) { el.classList.add("is-visible"); io.unobserve(el); }
+      });
+    }, 3000);
+
     var cio = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) { runCounter(entry.target); cio.unobserve(entry.target); }
@@ -136,17 +145,32 @@
     var trigger = document.querySelector('[data-action="toggle-servicios"]');
     var panel = document.querySelector("[data-dd-panel]");
     if (!trigger || !panel) return;
-    on(trigger, "click", function (e) { e.stopPropagation(); panel.classList.toggle("open"); });
-    on(document, "click", function (e) { if (!panel.contains(e.target) && e.target !== trigger) panel.classList.remove("open"); });
+    if (!panel.id) panel.id = "kael-dd-servicios";
+    trigger.setAttribute("aria-controls", panel.id);
+    trigger.setAttribute("aria-haspopup", "true");
+    function sync() { trigger.setAttribute("aria-expanded", String(panel.classList.contains("open"))); }
+    sync();
+    on(trigger, "click", function (e) { e.stopPropagation(); panel.classList.toggle("open"); sync(); });
+    on(document, "click", function (e) { if (!panel.contains(e.target) && e.target !== trigger) { panel.classList.remove("open"); sync(); } });
+    on(document, "keydown", function (e) { if (e.key === "Escape" && panel.classList.contains("open")) { panel.classList.remove("open"); sync(); trigger.focus(); } });
   }
 
   /* ---------- Menú móvil ---------- */
   function initMenu() {
     var menu = document.querySelector(".kael-mobilemenu");
     if (!menu) return;
-    function close() { menu.classList.remove("open"); document.body.style.overflow = ""; }
-    document.querySelectorAll('[data-action="toggle-menu"]').forEach(function (b) {
-      on(b, "click", function () { var o = menu.classList.toggle("open"); document.body.style.overflow = o ? "hidden" : ""; });
+    var toggles = document.querySelectorAll('[data-action="toggle-menu"]');
+    function sync(o) {
+      toggles.forEach(function (b) {
+        b.setAttribute("aria-expanded", String(o));
+        b.setAttribute("aria-label", o ? "Cerrar menú" : "Abrir menú");
+      });
+    }
+    function close() { menu.classList.remove("open"); document.body.style.overflow = ""; sync(false); }
+    sync(false);
+    toggles.forEach(function (b) {
+      b.setAttribute("aria-controls", menu.id || (menu.id = "kael-mobilemenu"));
+      on(b, "click", function () { var o = menu.classList.toggle("open"); document.body.style.overflow = o ? "hidden" : ""; sync(o); });
     });
     menu.querySelectorAll('a, [data-action="close-menu"]').forEach(function (el) { on(el, "click", close); });
     on(document, "keydown", function (e) { if (e.key === "Escape") close(); });
@@ -489,12 +513,23 @@
       var wrap = form.querySelector('[data-field="' + field + '"]');
       if (!wrap) return null;
       var err = wrap.querySelector(".kael-err");
-      if (!err) { err = document.createElement("p"); err.className = "kael-err"; err.style.cssText = "margin:6px 0 0;font-size:13px;color:#FCA5A5;"; wrap.appendChild(err); }
+      if (!err) {
+        err = document.createElement("p"); err.className = "kael-err";
+        err.id = "kael-err-" + field;
+        err.setAttribute("role", "alert");
+        // Rojo legible sobre fondo claro (antes #FCA5A5, pensado para el tema oscuro).
+        err.style.cssText = "margin:6px 0 0;font-size:13px;color:#DC2626;";
+        wrap.appendChild(err);
+      }
       err.textContent = text || "";
       err.style.display = text ? "block" : "none";
       var input = wrap.querySelector("input,select,textarea");
-      if (input) input.style.borderColor = text ? "#FCA5A5" : "";
-      return text ? (wrap.querySelector("input,select,textarea")) : null;
+      if (input) {
+        input.style.borderColor = text ? "#DC2626" : "";
+        if (text) { input.setAttribute("aria-invalid", "true"); input.setAttribute("aria-describedby", err.id); }
+        else { input.removeAttribute("aria-invalid"); input.removeAttribute("aria-describedby"); }
+      }
+      return text ? input : null;
     }
     function validate() {
       var first = null, el;
