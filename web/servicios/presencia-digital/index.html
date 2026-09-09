@@ -14,544 +14,381 @@
 <meta property="og:image" content="https://kaelum.es/assets/img/og-kaelum.png?v=14">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kaelum.es/assets/img/og-kaelum.png?v=14">
-<meta name="theme-color" content="#18191A">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/assets/img/favicon.ico?v=14" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=14">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=14">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=14">
 <script>document.documentElement.classList.add("js");</script>
-
 <link rel="preload" href="/assets/fonts/generalsans-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.css?v=15">
+<link rel="stylesheet" href="/assets/css/light.css?v=1">
 </head>
 <body>
 
-<div class="mzbody" style="position:relative; width:100%; overflow-x:hidden; font-family:'Geist',-apple-system,system-ui,sans-serif; color:#F5F4F8;">
-
-  <div class="mzu-bg" aria-hidden="true"><div class="blob b1" data-parallax="0.06"></div><div class="blob b2" data-parallax="0.10"></div><div class="blob b3" data-parallax="0.04"></div><div class="dots"></div><div class="grain"></div></div>
-  <svg class="mzu-line" preserveAspectRatio="none" style="position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;"><defs><linearGradient id="mzcb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B84F3"/><stop offset="0.5" stop-color="#3B82F6"/><stop offset="1" stop-color="#4DA6F7"/></linearGradient></defs><path class="mzu-track" fill="none" stroke="rgba(150,210,255,0.28)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(124,194,255,0.28));"></path><path class="mzu-prog" fill="none" stroke="url(#mzcb)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="will-change:stroke-dashoffset; filter:drop-shadow(0 0 6px rgba(124,194,255,0.5));"></path><g class="mzu-nodes"></g><circle class="mzu-comet" r="5" fill="#E0F2FE" style="filter:drop-shadow(0 0 10px rgba(124,194,255,0.95));opacity:0;"></circle></svg>
-
-  <!-- FIXED NAV -->
-  <header id="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:40; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(20,21,22,0.35); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;">
-    <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 36px; max-width:1320px; margin:0 auto; width:100%;">
-      <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-        <img src="/assets/img/logo-mark.webp?v=8" alt="KAELUM" width="38" height="38" style="width:38px; height:38px; object-fit:contain; animation:kael-logopulse 3.6s ease-in-out infinite;" />
-        <span style="font-family:'General Sans',sans-serif; font-weight:600; font-size:21px; letter-spacing:0.16em; color:#F5F4F8;">KAELUM</span>
-      </a>
-
-      <nav class="kael-desktop" style="align-items:center; gap:28px; position:absolute; left:50%; transform:translateX(-50%);">
-        <a href="/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Inicio</a>
-        <div style="position:relative;">
-          <button data-action="toggle-servicios" style="display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer; color:rgba(245,244,248,0.85); font-family:inherit; font-size:15px; font-weight:500; padding:0;" style-hover="color:#fff;">
-            Servicios
-            <span style="display:inline-block; width:7px; height:7px; border-right:1.6px solid currentColor; border-bottom:1.6px solid currentColor; transform:rotate(45deg) translateY(-1px);"></span>
-          </button>
-          <div data-dd-panel style="position:absolute; top:30px; left:-12px; min-width:240px; padding:7px; border-radius:14px; background:rgba(28,29,30,0.97); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,0.08); box-shadow:0 18px 50px rgba(0,0,0,0.5);">
-            <a href="/servicios/presencia-digital/" style="display:block; padding:11px 13px; border-radius:9px; color:rgba(245,244,248,0.92); text-decoration:none; font-size:14px; font-weight:500;" style-hover="background:rgba(255,255,255,0.05);">Presencia Digital</a>
-            <a href="/servicios/implementacion-ia/" style="display:block; padding:11px 13px; border-radius:9px; color:rgba(245,244,248,0.92); text-decoration:none; font-size:14px; font-weight:500;" style-hover="background:rgba(255,255,255,0.05);">Implementación de IA</a>
-          </div>
-        </div>
-        <a href="/sobre-nosotros/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Sobre nosotros</a>
-        <a href="/contacto/" style="color:rgba(245,244,248,0.85); text-decoration:none; font-size:15px; font-weight:500;" style-hover="color:#fff;">Contacto</a>
-      </nav>
-
-      <a href="/contacto/" class="kael-desktop" style="align-items:center; padding:10px 20px; border-radius:9999px; background:#0A6FD0; color:#FFFFFF; font-family:inherit; font-size:14px; font-weight:600; text-decoration:none; box-shadow:0 0 26px rgba(11,132,243,0.28); transition:transform .2s;" style-hover="transform:translateY(-1px);">Diagnóstico gratuito</a>
-
-      <button class="kael-burger" data-action="toggle-menu" aria-label="Abrir menú" style="flex-direction:column; gap:5px; width:42px; height:42px; align-items:center; justify-content:center; background:none; border:none; cursor:pointer;">
-        <span style="display:block; width:22px; height:2px; background:#E8E8EB; border-radius:2px;"></span>
-        <span style="display:block; width:22px; height:2px; background:#E8E8EB; border-radius:2px;"></span>
-        <span style="display:block; width:22px; height:2px; background:#E8E8EB; border-radius:2px;"></span>
-      </button>
-    </div>
-  </header>
-
-
-  <!-- SCROLL CIRCUIT LINE (draws on scroll) -->
-  <svg class="kael-circuit" preserveAspectRatio="none" style="position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; opacity:0.3;">
-    <defs><linearGradient id="circ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B84F3"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs>
-    <path fill="none" stroke="url(#circ)" stroke-width="2" stroke-linecap="round" style="filter:drop-shadow(0 0 6px rgba(11,132,243,0.6));"></path>
-    <circle r="4.5" fill="#5FA8F2" style="filter:drop-shadow(0 0 9px rgba(11,132,243,0.95)); opacity:0;"></circle>
-  </svg>
-
-  <!-- PAGE BODY -->
-  <!-- BLOQUE 1 · HERO -->
-  <section id="ph-hero" style="position:relative; padding:160px 24px 80px; text-align:center;">
-    <div style="max-width:880px; margin:0 auto; animation:kael-rise .6s ease both;">
-      <p class="mzu-eye">Servicio · Presencia digital</p>
-      <h1 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(34px,5.6vw,72px); line-height:1.08; letter-spacing:-0.02em;">Que te encuentren, te elijan y <span style="padding-bottom:0.12em; background-image:linear-gradient(120deg,#0B84F3,#4DA6F7,#3B82F6,#3B82F6,#4DA6F7); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:kael-shimmer 6.5s linear infinite;">vuelvan a ti</span></h1>
-      <p style="margin:26px auto 0; max-width:42rem; font-size:19px; line-height:1.65; color:#CFCFD3;">Rediseñamos tu web, optimizamos tu Google Business, montamos tu sistema de reservas online y automatizamos el flujo completo de captación. Todo lo que tu negocio necesita para competir digitalmente con los grandes.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
-        <a class="mzu-cta" href="/contacto/" style="padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
-        <a href="#proceso" style="padding:16px 28px; border-radius:9999px; background:rgba(255,255,255,0.04); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:16px; font-weight:500; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-4px);">Ver el proceso</a>
-      </div>
-    </div>
-    <div style="max-width:980px; margin:58px auto 0; animation:kael-rise .7s ease .15s both;">
-      <div class="mzu-tilt" style="border-radius:20px; padding:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(11,132,243,0.25); box-shadow:0 0 70px rgba(11,132,243,0.18);">
-        <!-- Mockup estático en lugar de vídeo. El vídeo provisional (13 MB) hundía el LCP en móvil, así que se retiró (el MP4 y su autoplay ya no están en el repo). Para reponer uno optimizado, sustituye este <img> por un <video muted loop playsinline preload="metadata" poster="/assets/img/mockup-web.webp"> con su <source>. --><img src="/assets/img/mockup-web.webp" alt="Ejemplo de web optimizada para presencia digital" width="1200" height="820" loading="lazy" decoding="async" style="width:100%; display:block; border-radius:12px;" />
-      </div>
-      <p style="text-align:center; margin:14px 0 0; font-size:12.5px; color:rgba(245,244,248,0.6);">Presencia digital en acción</p>
-    </div>
-  </section>
-
-  <!-- BLOQUE 2 · EL PROBLEMA -->
-  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:1180px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">El problema</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">¿Tu negocio digital trabaja para ti o contra ti?</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">La mayoría de PYMEs locales tienen presencia digital, pero no convierte. Estos son los síntomas más comunes que vemos en los diagnósticos:</p>
-      </div>
-      <div class="mzu-bento4" style="margin-top:44px;">
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;">
-          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Te buscan pero no te encuentran</h3>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:#CFCFD3;">Tu web no aparece en Google cuando alguien busca tu servicio en tu zona. Pierdes clientes contra competidores menos preparados.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;">
-          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Llegan a tu web y se van</h3>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:#CFCFD3;">Sin precios visibles, sin reseñas integradas, sin reserva online. Muchos se van a la competencia que sí lo tiene.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;">
-          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Solo se reserva por teléfono</h3>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:#CFCFD3;">Pierdes clientes que prefieren reservar online a cualquier hora, cuando tú no estás disponible. Y tu equipo pierde tiempo gestionando llamadas.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:30px;">
-          <h3 style="margin:0 0 10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:20px;">Tu nota de Google está enterrada</h3>
-          <p style="margin:0; font-size:16px; line-height:1.6; color:#CFCFD3;">Tienes 4.7 estrellas pero nadie las ve. Y nadie pide reseñas nuevas, así que tu reputación digital no crece.</p>
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="/" class="brand" aria-label="Kaelum, inicio">Kaelum<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <div class="nav-dd">
+        <button class="nav-dd-btn" data-action="toggle-servicios">Servicios <span class="chev" aria-hidden="true"></span></button>
+        <div data-dd-panel>
+          <a href="/servicios/presencia-digital/">Presencia digital</a>
+          <a href="/servicios/implementacion-ia/">Implementación de IA</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- INTRO · A MEDIDA -->
-  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px 0;">
-    <div style="max-width:900px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; border-radius:24px; padding:1.6px; background:linear-gradient(160deg,#0B84F3,#3B82F6,#3B82F6); box-shadow:0 0 60px rgba(11,132,243,0.22);">
-        <div style="background:#1C1D1E; border-radius:22px; padding:clamp(30px,4vw,48px); text-align:center;">
-          <h2 style="margin:0 auto; max-width:22ch; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(24px,3.4vw,36px); line-height:1.12; letter-spacing:-0.02em;">Cada negocio es único. Tu plan también.</h2>
-          <p style="margin:18px auto 0; max-width:64ch; font-size:17px; line-height:1.6; color:#CFCFD3;">No hay dos negocios iguales. Empezamos por entender el tuyo en el diagnóstico gratuito, detectamos qué te aporta más valor, y montamos un plan y un presupuesto a tu medida — solo con lo que de verdad necesitas.</p>
-          <a class="mzu-cta" href="/contacto/" style="display:inline-block; margin-top:28px; padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS (ACORDEÓN) -->
-  <section id="servicios" style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:860px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease;">
-        <p class="mzu-eye">Qué incluye el servicio</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Todo lo que necesitas, en un solo sistema</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">No vendemos servicios sueltos: montamos un sistema completo de captación y fidelización. Despliega cada servicio para ver el detalle.</p>
-      </div>
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; margin-top:36px;">
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Auditoría de Presencia Digital</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <p style="margin:0 0 14px; font-size:15px; line-height:1.6; color:#CFCFD3;">Analizamos a fondo cómo está hoy tu negocio en internet.</p>
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Tu página web</strong> <span style="color:#9A9AA0;">— experiencia de uso (UX), conversión, velocidad y SEO técnico (si está bien preparada para Google)</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Posicionamiento en Google</strong> <span style="color:#9A9AA0;">— SEO local y orgánico (aparecer sin pagar)</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Business Profile</strong> <span style="color:#9A9AA0;">— tu ficha de Google Maps</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Redes sociales</strong> <span style="color:#9A9AA0;">— Facebook, Instagram, LinkedIn, TikTok</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Reseñas online y reputación</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Publicidad</strong> <span style="color:#9A9AA0;">— Meta Ads y Google Ads (anuncios de pago)</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sistemas de captación y contacto</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Análisis de la competencia en tu zona</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Entregable</strong> <span style="color:#9A9AA0;">— informe profesional (web/PDF) con puntuación, problemas detectados y plan de acción</span></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Diseño y Optimización Web</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Auditoría técnica de la web actual</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Rediseño orientado a conversión</strong> <span style="color:#9A9AA0;">— que las visitas se conviertan en clientes, con diseño moderno (UX/UI)</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización móvil</strong> <span style="color:#9A9AA0;">— mobile-first: pensada primero para el móvil</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Velocidad de carga</strong> <span style="color:#9A9AA0;">— medida con Lighthouse, el test de rendimiento de Google</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estructura preparada para Google</strong> <span style="color:#9A9AA0;">— SEO friendly</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Textos optimizados por sección</strong> <span style="color:#9A9AA0;">— copy</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Elementos de confianza</strong> <span style="color:#9A9AA0;">— testimonios, reseñas, casos</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Llamadas a la acción</strong> <span style="color:#9A9AA0;">— CTAs: botones que invitan a contactar o reservar</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Página de equipo</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Versión en varios idiomas cuando aplique</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Google Business Profile <span style="color:#9A9AA0; font-weight:500;">(ficha de Google Maps)</span></span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Configuración o reactivación de tu ficha</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Descripción y categorías optimizadas</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Fotos profesionales del negocio</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Horarios, servicios y atributos</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Mensajes directos activados</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Publicaciones semanales</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">SEO local</strong> <span style="color:#9A9AA0;">— aparecer en las búsquedas de tu zona</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estrategia para subir de posición en Google Maps</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Sistema de Reservas Online <span style="color:#9A9AA0; font-weight:500;">(Cal.com)</span></span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Cal.com</strong> <span style="color:#9A9AA0;">— herramienta de reservas profesional</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Varios tipos de cita</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Integración con tu Google Calendar</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Personalización con tu marca</strong> <span style="color:#9A9AA0;">— logo y colores</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Confirmaciones automáticas por email</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Recordatorios automáticos antes de la cita</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Gestión de cancelaciones y cambios de cita</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email post-cita para pedir reseña</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">WhatsApp Business Profesional</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Perfil de empresa configurado</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Catálogo de servicios</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Mensajes automáticos de bienvenida y ausencia</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Respuestas rápidas a preguntas frecuentes</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Botón flotante de WhatsApp en la web</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Enlaces directos con mensaje ya escrito</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">SEO Local</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Palabras clave por zona geográfica</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización on-page</strong> <span style="color:#9A9AA0;">— títulos, descripciones y contenido de cada página</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">URLs preparadas para Google</strong> <span style="color:#9A9AA0;">— SEO friendly</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sitemap.xml y robots.txt</strong> <span style="color:#9A9AA0;">— archivos que ayudan a Google a entender tu web</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Datos estructurados</strong> <span style="color:#9A9AA0;">— Schema markup: etiquetas que ayudan a Google a mostrar tu negocio, horarios y reseñas</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Páginas individuales por servicio</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Indexación en Google Search Console</strong> <span style="color:#9A9AA0;">— la herramienta de Google para seguir tu web</span></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Analítica y Seguimiento</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Analytics 4</strong> <span style="color:#9A9AA0;">— medir las visitas y qué hacen en tu web</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Meta Pixel</strong> <span style="color:#9A9AA0;">— medir los resultados de los anuncios de Facebook/Instagram</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Eventos de conversión</strong> <span style="color:#9A9AA0;">— registrar cuándo alguien reserva o contacta</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Paneles mensuales de rendimiento</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Informes claros con métricas accionables</strong> <span style="color:#9A9AA0;">— datos que sirven para decidir</span></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Formularios y Captación de Leads</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Formularios optimizados</strong> <span style="color:#9A9AA0;">— con Formspree, un sistema fiable de envío de formularios</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Captación automática a tu base de datos</strong> <span style="color:#9A9AA0;">— los contactos se guardan solos</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email de bienvenida automático</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Seguimiento de clientes potenciales</strong> <span style="color:#9A9AA0;">— leads</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Imanes de captación opcionales</strong> <span style="color:#9A9AA0;">— lead magnets: guías o descuentos a cambio del email</span></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Email Marketing</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Brevo o Mailchimp</strong> <span style="color:#9A9AA0;">— plataformas de email marketing</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Plantillas de email profesionales</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Segmentación de audiencia</strong> <span style="color:#9A9AA0;">— enviar a cada grupo lo que le interesa</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Campañas mensuales automatizadas</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Emails post-venta y de fidelización</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Gestión de Reseñas</span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Sistema automático para pedir reseñas en Google</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Email post-servicio en el momento óptimo</strong> <span style="color:#9A9AA0;">— poco después de la visita</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Plantillas de respuesta</strong> <span style="color:#9A9AA0;">— a reseñas positivas y negativas</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Estrategia para mejorar tu puntuación general</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Reseñas visibles en la web</strong></span></li>
-          </ul>
-        </div>
-      </details>
-      <details class="kael-acc" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-        <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:clamp(16px,2.1vw,19px); font-weight:600;">
-          <span style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">Publicidad Digital <span style="font-size:11px; font-weight:600; letter-spacing:0.04em; color:#4DA6F7; padding:3px 9px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Opcional</span></span>
-          <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-        </summary>
-        <div class="kael-acc-body" style="padding:0 4px 26px;">
-          <ul style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;">
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Meta Ads</strong> <span style="color:#9A9AA0;">— anuncios en Facebook e Instagram</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Google Ads</strong> <span style="color:#9A9AA0;">— anuncios en Google</span></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Segmentación avanzada por zona geográfica</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Optimización de coste por clic y conversiones</strong></span></li>
-            <li style="display:flex; gap:11px;"><span style="flex:none; width:5px; height:5px; border-radius:50%; background:#4DA6F7; margin-top:9px;"></span><span style="font-size:15px; line-height:1.55;"><strong style="color:#E8E8EB; font-weight:600;">Informes mensuales con el retorno de la inversión</strong> <span style="color:#9A9AA0;">— ROAS: cuánto vendes por cada euro invertido en anuncios</span></span></li>
-          </ul>
-        </div>
-      </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA TRAS ACORDEÓN -->
-  <section style="position:relative; padding:clamp(24px,4vw,44px) 24px clamp(50px,7vw,80px);">
-    <div data-reveal style="transform:translateY(20px); transition:opacity .7s ease, transform .6s ease; max-width:860px; margin:0 auto; text-align:center;">
-      <p style="margin:0 0 22px; font-size:17px; line-height:1.6; color:#CFCFD3;">¿Te encaja? Veamos qué necesita tu negocio en un diagnóstico gratuito.</p>
-      <a class="mzu-cta" href="/contacto/" style="display:inline-block; padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 46px rgba(11,132,243,0.4); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 60px rgba(11,132,243,0.55);">Solicitar diagnóstico gratuito</a>
-    </div>
-  </section>
-
-  <!-- BLOQUE 4 · PROCESO -->
-  <section id="proceso" style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:980px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">Cómo lo hacemos</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">El proceso, paso a paso</h2>
-      </div>
-      <div style="margin-top:36px;">
-        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
-          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#4DA6F7,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">1</div>
-          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Diagnóstico</h3><span style="font-size:12.5px; font-weight:600; color:#4DA6F7; padding:4px 11px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Semana 1</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#CFCFD3;">Auditamos tu presencia digital completa. Informe profesional con problemas, prioridades y plan de acción. Sin compromiso.</p></div>
-        </div>
-        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
-          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#4DA6F7,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">2</div>
-          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Estrategia</h3><span style="font-size:12.5px; font-weight:600; color:#4DA6F7; padding:4px 11px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Semana 1-2</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#CFCFD3;">Definimos juntos qué implementar primero según negocio, objetivos y presupuesto. Propuesta clara con entregables y plazos.</p></div>
-        </div>
-        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
-          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#4DA6F7,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">3</div>
-          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Implementación</h3><span style="font-size:12.5px; font-weight:600; color:#4DA6F7; padding:4px 11px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Semanas 2-5</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#CFCFD3;">Ejecutamos las soluciones priorizadas. Ves el progreso cada semana y validas antes de seguir. Sin sorpresas.</p></div>
-        </div>
-        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08);">
-          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#4DA6F7,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">4</div>
-          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Lanzamiento</h3><span style="font-size:12.5px; font-weight:600; color:#4DA6F7; padding:4px 11px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Semana 5-6</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#CFCFD3;">Migración, configuración final y formación a tu equipo. Te dejamos todo funcionando.</p></div>
-        </div>
-        <div data-reveal style="transform:translateY(24px); transition:opacity .7s ease, transform .5s ease; display:flex; gap:26px; align-items:flex-start; padding:28px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08);">
-          <div style="flex:none; min-width:64px; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(40px,6vw,72px); line-height:0.9; background-image:linear-gradient(160deg,#4DA6F7,#3B82F6); -webkit-background-clip:text; background-clip:text; color:transparent; opacity:0.9;">5</div>
-          <div><div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px;"><h3 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px;">Mantenimiento</h3><span style="font-size:12.5px; font-weight:600; color:#4DA6F7; padding:4px 11px; border-radius:9999px; background:rgba(11,132,243,0.12); border:1px solid rgba(11,132,243,0.3);">Mensual</span></div><p style="margin:10px 0 0; font-size:16px; line-height:1.6; color:#CFCFD3;">Monitorizamos, optimizamos y evolucionamos cada mes. Reportes claros y reuniones trimestrales.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POR QUÉ IMPORTA (datos de sector) -->
-  <section id="resultados" style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:1180px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">El mercado hoy</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Por qué tu presencia digital importa</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">No son promesas nuestras: son datos del sector. Esto es lo que pasa ahí fuera mientras tu negocio no da el paso.</p>
-      </div>
-      <div class="kael-grid kael-grid--3" style="grid-template-columns:repeat(3,1fr); margin-top:44px;">
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
-          <div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(32px,4.4vw,48px); line-height:1; color:#4DA6F7;">76%</div>
-          <p style="margin:14px 0 0; font-size:15.5px; line-height:1.5; color:#E8E8EB;">de las búsquedas locales desde el móvil terminan en una visita en 24 horas.</p>
-          <p style="margin:14px 0 0; font-size:14.5px; line-height:1.5; color:#4DA6F7; font-weight:600;">→ Por eso necesitas aparecer justo cuando te buscan.</p>
-          <p style="margin:12px 0 0; font-size:12px; color:rgba(245,244,248,0.45);">Fuente: Think with Google</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
-          <div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(32px,4.4vw,48px); line-height:1; color:#4DA6F7;">Más clics</div>
-          <p style="margin:14px 0 0; font-size:15.5px; line-height:1.5; color:#E8E8EB;">Una ficha de Google Business completa recibe muchos más que una incompleta.</p>
-          <p style="margin:14px 0 0; font-size:14.5px; line-height:1.5; color:#4DA6F7; font-weight:600;">→ Por eso la optimizamos a fondo.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:18px; padding:28px;">
-          <div style="font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(32px,4.4vw,48px); line-height:1; color:#4DA6F7;">88%</div>
-          <p style="margin:14px 0 0; font-size:15.5px; line-height:1.5; color:#E8E8EB;">de los consumidores confía en las reseñas online tanto como en una recomendación personal.</p>
-          <p style="margin:14px 0 0; font-size:14.5px; line-height:1.5; color:#4DA6F7; font-weight:600;">→ Por eso montamos gestión de reseñas.</p>
-          <p style="margin:12px 0 0; font-size:12px; color:rgba(245,244,248,0.45);">Fuente: BrightLocal, Local Consumer Review Survey</p>
-        </div>
-      </div>
-      <p style="margin:26px 0 0; font-size:13.5px; line-height:1.6; color:rgba(245,244,248,0.6); max-width:70ch;">Datos de sector, orientativos. Tu caso concreto lo medimos con tus números desde el día 1.</p>
-    </div>
-  </section>
-
-  <!-- NUESTRO COMPROMISO (garantías) -->
-  <section style="position:relative; padding:clamp(40px,6vw,80px) 24px clamp(60px,8vw,96px);">
-    <div style="max-width:1180px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">Sin letra pequeña</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Nuestro compromiso contigo</h2>
-        <p style="margin:18px 0 0; font-size:18px; line-height:1.6; color:#CFCFD3; max-width:64ch;">Esto no depende de suerte ni de casos ajenos: depende solo de nosotros.</p>
-      </div>
-      <div class="kael-grid kael-grid--4" style="grid-template-columns:repeat(4,1fr); margin-top:44px;">
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; gap:14px; align-items:flex-start; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div>
-          <p style="margin:0; font-size:15.5px; line-height:1.5; color:#E8E8EB; font-weight:500;">Diagnóstico gratuito en menos de 7 días.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; gap:14px; align-items:flex-start; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16a8 8 0 1 1 15 0"/><path d="M12 16l4.2-4.6"/><circle cx="12" cy="16" r="1"/></svg></div>
-          <p style="margin:0; font-size:15.5px; line-height:1.5; color:#E8E8EB; font-weight:500;">Webs optimizadas: 90+ en velocidad (Google PageSpeed) en escritorio.</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; gap:14px; align-items:flex-start; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6l7-3Z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg></div>
-          <p style="margin:0; font-size:15.5px; line-height:1.5; color:#E8E8EB; font-weight:500;">Tus datos en servidores europeos (RGPD).</p>
-        </div>
-        <div data-reveal data-cardhover style="transform:translateY(26px); transition:opacity .7s ease, transform .4s ease, border-color .3s ease, box-shadow .3s ease; display:flex; gap:14px; align-items:flex-start; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:24px;">
-          <div style="width:40px; height:40px; flex:none; border-radius:11px; display:flex; align-items:center; justify-content:center; background:rgba(11,132,243,0.14); border:1px solid rgba(11,132,243,0.3);"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4DA6F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
-          <p style="margin:0; font-size:15.5px; line-height:1.5; color:#E8E8EB; font-weight:500;">El informe del diagnóstico es tuyo, aunque no trabajes con nosotros.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOQUE 7 · FAQ -->
-  <section style="position:relative; padding:clamp(60px,8vw,96px) 24px; scroll-margin-top:90px;">
-    <div style="max-width:840px; margin:0 auto;">
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; max-width:760px;">
-        <p class="mzu-eye">Preguntas frecuentes</p>
-        <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(30px,4.2vw,52px); line-height:1.1; letter-spacing:-0.02em;">Resolvemos tus dudas</h2>
-      </div>
-      <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; margin-top:36px;">
-        
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿Por qué un compromiso mínimo de 6 meses?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">Porque la presencia digital no funciona con parches. Para ver resultados reales en SEO local, posicionamiento y conversión necesitamos al menos 3-6 meses de implementación y optimización continua.</p>
-          </details>
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿Qué pasa si quiero cancelar antes?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">Lo entendemos. Tras los 6 meses iniciales puedes cancelar con 30 días de preaviso. Y si en cualquier momento sientes que no recibes el valor que esperabas, hablamos.</p>
-          </details>
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿Trabajáis con negocios fuera de Madrid?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">Nuestra especialidad es Madrid porque conocemos la zona. Trabajamos también con otras zonas si encaja con nuestro modelo. Cuéntanos.</p>
-          </details>
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿Necesito tener web previa?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">No. Si no tienes web, te la hacemos. Si la tienes, la analizamos y vemos si rediseñarla desde cero compensa más que adaptarla.</p>
-          </details>
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿Quién es el dueño de la web y las cuentas?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">Tú. Siempre. Todas las cuentas se crean a tu nombre y se quedan contigo. Trabajamos con herramientas estándar (Cal.com, n8n, Brevo) que cualquier técnico puede mantener.</p>
-          </details>
-          <details class="kael-faq" style="border-bottom:1px solid rgba(255,255,255,0.08);">
-            <summary style="display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 4px; color:#F5F4F8; font-family:'General Sans',sans-serif; font-size:18px; font-weight:600;">
-              <span>¿En cuánto tiempo veo resultados?</span>
-              <span class="kf-icon" style="font-size:26px; color:#4DA6F7; line-height:1; flex:none;">+</span>
-            </summary>
-            <p style="margin:0; padding:0 4px 24px; font-size:16px; line-height:1.65; color:#CFCFD3;">Los primeros resultados los ves en 30-45 días (Google Business, reservas). El SEO local se mueve a los 60-90 días. El sistema está optimizado al 100% a los 6 meses.</p>
-          </details>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOQUE 8 · CTA FINAL -->
-  <section style="position:relative; padding:clamp(80px,11vw,140px) 24px; overflow:hidden;">
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:760px; height:420px; max-width:92vw; border-radius:50%; filter:blur(130px); background:radial-gradient(ellipse, rgba(11,132,243,0.20), rgba(59,130,246,0.10) 55%, transparent 75%); pointer-events:none; z-index:0;" data-parallax="0.04"></div>
-    <div data-reveal style="transform:translateY(26px); transition:opacity .7s ease, transform .6s ease; position:relative; z-index:1; max-width:680px; margin:0 auto; text-align:center;">
-      <h2 style="margin:0; font-family:'General Sans',sans-serif; font-weight:600; font-size:clamp(32px,5vw,56px); line-height:1.08; letter-spacing:-0.02em;">¿Empezamos por el diagnóstico?</h2>
-      <p style="margin:22px 0 0; font-size:19px; line-height:1.6; color:#CFCFD3;">Te hacemos un análisis completo de tu presencia digital actual. Recibirás un informe profesional con problemas detectados, oportunidades y plan de acción. Sin compromiso ni venta agresiva.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
-        <a class="mzu-cta" href="/contacto/" style="padding:16px 32px; border-radius:9999px; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0; box-shadow:0 0 50px rgba(11,132,243,0.45); transition:transform .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-4px); box-shadow:0 10px 66px rgba(11,132,243,0.6);">Solicitar diagnóstico gratuito</a>
-        <a href="/servicios/implementacion-ia/" style="padding:16px 28px; border-radius:9999px; background:rgba(255,255,255,0.04); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.16); color:#F5F4F8; text-decoration:none; font-family:inherit; font-size:16px; font-weight:500; transition:border-color .25s ease, transform .25s ease;" style-hover="border-color:rgba(255,255,255,0.4); transform:translateY(-4px);">Conoce nuestro servicio de IA</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  
-  <!-- FOOTER -->
-  <footer style="border-top:1px solid rgba(255,255,255,0.08); padding:56px 24px 40px;">
-    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px;" class="kael-grid kael-grid--footer">
-      <div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
-          <img src="/assets/img/logo-mark.webp?v=8" alt="KAELUM" width="34" height="34" style="width:34px; height:34px; object-fit:contain;" />
-          <span style="font-family:'General Sans',sans-serif; font-weight:600; font-size:19px; letter-spacing:0.16em;">KAELUM</span>
-        </div>
-        <p style="margin:0 0 18px; font-size:15px; line-height:1.6; color:rgba(245,244,248,0.55); max-width:36ch;">Presencia digital e implementación de IA para PYMEs y comercio local de Madrid. Resultados medibles, compromiso a largo plazo.</p>
-      </div>
-      <div>
-        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Servicios</h4>
-        <a href="/servicios/presencia-digital/" style="display:block; margin-bottom:11px; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Presencia digital</a>
-        <a href="/servicios/implementacion-ia/" style="display:block; margin-bottom:11px; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Implementación de IA</a>
-        <a href="/#para-quien" style="display:block; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Sectores</a>
-      </div>
-      <div>
-        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Empresa</h4>
-        <a href="/sobre-nosotros/" style="display:block; margin-bottom:11px; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Sobre nosotros</a>
-        <a href="/contacto/" style="display:block; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Contacto</a>
-      </div>
-      <div>
-        <h4 style="margin:0 0 16px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,244,248,0.5);">Contacto</h4>
-        <a href="/contacto/" style="display:block; margin-bottom:11px; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">Diagnóstico gratuito</a>
-        <a href="mailto:contacto@kaelum.es" style="display:block; margin-bottom:11px; font-size:15px; color:#CFCFD3; text-decoration:none;" style-hover="color:#fff;">contacto@kaelum.es</a>
-        <span style="display:block; font-size:15px; color:#CFCFD3;">Madrid, España</span>
-      </div>
-    </div>
-    <div style="max-width:1180px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06); font-size:13.5px; color:rgba(245,244,248,0.6);">© <span id="year">2026</span> KAELUM. Todos los derechos reservados. Hecho en Madrid. · <a href="/privacidad/" style="color:rgba(245,244,248,0.55); text-decoration:none;" style-hover="color:#fff;">Política de privacidad</a></div>
-  </footer>
-
-
-  <!-- mobile overlay menu -->
-  <div class="kael-mobilemenu" style="position:fixed; inset:0; z-index:80; background:rgba(20,21,22,0.97); backdrop-filter:blur(18px); flex-direction:column; padding:24px 32px;">
-    <div style="display:flex; align-items:center; justify-content:space-between;">
-      <span style="display:flex; align-items:center; gap:10px; font-family:'General Sans',sans-serif; font-weight:600; font-size:21px; letter-spacing:0.16em;"><img src="/assets/img/logo-mark.webp?v=8" alt="" width="36" height="36" style="width:36px; height:36px; object-fit:contain;" />KAELUM</span>
-      <button data-action="close-menu" aria-label="Cerrar menú" style="width:42px; height:42px; background:none; border:none; color:#F5F4F8; font-size:30px; cursor:pointer; line-height:1;">×</button>
-    </div>
-    <nav style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:22px;">
-      <a href="/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Inicio</a>
-      <a href="/servicios/presencia-digital/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Presencia Digital</a>
-      <a href="/servicios/implementacion-ia/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Implementación de IA</a>
-      <a href="/sobre-nosotros/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Sobre nosotros</a>
-      <a href="/contacto/" style="color:#F5F4F8; text-decoration:none; font-family:'General Sans',sans-serif; font-size:30px; font-weight:500;">Contacto</a>
+      <a href="/sobre-nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
     </nav>
-    <a href="/contacto/" style="padding:16px; border-radius:9999px; text-align:center; text-decoration:none; font-family:inherit; font-size:16px; font-weight:600; color:#FFFFFF; background:#0A6FD0;">Diagnóstico gratuito</a>
+    <a href="/contacto/" class="nav-cta desktop-only">Diagnóstico gratuito</a>
+    <button class="burger" data-action="toggle-menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </div>
+</header>
+
+<main>
+<!-- ===== HERO ===== -->
+<section class="page-hero" id="ph-hero">
+  <p class="eyebrow">Servicio · Presencia digital</p>
+  <h1>Que te encuentren, te elijan y <span class="accent">vuelvan a ti<svg viewBox="0 0 190 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 50 3, 140 3, 187 6"/></svg></span></h1>
+  <p class="lead">Rediseñamos tu web, optimizamos tu Google Business, montamos tu sistema de reservas online y automatizamos el flujo completo de captación. Todo lo que tu negocio necesita para competir digitalmente con los grandes.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar diagnóstico gratuito</a>
+    <a class="btn-text" href="#proceso">Ver el proceso</a>
+  </div>
+</section>
+<div class="wrap">
+  <div class="media-panel" data-reveal>
+    <span class="mono" aria-hidden="true">K<span class="p2">.</span></span>
+    <span class="sv-tag">Qué incluye</span>
+    <div class="sv-pills">
+      <span>Web optimizada</span><span>SEO local</span><span>Google Business</span><span>Reservas online</span><span>WhatsApp Business</span><span>Reseñas</span><span>Email marketing</span><span>Analítica</span><span>Publicidad (opcional)</span>
+    </div>
+  </div>
+  <p class="media-cap">Un solo sistema de captación y fidelización.</p>
 </div>
 
-<script src="/assets/js/main.js?v=15" defer></script>
+<!-- ===== EL PROBLEMA ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">El problema</p>
+      <h2 class="sec-title">¿Tu negocio digital trabaja para ti o contra ti?</h2>
+      <p class="sec-lead">La mayoría de PYMEs locales tienen presencia digital, pero no convierte. Estos son los síntomas más comunes que vemos en los diagnósticos:</p>
+    </div>
+    <div class="info-grid" data-reveal>
+      <div class="info-card"><h3>Te buscan pero no te encuentran</h3><p>Tu web no aparece en Google cuando alguien busca tu servicio en tu zona. Pierdes clientes contra competidores menos preparados.</p></div>
+      <div class="info-card"><h3>Llegan a tu web y se van</h3><p>Sin precios visibles, sin reseñas integradas, sin reserva online. Muchos se van a la competencia que sí lo tiene.</p></div>
+      <div class="info-card"><h3>Solo se reserva por teléfono</h3><p>Pierdes clientes que prefieren reservar online a cualquier hora, cuando tú no estás disponible. Y tu equipo pierde tiempo gestionando llamadas.</p></div>
+      <div class="info-card"><h3>Tu nota de Google está enterrada</h3><p>Tienes 4.7 estrellas pero nadie las ve. Y nadie pide reseñas nuevas, así que tu reputación digital no crece.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== A MEDIDA ===== -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="callout" data-reveal>
+      <h2>Cada negocio es único. Tu plan también.</h2>
+      <p>No hay dos negocios iguales. Empezamos por entender el tuyo en el diagnóstico gratuito, detectamos qué te aporta más valor, y montamos un plan y un presupuesto a tu medida: solo con lo que de verdad necesitas.</p>
+      <a class="btn-primary" href="/contacto/">Solicitar diagnóstico gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS (ACORDEÓN) ===== -->
+<section class="section" id="servicios" style="background:var(--bg-2);">
+  <div class="wrap" style="max-width:860px;">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Qué incluye el servicio</p>
+      <h2 class="sec-title">Todo lo que necesitas, en un solo sistema</h2>
+      <p class="sec-lead">No vendemos servicios sueltos: montamos un sistema completo de captación y fidelización. Despliega cada servicio para ver el detalle.</p>
+    </div>
+    <div class="faq" data-reveal style="margin-top:36px;max-width:none;">
+      <details class="faq-item">
+        <summary><span>Auditoría de Presencia Digital</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <p class="intro">Analizamos a fondo cómo está hoy tu negocio en internet.</p>
+          <ul class="mk-list">
+            <li><strong>Tu página web</strong> <span class="mut">— experiencia de uso (UX), conversión, velocidad y SEO técnico (si está bien preparada para Google)</span></li>
+            <li><strong>Posicionamiento en Google</strong> <span class="mut">— SEO local y orgánico (aparecer sin pagar)</span></li>
+            <li><strong>Google Business Profile</strong> <span class="mut">— tu ficha de Google Maps</span></li>
+            <li><strong>Redes sociales</strong> <span class="mut">— Facebook, Instagram, LinkedIn, TikTok</span></li>
+            <li><strong>Reseñas online y reputación</strong></li>
+            <li><strong>Publicidad</strong> <span class="mut">— Meta Ads y Google Ads (anuncios de pago)</span></li>
+            <li><strong>Sistemas de captación y contacto</strong></li>
+            <li><strong>Análisis de la competencia en tu zona</strong></li>
+            <li><strong>Entregable</strong> <span class="mut">— informe profesional (web/PDF) con puntuación, problemas detectados y plan de acción</span></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Diseño y Optimización Web</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Auditoría técnica de la web actual</strong></li>
+            <li><strong>Rediseño orientado a conversión</strong> <span class="mut">— que las visitas se conviertan en clientes, con diseño moderno (UX/UI)</span></li>
+            <li><strong>Optimización móvil</strong> <span class="mut">— mobile-first: pensada primero para el móvil</span></li>
+            <li><strong>Velocidad de carga</strong> <span class="mut">— medida con Lighthouse, el test de rendimiento de Google</span></li>
+            <li><strong>Estructura preparada para Google</strong> <span class="mut">— SEO friendly</span></li>
+            <li><strong>Textos optimizados por sección</strong> <span class="mut">— copy</span></li>
+            <li><strong>Elementos de confianza</strong> <span class="mut">— testimonios, reseñas, casos</span></li>
+            <li><strong>Llamadas a la acción</strong> <span class="mut">— CTAs: botones que invitan a contactar o reservar</span></li>
+            <li><strong>Página de equipo</strong></li>
+            <li><strong>Versión en varios idiomas cuando aplique</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Google Business Profile <span class="summary-note">(ficha de Google Maps)</span></span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Configuración o reactivación de tu ficha</strong></li>
+            <li><strong>Descripción y categorías optimizadas</strong></li>
+            <li><strong>Fotos profesionales del negocio</strong></li>
+            <li><strong>Horarios, servicios y atributos</strong></li>
+            <li><strong>Mensajes directos activados</strong></li>
+            <li><strong>Publicaciones semanales</strong></li>
+            <li><strong>SEO local</strong> <span class="mut">— aparecer en las búsquedas de tu zona</span></li>
+            <li><strong>Estrategia para subir de posición en Google Maps</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Sistema de Reservas Online <span class="summary-note">(Cal.com)</span></span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Cal.com</strong> <span class="mut">— herramienta de reservas profesional</span></li>
+            <li><strong>Varios tipos de cita</strong></li>
+            <li><strong>Integración con tu Google Calendar</strong></li>
+            <li><strong>Personalización con tu marca</strong> <span class="mut">— logo y colores</span></li>
+            <li><strong>Confirmaciones automáticas por email</strong></li>
+            <li><strong>Recordatorios automáticos antes de la cita</strong></li>
+            <li><strong>Gestión de cancelaciones y cambios de cita</strong></li>
+            <li><strong>Email post-cita para pedir reseña</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>WhatsApp Business Profesional</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Perfil de empresa configurado</strong></li>
+            <li><strong>Catálogo de servicios</strong></li>
+            <li><strong>Mensajes automáticos de bienvenida y ausencia</strong></li>
+            <li><strong>Respuestas rápidas a preguntas frecuentes</strong></li>
+            <li><strong>Botón flotante de WhatsApp en la web</strong></li>
+            <li><strong>Enlaces directos con mensaje ya escrito</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>SEO Local</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Palabras clave por zona geográfica</strong></li>
+            <li><strong>Optimización on-page</strong> <span class="mut">— títulos, descripciones y contenido de cada página</span></li>
+            <li><strong>URLs preparadas para Google</strong> <span class="mut">— SEO friendly</span></li>
+            <li><strong>Sitemap.xml y robots.txt</strong> <span class="mut">— archivos que ayudan a Google a entender tu web</span></li>
+            <li><strong>Datos estructurados</strong> <span class="mut">— Schema markup: etiquetas que ayudan a Google a mostrar tu negocio, horarios y reseñas</span></li>
+            <li><strong>Páginas individuales por servicio</strong></li>
+            <li><strong>Indexación en Google Search Console</strong> <span class="mut">— la herramienta de Google para seguir tu web</span></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Analítica y Seguimiento</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Google Analytics 4</strong> <span class="mut">— medir las visitas y qué hacen en tu web</span></li>
+            <li><strong>Meta Pixel</strong> <span class="mut">— medir los resultados de los anuncios de Facebook/Instagram</span></li>
+            <li><strong>Eventos de conversión</strong> <span class="mut">— registrar cuándo alguien reserva o contacta</span></li>
+            <li><strong>Paneles mensuales de rendimiento</strong></li>
+            <li><strong>Informes claros con métricas accionables</strong> <span class="mut">— datos que sirven para decidir</span></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Formularios y Captación de Leads</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Formularios optimizados</strong> <span class="mut">— con Formspree, un sistema fiable de envío de formularios</span></li>
+            <li><strong>Captación automática a tu base de datos</strong> <span class="mut">— los contactos se guardan solos</span></li>
+            <li><strong>Email de bienvenida automático</strong></li>
+            <li><strong>Seguimiento de clientes potenciales</strong> <span class="mut">— leads</span></li>
+            <li><strong>Imanes de captación opcionales</strong> <span class="mut">— lead magnets: guías o descuentos a cambio del email</span></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Email Marketing</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Brevo o Mailchimp</strong> <span class="mut">— plataformas de email marketing</span></li>
+            <li><strong>Plantillas de email profesionales</strong></li>
+            <li><strong>Segmentación de audiencia</strong> <span class="mut">— enviar a cada grupo lo que le interesa</span></li>
+            <li><strong>Campañas mensuales automatizadas</strong></li>
+            <li><strong>Emails post-venta y de fidelización</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Gestión de Reseñas</span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Sistema automático para pedir reseñas en Google</strong></li>
+            <li><strong>Email post-servicio en el momento óptimo</strong> <span class="mut">— poco después de la visita</span></li>
+            <li><strong>Plantillas de respuesta</strong> <span class="mut">— a reseñas positivas y negativas</span></li>
+            <li><strong>Estrategia para mejorar tu puntuación general</strong></li>
+            <li><strong>Reseñas visibles en la web</strong></li>
+          </ul>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary><span>Publicidad Digital <span class="summary-badge">Opcional</span></span><span class="ic">+</span></summary>
+        <div class="acc-body">
+          <ul class="mk-list">
+            <li><strong>Meta Ads</strong> <span class="mut">— anuncios en Facebook e Instagram</span></li>
+            <li><strong>Google Ads</strong> <span class="mut">— anuncios en Google</span></li>
+            <li><strong>Segmentación avanzada por zona geográfica</strong></li>
+            <li><strong>Optimización de coste por clic y conversiones</strong></li>
+            <li><strong>Informes mensuales con el retorno de la inversión</strong> <span class="mut">— ROAS: cuánto vendes por cada euro invertido en anuncios</span></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+    <div style="text-align:center;margin-top:40px;" data-reveal>
+      <p style="margin:0 0 22px;font-size:17px;line-height:1.6;color:var(--ink-soft);">¿Te encaja? Veamos qué necesita tu negocio en un diagnóstico gratuito.</p>
+      <a class="btn-primary" href="/contacto/">Solicitar diagnóstico gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESO ===== -->
+<section class="section" id="proceso">
+  <div class="wrap" style="max-width:980px;">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Cómo lo hacemos</p>
+      <h2 class="sec-title">El proceso, paso a paso</h2>
+    </div>
+    <div class="proc">
+      <div class="proc-row" data-reveal><div class="proc-num">1</div><div><div class="proc-head"><h3>Diagnóstico</h3><span class="proc-badge">Semana 1</span></div><p>Auditamos tu presencia digital completa. Informe profesional con problemas, prioridades y plan de acción. Sin compromiso.</p></div></div>
+      <div class="proc-row" data-reveal><div class="proc-num">2</div><div><div class="proc-head"><h3>Estrategia</h3><span class="proc-badge">Semana 1-2</span></div><p>Definimos juntos qué implementar primero según negocio, objetivos y presupuesto. Propuesta clara con entregables y plazos.</p></div></div>
+      <div class="proc-row" data-reveal><div class="proc-num">3</div><div><div class="proc-head"><h3>Implementación</h3><span class="proc-badge">Semanas 2-5</span></div><p>Ejecutamos las soluciones priorizadas. Ves el progreso cada semana y validas antes de seguir. Sin sorpresas.</p></div></div>
+      <div class="proc-row" data-reveal><div class="proc-num">4</div><div><div class="proc-head"><h3>Lanzamiento</h3><span class="proc-badge">Semana 5-6</span></div><p>Migración, configuración final y formación a tu equipo. Te dejamos todo funcionando.</p></div></div>
+      <div class="proc-row" data-reveal><div class="proc-num">5</div><div><div class="proc-head"><h3>Mantenimiento</h3><span class="proc-badge">Mensual</span></div><p>Monitorizamos, optimizamos y evolucionamos cada mes. Reportes claros y reuniones trimestrales.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTADOS (datos de sector) ===== -->
+<section class="section" id="resultados" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">El mercado hoy</p>
+      <h2 class="sec-title">Por qué tu presencia digital importa</h2>
+      <p class="sec-lead">No son promesas nuestras: son datos del sector. Esto es lo que pasa ahí fuera mientras tu negocio no da el paso.</p>
+    </div>
+    <div class="stat-grid" data-reveal>
+      <div class="stat-card"><div class="stat-num">76%</div><p class="t">de las búsquedas locales desde el móvil terminan en una visita en 24 horas.</p><p class="arrow">→ Por eso necesitas aparecer justo cuando te buscan.</p><p class="src">Fuente: Think with Google</p></div>
+      <div class="stat-card"><div class="stat-num">Más clics</div><p class="t">Una ficha de Google Business completa recibe muchos más que una incompleta.</p><p class="arrow">→ Por eso la optimizamos a fondo.</p></div>
+      <div class="stat-card"><div class="stat-num">88%</div><p class="t">de los consumidores confía en las reseñas online tanto como en una recomendación personal.</p><p class="arrow">→ Por eso montamos gestión de reseñas.</p><p class="src">Fuente: BrightLocal, Local Consumer Review Survey</p></div>
+    </div>
+    <p class="note-small">Datos de sector, orientativos. Tu caso concreto lo medimos con tus números desde el día 1.</p>
+  </div>
+</section>
+
+<!-- ===== COMPROMISO ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Sin letra pequeña</p>
+      <h2 class="sec-title">Nuestro compromiso contigo</h2>
+      <p class="sec-lead">Esto no depende de suerte ni de casos ajenos: depende solo de nosotros.</p>
+    </div>
+    <div class="pledge-grid" data-reveal>
+      <div class="pledge"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><p>Diagnóstico gratuito en menos de 7 días.</p></div>
+      <div class="pledge"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16a8 8 0 1 1 15 0"/><path d="M12 16l4.2-4.6"/><circle cx="12" cy="16" r="1"/></svg></span><p>Webs optimizadas: 90+ en velocidad (Google PageSpeed) en escritorio.</p></div>
+      <div class="pledge"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.5-7 9-4-1.5-7-4.6-7-9V6l7-3Z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg></span><p>Tus datos en servidores europeos (RGPD).</p></div>
+      <div class="pledge"><span class="ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><p>El informe del diagnóstico es tuyo, aunque no trabajes con nosotros.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="wrap" style="max-width:840px;">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="sec-title">Resolvemos tus dudas</h2>
+    </div>
+    <div class="faq" data-reveal style="margin-top:36px;max-width:none;">
+      <details class="faq-item"><summary><span>¿Por qué un compromiso mínimo de 6 meses?</span><span class="ic">+</span></summary><p>Porque la presencia digital no funciona con parches. Para ver resultados reales en SEO local, posicionamiento y conversión necesitamos al menos 3-6 meses de implementación y optimización continua.</p></details>
+      <details class="faq-item"><summary><span>¿Qué pasa si quiero cancelar antes?</span><span class="ic">+</span></summary><p>Lo entendemos. Tras los 6 meses iniciales puedes cancelar con 30 días de preaviso. Y si en cualquier momento sientes que no recibes el valor que esperabas, hablamos.</p></details>
+      <details class="faq-item"><summary><span>¿Trabajáis con negocios fuera de Madrid?</span><span class="ic">+</span></summary><p>Nuestra especialidad es Madrid porque conocemos la zona. Trabajamos también con otras zonas si encaja con nuestro modelo. Cuéntanos.</p></details>
+      <details class="faq-item"><summary><span>¿Necesito tener web previa?</span><span class="ic">+</span></summary><p>No. Si no tienes web, te la hacemos. Si la tienes, la analizamos y vemos si rediseñarla desde cero compensa más que adaptarla.</p></details>
+      <details class="faq-item"><summary><span>¿Quién es el dueño de la web y las cuentas?</span><span class="ic">+</span></summary><p>Tú. Siempre. Todas las cuentas se crean a tu nombre y se quedan contigo. Trabajamos con herramientas estándar (Cal.com, n8n, Brevo) que cualquier técnico puede mantener.</p></details>
+      <details class="faq-item"><summary><span>¿En cuánto tiempo veo resultados?</span><span class="ic">+</span></summary><p>Los primeros resultados los ves en 30-45 días (Google Business, reservas). El SEO local se mueve a los 60-90 días. El sistema está optimizado al 100% a los 6 meses.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="section cta-final">
+  <div class="wrap" data-reveal style="max-width:680px;">
+    <h2>¿Empezamos por el diagnóstico?</h2>
+    <p>Te hacemos un análisis completo de tu presencia digital actual. Recibirás un informe profesional con problemas detectados, oportunidades y plan de acción. Sin compromiso ni venta agresiva.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="/contacto/">Solicitar diagnóstico gratuito</a>
+      <a class="btn-secondary" href="/servicios/implementacion-ia/">Conoce nuestro servicio de IA</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-in">
+    <div>
+      <a href="/" class="brand" style="display:inline-flex;">Kaelum<span class="dot">.</span></a>
+      <p class="about">Presencia digital e implementación de IA para PYMEs y comercio local de Madrid. Resultados medibles, compromiso a largo plazo.</p>
+    </div>
+    <div class="col">
+      <h4>Servicios</h4>
+      <a href="/servicios/presencia-digital/">Presencia digital</a>
+      <a href="/servicios/implementacion-ia/">Implementación de IA</a>
+      <a href="/#para-quien">Sectores</a>
+    </div>
+    <div class="col">
+      <h4>Empresa</h4>
+      <a href="/sobre-nosotros/">Sobre nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div class="col">
+      <h4>Contacto</h4>
+      <a href="/contacto/">Diagnóstico gratuito</a>
+      <a href="mailto:contacto@kaelum.es">contacto@kaelum.es</a>
+      <span>Madrid, España</span>
+    </div>
+  </div>
+  <div class="footer-legal">© <span id="year">2026</span> KAELUM. Todos los derechos reservados. Hecho en Madrid. · <a href="/privacidad/">Política de privacidad</a></div>
+</footer>
+
+<!-- ===== MENÚ MÓVIL ===== -->
+<div class="kael-mobilemenu">
+  <div class="mm-top">
+    <span class="brand">Kaelum<span class="dot">.</span></span>
+    <button data-action="close-menu" aria-label="Cerrar menú" class="mm-close">×</button>
+  </div>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/servicios/presencia-digital/">Presencia Digital</a>
+    <a href="/servicios/implementacion-ia/">Implementación de IA</a>
+    <a href="/sobre-nosotros/">Sobre nosotros</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
+  <a href="/contacto/" class="mm-cta">Diagnóstico gratuito</a>
+</div>
+
+<script src="/assets/js/main.js?v=16" defer></script>
 </body>
 </html>

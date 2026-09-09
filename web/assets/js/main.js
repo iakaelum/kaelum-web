@@ -524,8 +524,8 @@
           '<div style="width:66px; height:66px; margin:0 auto 22px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.45); box-shadow:0 0 40px rgba(52,211,153,0.18);">' +
             '<svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#34D399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></svg>' +
           '</div>' +
-          '<h2 style="margin:0; font-family:\'General Sans\',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.01em; color:#F5F4F8;">¡Mensaje enviado!</h2>' +
-          '<p style="margin:14px auto 0; max-width:38ch; font-size:16px; line-height:1.6; color:#CFCFD3;">Gracias por escribirnos. Te responderemos en menos de 24h. Revisa tu email (y la carpeta de spam, por si acaso).</p>' +
+          '<h2 style="margin:0; font-family:\'General Sans\',sans-serif; font-weight:600; font-size:26px; letter-spacing:-0.01em; color:#14161B;">¡Mensaje enviado!</h2>' +
+          '<p style="margin:14px auto 0; max-width:38ch; font-size:16px; line-height:1.6; color:#434852;">Gracias por escribirnos. Te responderemos en menos de 24h. Revisa tu email (y la carpeta de spam, por si acaso).</p>' +
         '</div>';
       try { host.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
     }
