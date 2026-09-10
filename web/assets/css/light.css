@@ -147,8 +147,9 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 .sv-tag{position:relative;z-index:1;align-self:flex-start;font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);background:none;padding:0;border-radius:0;}
 .sv-pills{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:9px;}
 .sv-pills span{font-size:13.5px;font-weight:500;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:8px 14px;}
-.chip{width:46px;height:46px;flex:none;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:var(--brand-soft);border:1px solid rgba(46,107,214,0.18);margin-bottom:20px;}
-.chip svg{stroke:var(--brand);}
+/* .chip y .cap-ico eliminados: la pastilla azul pastel con icono de trazo
+   fino era el tell mas reconocible de landing generada. Cada zona usa ahora
+   un recurso propio: indice numerico, marcador de linea o nada. */
 .svc-name{font-weight:600;font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;margin:0;color:var(--ink);}
 .svc-kicker{margin:8px 0 0;font-size:15px;font-weight:600;color:var(--brand-deep);}
 .svc-desc{margin:16px 0 24px;font-size:16.5px;line-height:1.65;color:var(--ink-soft);max-width:46ch;}
@@ -170,11 +171,11 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 /* Lista editorial de filas (antes eran 3 tarjetas en rejilla: el tell más visible
    de landing genérica). Filas separadas por hairline, sin cajas ni sombras. */
 .cap-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:40px;border-top:1px solid var(--line);}
-.cap-card{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:6px 24px;align-items:start;padding:30px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:inherit;transition:border-color .2s;}
+.cap-card{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:6px 24px;align-items:start;padding:30px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:inherit;transition:border-color .2s;}
 .cap-card:hover{border-bottom-color:var(--brand);}
 .cap-card .top{grid-column:1;grid-row:1 / span 3;display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:0;}
-.cap-ico{width:44px;height:44px;flex:none;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:var(--brand-soft);border:1px solid rgba(46,107,214,0.18);}
-.cap-ico svg{stroke:var(--brand);}
+/* Indice editorial en mono: ordena la lista sin imitar una libreria de iconos */
+.cap-num{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:0.04em;color:var(--ink-mute);font-variant-numeric:tabular-nums;padding-top:3px;}
 .cap-badge{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);padding:0;background:none;}
 .cap-card h3{grid-column:2;grid-row:1;margin:0;font-weight:600;font-size:19px;letter-spacing:-0.015em;color:var(--ink);transition:color .2s;}
 .cap-card:hover h3{color:var(--brand-deep);}
@@ -206,7 +207,7 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
    ============================================================ */
 .mosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:44px;}
 .tile{position:relative;overflow:hidden;border-radius:var(--radius-lg);min-height:290px;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s;}
-.tile:hover{transform:translateY(-4px);}
+.tile:hover{border-color:var(--line-strong);}
 .tile.s7{grid-column:span 7;}
 .tile.s5{grid-column:span 5;}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
@@ -228,7 +229,6 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 .reason p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
 .cred-figure{margin:0;}
 .cred-card{position:relative;aspect-ratio:4/3;border-radius:var(--radius-lg);border:1px solid var(--line);background:linear-gradient(180deg,var(--brand-soft),var(--surface));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:34px;}
-.cred-card .chip{margin:0;}
 .cred-card .t{margin:0;font-family:var(--sans);font-weight:600;font-size:17px;color:var(--ink);}
 .cred-card .s{margin:0;font-size:14px;line-height:1.55;color:var(--ink-mute);max-width:34ch;}
 .cred-figure figcaption{margin:14px 0 0;font-size:14px;line-height:1.5;color:var(--ink-mute);}
@@ -392,7 +392,7 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 /* Grid de info (problema, etc.) */
 .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px;}
 .info-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;transition:border-color .25s,transform .25s;}
-.info-card:hover{border-color:rgba(46,107,214,0.35);transform:translateY(-3px);}
+.info-card:hover{border-color:var(--line-strong);}
 .info-card h3{margin:0 0 10px;font-weight:600;font-size:20px;color:var(--ink);}
 .info-card p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
 
@@ -432,10 +432,11 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 .note-small{margin:26px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink-mute);max-width:70ch;}
 
 /* Compromisos / garantías */
-.pledge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;}
-.pledge{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;}
-.pledge .ico{width:40px;height:40px;flex:none;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:var(--brand-soft);border:1px solid rgba(46,107,214,0.18);}
-.pledge .ico svg{stroke:var(--brand);}
+/* Compromisos: antes 4 tarjetas en fila (tell #6). Ahora dos columnas de filas
+   con el marcador de linea de marca, el mismo lenguaje que .mk-list. */
+.pledge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;margin-top:44px;border-top:1px solid var(--line);}
+.pledge{position:relative;display:block;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:20px 0 20px 22px;}
+.pledge::before{content:"";position:absolute;left:0;top:1.85em;width:11px;height:2px;border-radius:2px;background:var(--brand);}
 .pledge p{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink);font-weight:500;}
 
 /* Stats en línea bajo un hero */
@@ -449,8 +450,9 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 
 /* Tarjetas numeradas (info-card con número de fondo) */
 .info-card.numbered{position:relative;overflow:hidden;}
-.info-card .n{position:absolute;top:12px;right:18px;font-family:var(--sans);font-weight:700;font-size:54px;line-height:1;color:var(--brand);opacity:0.16;}
-.info-card.numbered h3{max-width:80%;position:relative;}
+/* El numero deja de ser marca de agua gigante: indice mono, arriba y legible */
+.info-card .n{position:static;display:block;margin:0 0 10px;font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:0.08em;color:var(--ink-mute);opacity:1;}
+.info-card.numbered h3{max-width:none;position:relative;}
 
 /* Grid de tecnología (logo + título + desc) */
 /* 2 columnas con hairline, no 3 tarjetas en fila. */
@@ -501,8 +503,8 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 .contact-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;}
 .contact-box h2{margin:0 0 16px;font-weight:600;font-size:19px;color:var(--ink);}
 .contact-line{display:flex;align-items:center;gap:12px;margin-bottom:14px;text-decoration:none;}
-.contact-line .ic{flex:none;width:38px;height:38px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:var(--brand-soft);border:1px solid rgba(46,107,214,0.18);}
-.contact-line .ic svg{stroke:var(--brand);}
+.contact-line .ic{flex:none;width:22px;display:flex;align-items:center;justify-content:center;background:none;border:0;}
+.contact-line .ic svg{stroke:var(--ink-mute);}
 .contact-line .tx{font-size:15.5px;color:var(--ink);font-weight:500;}
 .wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;padding:12px 16px;border-radius:var(--radius);background:#E7F8F0;border:1px solid #9BE3C4;color:#0E7A54;font-family:inherit;font-size:14.5px;font-weight:600;margin-bottom:6px;transition:background .2s;}
 .wa-btn:hover{background:#D9F3E7;}
@@ -567,6 +569,7 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
 }
 @media (max-width:720px){
   .pledge-grid{grid-template-columns:1fr;}
+  .pledge{padding:18px 0 18px 22px;}
 }
 
 /* ============================================================
@@ -582,7 +585,7 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
   .split,.split--why{grid-template-columns:1fr;gap:34px;}
   .footer-in{grid-template-columns:1fr 1fr;gap:32px;}
   /* La fila de capacidad pierde la columna del enlace: baja bajo el texto */
-  .cap-card{grid-template-columns:48px minmax(0,1fr);}
+  .cap-card{grid-template-columns:34px minmax(0,1fr);}
   .cap-card .foot{grid-column:2;grid-row:4;margin-top:14px;}
   .cap-card .top{grid-row:1 / span 4;}
 }
@@ -606,3 +609,12 @@ h1,h2,h3,h4{font-family:var(--sans);overflow-wrap:break-word;}
   .kael-cookie-actions{justify-content:stretch;}
   .kael-cookie button{flex:1;padding:10px 12px;font-size:13.5px;}
 }
+
+/* ============================================================
+   Páginas legales: avisos internos y huecos por rellenar
+   ============================================================ */
+/* Nota dirigida a los fundadores, no al visitante. Se ve, a propósito. */
+.legal-notice{margin:0 0 34px;padding:16px 18px;border-left:3px solid #D97706;background:#FFF7ED;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14.5px;line-height:1.6;color:#7C2D12;}
+.legal-notice strong{font-weight:700;}
+/* Dato obligatorio que falta: imposible de pasar por alto antes de publicar. */
+.legal-todo{display:inline-block;padding:1px 8px;border-radius:var(--radius-sm);background:#FEE2E2;border:1px dashed #DC2626;color:#991B1B;font-family:var(--mono);font-size:12.5px;font-weight:600;}
